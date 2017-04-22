@@ -47,7 +47,7 @@ public class GameScreen implements Screen {
         MapLayers layers = map.getLayers();
         TiledMapTile[] tiles = new TiledMapTile[1];
 
-        tiles[0] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_MEDIEVAL_MEDIEVAL_CHURCH));
+        tiles[0] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_GRASS_GRASS_05));
 
         for (int l = 0; l < 1; l++) {
             TiledMapTileLayer layer = new TiledMapTileLayer(10, 10, 120, 140);
@@ -67,7 +67,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1f);
+        Gdx.gl.glClearColor(39/255.f, 174/255.f, 96/255.f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         camera.update();
         renderer.setView(camera);
