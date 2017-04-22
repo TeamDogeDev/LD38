@@ -5,6 +5,8 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Disposable;
 import de.dogedev.ld38.assets.enums.BitmapFonts;
 import de.dogedev.ld38.assets.enums.Musics;
@@ -17,6 +19,7 @@ import de.dogedev.ld38.assets.enums.Textures;
 public class AssetLoader implements Disposable{
 
     private AssetManager manager = new AssetManager();
+    private TextureAtlas atlas;
 
     public AssetLoader() {
         loadTextures();
@@ -52,6 +55,7 @@ public class AssetLoader implements Disposable{
     }
 
     private void loadTextures() {
+        manager.load("sprites/packed.atlas", TextureAtlas.class);
         for(Textures texture : Textures.values()) {
             manager.load(texture.name, Texture.class);
         }
@@ -69,8 +73,12 @@ public class AssetLoader implements Disposable{
         return manager.get(font.name, BitmapFont.class);
     }
 
-    public Texture getTexture(Textures texture) {
-        return manager.get(texture.name, Texture.class);
+    public TextureRegion getTexture(Textures texture) {
+        return manager.get(texture.name, TextureRegion.class);
+    }
+
+    public TextureRegion getTextureAtlasRegion(String texture) {
+        return manager.get("sprites/packed.atlas", TextureAtlas.class).findRegion(texture);
     }
 
     @Override
