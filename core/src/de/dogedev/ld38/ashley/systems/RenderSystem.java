@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
@@ -37,17 +38,6 @@ public class RenderSystem extends EntitySystem implements EntityListener {
 
     }
 
-    public int getTilePosX(int x, int y) {
-        int x2 =  x*120+60;
-        if(y%2 == 0) {
-            x2 += 60;
-        }
-        return x2;
-    }
-    public int getTilePosY(int y) {
-        return y*104+70;
-    }
-
     @Override
     public void addedToEngine (Engine pengine) {
         entities = pengine.getEntitiesFor(Family.all(PositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class).get());
@@ -63,8 +53,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
                 entity.add(rc);
 
                 PositionComponent pc = engine.createComponent(PositionComponent.class);
-                pc.x = getTilePosX(x, y);
-                pc.y = getTilePosY(y);
+                pc.x = CoordinateMapper.getTilePosX(x, y);
+                pc.y = CoordinateMapper.getTilePosY(y);
                 entity.add(pc);
 
                 engine.addEntity(entity);
