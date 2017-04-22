@@ -26,14 +26,6 @@ public class GameInputProcessor extends InputAdapter {
         return super.scrolled(amount);
     }
 
-//    @Override
-//    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-//        mouse.set(screenX, screenY, 0);
-//        Vector3 unproject = camera.unproject(mouse);
-//        Vector2 tile = CoordinateMapper.getTile((int) unproject.x, (int) unproject.y);
-//        spawnEntity(tile);
-//        return super.touchUp(screenX, screenY, pointer, button);
-//    }
 
 
 }
