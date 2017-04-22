@@ -1,14 +1,9 @@
 package de.dogedev.ld38.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.input.GestureDetector;
-import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
@@ -17,31 +12,31 @@ import com.badlogic.gdx.maps.tiled.renderers.HexagonalTiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
-import de.dogedev.ld38.input.GameDragProcessor;
-import de.dogedev.ld38.input.GameInputProcessor;
+import de.dogedev.ld38.ashley.systems.DebugUISystem;
+import de.dogedev.ld38.ashley.systems.InputSystem;
 
 /**
  * Created by elektropapst on 22.04.2017.
  */
 public class GameScreen implements Screen {
 
-    TextureRegion texture;
-    SpriteBatch batch;
-
     private TiledMap map;
     private OrthographicCamera camera;
     private HexagonalTiledMapRenderer renderer;
 
 
-    @Override
-    public void show() {
-        batch = new SpriteBatch();
-        texture = Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_DIRT_DIRT_01);
-
+    public GameScreen(){
         camera = new OrthographicCamera();
         camera.zoom = 2f;
         camera.setToOrtho(false, 1280, 720);
 
+        Statics.ashley.addSystem(new DebugUISystem(camera));
+        Statics.ashley.addSystem(new InputSystem(camera));
+
+    }
+
+    @Override
+    public void show() {
         map = new TiledMap();
         map.getProperties().put("hexsidelength", 68);
         map.getProperties().put("staggeraxis", "y");
@@ -63,14 +58,6 @@ public class GameScreen implements Screen {
         }
 
         renderer = new HexagonalTiledMapRenderer(map);
-
-        InputMultiplexer inputMultiplexer = new InputMultiplexer(
-                new GameInputProcessor(camera),
-                new GestureDetector(new GameDragProcessor(camera))
-                );
-
-        Gdx.input.setInputProcessor(inputMultiplexer);
-
     }
 
     @Override
@@ -81,6 +68,7 @@ public class GameScreen implements Screen {
         camera.update();
         renderer.setView(camera);
         renderer.render();
+        Statics.ashley.update(delta);
 //        batch.begin();
 //        batch.draw(texture, 100, 100);
 //        batch.end();
