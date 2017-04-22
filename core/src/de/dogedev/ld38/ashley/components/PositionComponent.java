@@ -8,7 +8,12 @@ import com.badlogic.gdx.utils.Pool;
  */
 public class PositionComponent implements Component, Pool.Poolable {
 
+    public int x;
+    public int y;
+
     @Override
     public void reset() {
+        x = 0;
+        y = 0;
     }
 }
