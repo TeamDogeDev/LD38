@@ -1,9 +1,6 @@
 package de.dogedev.ld38.ashley.systems;
 
-import com.badlogic.ashley.core.Engine;
-import com.badlogic.ashley.core.Entity;
-import com.badlogic.ashley.core.EntitySystem;
-import com.badlogic.ashley.core.Family;
+import com.badlogic.ashley.core.*;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.math.Vector2;
 import de.dogedev.ld38.ashley.ComponentMappers;
@@ -42,6 +39,14 @@ public class MovementSystem extends EntitySystem  {
             current.set(pvc.x, pvc.y);
             target.set(mvc.x, mvc.y);
             target.sub(current);
+
+            if(target.len() < 40){
+                // Einheit ist angekommen
+                e.add(((PooledEngine)getEngine()).createComponent(HiddenComponent.class));
+                e.remove(MovementComponent.class);
+                continue;
+            }
+
             target.nor();
             target.scl(mvc.speed*deltaTime);
             pvc.x += target.x;
