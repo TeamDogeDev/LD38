@@ -14,9 +14,7 @@ import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
-import de.dogedev.ld38.ashley.components.HiddenComponent;
-import de.dogedev.ld38.ashley.components.PositionComponent;
-import de.dogedev.ld38.ashley.components.RenderComponent;
+import de.dogedev.ld38.ashley.components.*;
 
 /**
  * Created by Furuha on 28.01.2016.
@@ -34,15 +32,30 @@ public class RenderSystem extends EntitySystem implements EntityListener {
         this.batch = new SpriteBatch();
         this.sortedEntities = new Array<>();
         this.font = new BitmapFont();
-
-
     }
 
     @Override
     public void addedToEngine (Engine pengine) {
-        entities = pengine.getEntitiesFor(Family.all(PositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class).get());
+        entities = pengine.getEntitiesFor(Family.one(PositionComponent.class, TilePositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class).get());
 
         PooledEngine engine = (PooledEngine) pengine;
+
+        for(int x = 0; x < Statics.settings.tilesX; x++){
+            for(int y = 0; y < Statics.settings.tilesY; y++){
+                Entity entity = engine.createEntity();
+                RenderComponent rc = engine.createComponent(RenderComponent.class);
+                rc.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_MINE);
+                rc.angle = 180;
+                entity.add(rc);
+
+                TilePositionComponent pc = engine.createComponent(TilePositionComponent.class);
+                pc.x = x;
+                pc.y = y;
+                entity.add(pc);
+
+                engine.addEntity(entity);
+            }
+        }
 
         for(int x = 0; x < Statics.settings.tilesX; x++){
             for(int y = 0; y < Statics.settings.tilesY; y++){
@@ -57,14 +70,13 @@ public class RenderSystem extends EntitySystem implements EntityListener {
                 pc.y = CoordinateMapper.getTilePosY(y);
                 entity.add(pc);
 
+                entity.add(engine.createComponent(LookComponent.class));
+
                 engine.addEntity(entity);
             }
         }
-//        engine.addEntityListener(Family.all(PositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class, SubEntityComponent.class).get(), this);
-//        for(Entity e: entities){
-//            sortedEntities.add(e);
-//        }
-//        sortedEntities.sort();
+
+
     }
 
     @Override
@@ -98,15 +110,7 @@ public class RenderSystem extends EntitySystem implements EntityListener {
         batch.begin();
         for (int i = 0; i < entities.size(); i++) {
             Entity e = entities.get(i);
-
             drawEntity(e, deltaTime);
-
-//            PositionComponent position = ComponentMappers.position.get(e);
-//            NameComponent nc = ComponentMappers.name.get(e);
-
-//            if (nc != null) {
-//                font.draw(batch, nc.name, position.x + xOffset - 90, position.y + position.z + 40, 200, Align.center, false);
-//            }
         }
 
         batch.end();
@@ -114,20 +118,42 @@ public class RenderSystem extends EntitySystem implements EntityListener {
     }
 
     private void drawEntity(Entity e, float deltaTime) {
-        PositionComponent positionComponent = ComponentMappers.position.get(e);
         RenderComponent renderComponent = ComponentMappers.render.get(e);
-//        batch.draw(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2);
 
-        int targetX = Gdx.input.getX(), targetY = Gdx.input.getY();
-        drawRotated(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2, targetX, targetY, renderComponent.angle);
+        if(ComponentMappers.tilePos.has(e)){
+            TilePositionComponent positionComponent = ComponentMappers.tilePos.get(e);
 
+            Vector2 tilePos = CoordinateMapper.getTilePos(positionComponent.x, positionComponent.y);
+
+            if(ComponentMappers.look.has(e)){
+                int targetX = Gdx.input.getX(), targetY = Gdx.input.getY();
+                drawRotated(renderComponent.region, tilePos.x-renderComponent.region.getRegionWidth()/2, tilePos.y-renderComponent.region.getRegionHeight()/2, targetX, targetY, renderComponent.angle);
+            } else {
+                draw(renderComponent.region, tilePos.x-renderComponent.region.getRegionWidth()/2, tilePos.y-renderComponent.region.getRegionHeight()/2);
+            }
+        }
+        if(ComponentMappers.position.has(e)){
+            PositionComponent positionComponent = ComponentMappers.position.get(e);
+
+            if(ComponentMappers.look.has(e)){
+                int targetX = Gdx.input.getX(), targetY = Gdx.input.getY();
+                drawRotated(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2, targetX, targetY, renderComponent.angle);
+            } else {
+                draw(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2);
+            }
+
+        }
+
+    }
+
+    private void draw(TextureRegion region, float x, float y) {
+        batch.draw(region.getTexture(), x, y, region.getRegionWidth()/2, region.getRegionHeight()/2, region.getRegionWidth(), region.getRegionHeight(), 1, 1, 0, region.getRegionX(), region.getRegionY(), region.getRegionWidth(), region.getRegionHeight(), false, false);
     }
 
     private void drawRotated(TextureRegion region, float x, float y, int targetX, int targetY, int angleOffset) {
         Vector3 unproject = camera.unproject(Vector3.X.set(targetX, targetY, 0));
         Vector2.X.set(x, y);
         Vector2.Y.set(unproject.x, unproject.y);
-//        float angle = Vector2.X.angle(Vector2.Y)+180;
         float angle = Vector2.Y.sub(Vector2.X).angle() - 90 + angleOffset;
         batch.draw(region.getTexture(), x, y, region.getRegionWidth()/2, region.getRegionHeight()/2, region.getRegionWidth(), region.getRegionHeight(), 1, 1, angle, region.getRegionX(), region.getRegionY(), region.getRegionWidth(), region.getRegionHeight(), false, false);
     }
