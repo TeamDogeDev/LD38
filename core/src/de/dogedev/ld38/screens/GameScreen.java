@@ -47,7 +47,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));
-        ashley.addSystem(new OverlayRenderSystem(camera));
+//        ashley.addSystem(new OverlayRenderSystem(camera));
 
         Entity castleOpen = ashley.createEntity();
         RenderComponent rc = ashley.createComponent(RenderComponent.class);
@@ -71,27 +71,6 @@ public class GameScreen implements Screen {
 
         ashley.addEntity(castleOpen);
         ashley.addEntity(castleSmall);
-
-
-        // tmp -------------------
-        int n = 10;
-        for (int i = 0; i < n; i++) {
-            Entity e = ashley.createEntity();
-            rc = ashley.createComponent(RenderComponent.class);
-            rc.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_WINDMILL_BASE);
-            pc = ashley.createComponent(PositionComponent.class);
-            int x = MathUtils.random(1, Statics.settings.tilesX-1);
-            int y = MathUtils.random(1, Statics.settings.tilesY-1);
-            pc.x = CoordinateMapper.getTilePosX(x, y); //
-            pc.y = CoordinateMapper.getTilePosY(y);
-            e.add(pc);
-            e.add(rc);
-            ashley.addEntity(e);
-        }
-
-
-        // ---------------------
-
     }
 
     @Override
