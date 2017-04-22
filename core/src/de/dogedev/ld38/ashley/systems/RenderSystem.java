@@ -54,8 +54,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
 
         PooledEngine engine = (PooledEngine) pengine;
 
-        for(int x = 0; x < 15; x++){
-            for(int y = 0; y < 15; y++){
+        for(int x = 0; x < Statics.settings.tilesX; x++){
+            for(int y = 0; y < Statics.settings.tilesY; y++){
                 Entity entity = engine.createEntity();
                 RenderComponent rc = engine.createComponent(RenderComponent.class);
                 rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);

@@ -20,16 +20,14 @@ public class MapBuilder {
         map.getProperties().put("staggeraxis", "y");
         MapLayers layers = map.getLayers();
 
-        for (int l = 0; l < 1; l++) {
-            Grid mapGrid = new Grid(tilesX, tilesY);
+        Grid mapGrid = new Grid(tilesX, tilesY);
 
-            final NoiseGenerator noiseGenerator = NoiseGenerator.getInstance();
-            noiseStage(mapGrid, noiseGenerator, 2, 1);
+        final NoiseGenerator noiseGenerator = NoiseGenerator.getInstance();
+        noiseStage(mapGrid, noiseGenerator, 2, 1);
 
-            TiledMapTileLayer layer = createLayer(mapGrid, tilesX, tilesY);
-            decorateLayer(layer, tilesX, tilesY);
-            layers.add(layer);
-        }
+        TiledMapTileLayer groundLayer = createLayer(mapGrid, tilesX, tilesY);
+        decorateLayer(groundLayer, tilesX, tilesY);
+        layers.add(groundLayer);
 
         layers.add(createEdges(tilesX, tilesY));
         return map;
@@ -46,6 +44,7 @@ public class MapBuilder {
         }
         return layer;
     }
+
     private TiledMapTileLayer createLayer(Grid mapGrid, int tilesX, int tilesY) {
 
 
@@ -76,11 +75,10 @@ public class MapBuilder {
     }
 
     private void decorateLayer(TiledMapTileLayer tileLayer, int tilesX, int tilesY) {
-        for (int y = 0; y < tilesY; y++) {
-            for (int x = 0; x < tilesX; x++) {
-                int id = tileLayer.getCell(x, y).getTile().getId();
+        for (int y = 1; y < tilesY-1; y++) {
+            for (int x = 1; x < tilesX-1; x++) {
                 boolean decorate = MathUtils.randomBoolean(.2f);
-                if(decorate) {
+                if (decorate) {
                     TiledMapTileLayer.Cell cell = tileLayer.getCell(x, y);
                     cell.setTile(CMapTile.getTileVariation((CMapTile) cell.getTile()));
                 }
