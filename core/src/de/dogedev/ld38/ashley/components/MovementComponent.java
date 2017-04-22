@@ -6,10 +6,11 @@ import com.badlogic.gdx.utils.Pool;
 /**
  * Created by elektropapst on 22.04.2017.
  */
-public class PositionComponent implements Component, Pool.Poolable {
+public class MovementComponent implements Component, Pool.Poolable {
 
     public float x;
     public float y;
+    public float speed;
 
     @Override
     public void reset() {

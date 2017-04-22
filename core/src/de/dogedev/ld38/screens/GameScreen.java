@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
@@ -56,6 +55,7 @@ public class GameScreen implements Screen {
 
         ashley.addSystem(new InputSystem(camera));
         ashley.addSystem(new CameraSystem(camera));
+        ashley.addSystem(new MovementSystem());
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));

@@ -9,8 +9,9 @@ import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.components.LookComponent;
+import de.dogedev.ld38.ashley.components.MovementComponent;
+import de.dogedev.ld38.ashley.components.PositionComponent;
 import de.dogedev.ld38.ashley.components.RenderComponent;
-import de.dogedev.ld38.ashley.components.TilePositionComponent;
 
 /**
  * Created by elektropapst on 22.04.2017.
@@ -47,11 +48,18 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
         rc.angle = 90;
         entity.add(rc);
 
-        TilePositionComponent tpc = Statics.ashley.createComponent(TilePositionComponent.class);
-
-        tpc.x = (int) tile.x;
-        tpc.y = (int) tile.y;
+        PositionComponent tpc = Statics.ashley.createComponent(PositionComponent.class);
+        tpc.x = CoordinateMapper.getTilePosX(0, 7);
+        tpc.y = CoordinateMapper.getTilePosY(7);
         entity.add(tpc);
+
+
+        MovementComponent mvc = Statics.ashley.createComponent(MovementComponent.class);
+        Vector2 tilePos = CoordinateMapper.getTilePos((int) tile.x, (int) tile.y);
+        mvc.x = (int) tilePos.x;
+        mvc.y = (int) tilePos.y;
+        mvc.speed = 40;
+        entity.add(mvc);
 
         entity.add(Statics.ashley.createComponent(LookComponent.class));
 
