@@ -1,13 +1,17 @@
 package de.dogedev.ld38.ashley.systems;
 
-import com.badlogic.ashley.core.Engine;
-import com.badlogic.ashley.core.Entity;
-import com.badlogic.ashley.core.EntityListener;
-import com.badlogic.ashley.core.EntitySystem;
+import com.badlogic.ashley.core.*;
+import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Array;
+import de.dogedev.ld38.Key;
+import de.dogedev.ld38.Statics;
+import de.dogedev.ld38.ashley.ComponentMappers;
+import de.dogedev.ld38.ashley.components.HiddenComponent;
+import de.dogedev.ld38.ashley.components.PositionComponent;
+import de.dogedev.ld38.ashley.components.RenderComponent;
 
 /**
  * Created by Furuha on 28.01.2016.
@@ -18,18 +22,49 @@ public class RenderSystem extends EntitySystem implements EntityListener {
     private final OrthographicCamera camera;
     private Array<Entity> sortedEntities;
     private BitmapFont font;
-
+    ImmutableArray<Entity> entities;
 
     public RenderSystem(OrthographicCamera camera) {
         this.camera = camera;
         this.batch = new SpriteBatch();
         this.sortedEntities = new Array<>();
         this.font = new BitmapFont();
+
+
+    }
+
+    public int getTilePosX(int x, int y) {
+        int x2 =  x*120+30;
+        if(y%2 == 0) {
+            x2 += 60;
+        }
+        return x2;
+    }
+    public int getTilePosY(int y) {
+        return y*104+35;
     }
 
     @Override
-    public void addedToEngine (Engine engine) {
-//        ImmutableArray<Entity> entities = engine.getEntitiesFor(Family.all(PositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class, SubEntityComponent.class).get());
+    public void addedToEngine (Engine pengine) {
+        entities = pengine.getEntitiesFor(Family.all(PositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class).get());
+
+        PooledEngine engine = (PooledEngine) pengine;
+
+        for(int x = 0; x < 15; x++){
+            for(int y = 0; y < 15; y++){
+                Entity entity = engine.createEntity();
+                RenderComponent rc = engine.createComponent(RenderComponent.class);
+                rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);
+                entity.add(rc);
+
+                PositionComponent pc = engine.createComponent(PositionComponent.class);
+                pc.x = getTilePosX(x, y);
+                pc.y = getTilePosY(y);
+                entity.add(pc);
+
+                engine.addEntity(entity);
+            }
+        }
 //        engine.addEntityListener(Family.all(PositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class, SubEntityComponent.class).get(), this);
 //        for(Entity e: entities){
 //            sortedEntities.add(e);
@@ -67,8 +102,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
 
         batch.begin();
 
-        for (int i = 0; i < sortedEntities.size; i++) {
-            Entity e = sortedEntities.get(i);
+        for (int i = 0; i < entities.size(); i++) {
+            Entity e = entities.get(i);
 
             drawEntity(e, deltaTime);
 
@@ -85,6 +120,10 @@ public class RenderSystem extends EntitySystem implements EntityListener {
     }
 
     private void drawEntity(Entity e, float deltaTime) {
+        PositionComponent positionComponent = ComponentMappers.position.get(e);
+        RenderComponent renderComponent = ComponentMappers.render.get(e);
+
+        batch.draw(renderComponent.region, positionComponent.x, positionComponent.y);
 
     }
 
