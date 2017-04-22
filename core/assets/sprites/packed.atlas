@@ -620,328 +620,328 @@ Objects/windmill
   orig: 48, 56
   offset: 0, 0
   index: -1
-Tiles/Terrain/Dirt/dirt
+Tiles/Terrain/Dirt/dirt_01
   rotate: false
   xy: 2, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 1
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_02
   rotate: false
   xy: 2, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 2
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_03
   rotate: false
   xy: 2, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 3
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_04
   rotate: false
   xy: 2, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 4
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_05
   rotate: false
   xy: 2, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 5
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_06
   rotate: false
   xy: 2, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 6
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_07
   rotate: false
   xy: 2, 30
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 7
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_08
   rotate: false
   xy: 132, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 8
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_09
   rotate: false
   xy: 254, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 9
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_10
   rotate: false
   xy: 376, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 10
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_11
   rotate: false
   xy: 498, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 11
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_12
   rotate: false
   xy: 620, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 12
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_13
   rotate: false
   xy: 742, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 13
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_14
   rotate: false
   xy: 864, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 14
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_15
   rotate: false
   xy: 124, 726
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 15
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_16
   rotate: false
   xy: 124, 584
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 16
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_17
   rotate: false
   xy: 124, 442
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 17
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_18
   rotate: false
   xy: 124, 300
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 18
-Tiles/Terrain/Dirt/dirt
+  index: -1
+Tiles/Terrain/Dirt/dirt_19
   rotate: false
   xy: 678, 69
   size: 88, 101
   orig: 88, 101
   offset: 0, 0
-  index: 19
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_01
   rotate: false
   xy: 124, 158
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 1
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_02
   rotate: false
   xy: 297, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 2
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_03
   rotate: false
   xy: 246, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 3
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_04
   rotate: false
   xy: 246, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 4
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_05
   rotate: false
   xy: 246, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 5
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_06
   rotate: false
   xy: 246, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 6
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_07
   rotate: false
   xy: 368, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 7
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_08
   rotate: false
   xy: 419, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 8
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_09
   rotate: false
   xy: 368, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 9
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_10
   rotate: false
   xy: 368, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 10
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_11
   rotate: false
   xy: 368, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 11
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_12
   rotate: false
   xy: 541, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 12
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_13
   rotate: false
   xy: 663, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 13
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_14
   rotate: false
   xy: 785, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 14
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_15
   rotate: false
   xy: 541, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 15
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_16
   rotate: false
   xy: 663, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 16
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_17
   rotate: false
   xy: 785, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 17
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_18
   rotate: false
   xy: 490, 397
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 18
-Tiles/Terrain/Grass/grass
+  index: -1
+Tiles/Terrain/Grass/grass_19
   rotate: false
   xy: 588, 68
   size: 88, 102
   orig: 88, 102
   offset: 0, 0
-  index: 19
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_01
   rotate: false
   xy: 490, 255
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 1
-Tiles/Terrain/Mars/mars
-  rotate: false
-  xy: 715, 456
-  size: 120, 140
-  orig: 120, 140
-  offset: 0, 0
-  index: 3
-Tiles/Terrain/Mars/mars
-  rotate: false
-  xy: 715, 314
-  size: 120, 140
-  orig: 120, 140
-  offset: 0, 0
-  index: 4
-Tiles/Terrain/Mars/mars
-  rotate: false
-  xy: 654, 172
-  size: 120, 140
-  orig: 120, 140
-  offset: 0, 0
-  index: 5
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_02
   rotate: false
   xy: 768, 69
   size: 88, 101
   orig: 88, 101
   offset: 0, 0
-  index: 2
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_03
+  rotate: false
+  xy: 715, 456
+  size: 120, 140
+  orig: 120, 140
+  offset: 0, 0
+  index: -1
+Tiles/Terrain/Mars/mars_04
+  rotate: false
+  xy: 715, 314
+  size: 120, 140
+  orig: 120, 140
+  offset: 0, 0
+  index: -1
+Tiles/Terrain/Mars/mars_05
+  rotate: false
+  xy: 654, 172
+  size: 120, 140
+  orig: 120, 140
+  offset: 0, 0
+  index: -1
+Tiles/Terrain/Mars/mars_06
   rotate: false
   xy: 776, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 6
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_07
   rotate: false
   xy: 898, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 7
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_02
   rotate: false
   xy: 858, 69
   size: 88, 101
   orig: 88, 101
   offset: 0, 0
-  index: 2
+  index: -1
 
 packed2.png
 size: 1024,1024
@@ -1438,111 +1438,111 @@ Tiles/Modern/modern_villageLarge
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars
+Tiles/Terrain/Mars/mars_08
   rotate: false
   xy: 2, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 8
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_09
   rotate: false
   xy: 2, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 9
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_10
   rotate: false
   xy: 124, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 10
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_11
   rotate: false
   xy: 2, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 11
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_12
   rotate: false
   xy: 124, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 12
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_13
   rotate: false
   xy: 246, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 13
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_14
   rotate: false
   xy: 2, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 14
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_15
   rotate: false
   xy: 124, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 15
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_16
   rotate: false
   xy: 246, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 16
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_17
   rotate: false
   xy: 368, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 17
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_18
   rotate: false
   xy: 2, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 18
-Tiles/Terrain/Mars/mars
+  index: -1
+Tiles/Terrain/Mars/mars_19
   rotate: false
   xy: 124, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 19
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_01
   rotate: false
   xy: 734, 30
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 1
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_03
   rotate: false
   xy: 856, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 3
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_04
   rotate: false
   xy: 856, 30
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 4
+  index: -1
 
 packed3.png
 size: 1024,1024
@@ -1689,237 +1689,237 @@ Tiles/Sci-fi/scifi_tower
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand
+Tiles/Terrain/Sand/sand_05
   rotate: false
   xy: 2, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 5
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_06
   rotate: false
   xy: 2, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 6
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_07
   rotate: false
   xy: 124, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 7
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_08
   rotate: false
   xy: 2, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 8
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_09
   rotate: false
   xy: 124, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 9
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_10
   rotate: false
   xy: 246, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 10
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_11
   rotate: false
   xy: 2, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 11
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_12
   rotate: false
   xy: 124, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 12
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_13
   rotate: false
   xy: 246, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 13
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_14
   rotate: false
   xy: 368, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 14
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_15
   rotate: false
   xy: 2, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 15
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_16
   rotate: false
   xy: 124, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 16
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_17
   rotate: false
   xy: 246, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 17
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_18
   rotate: false
   xy: 368, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 18
-Tiles/Terrain/Sand/sand
+  index: -1
+Tiles/Terrain/Sand/sand_19
   rotate: false
   xy: 490, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 19
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_01
   rotate: false
   xy: 612, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 1
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_03
   rotate: false
   xy: 734, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 3
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_04
   rotate: false
   xy: 856, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 4
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_05
   rotate: false
   xy: 246, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 5
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_06
   rotate: false
   xy: 368, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 6
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_07
   rotate: false
   xy: 490, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 7
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_08
   rotate: false
   xy: 612, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 8
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_09
   rotate: false
   xy: 734, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 9
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_10
   rotate: false
   xy: 856, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 10
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_11
   rotate: false
   xy: 368, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 11
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_12
   rotate: false
   xy: 490, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 12
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_13
   rotate: false
   xy: 612, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 13
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_14
   rotate: false
   xy: 734, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 14
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_15
   rotate: false
   xy: 856, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 15
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_16
   rotate: false
   xy: 490, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 16
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_17
   rotate: false
   xy: 612, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 17
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_18
   rotate: false
   xy: 734, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 18
-Tiles/Terrain/Stone/stone
+  index: -1
+Tiles/Terrain/Stone/stone_19
   rotate: false
   xy: 856, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
-  index: 19
+  index: -1
 Tiles/Western/western_bank
   rotate: false
   xy: 612, 2
@@ -2192,13 +2192,13 @@ Objects/windmill_complete
   orig: 52, 66
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone
+Tiles/Terrain/Stone/stone_02
   rotate: false
   xy: 244, 153
   size: 88, 101
   orig: 88, 101
   offset: 0, 0
-  index: 2
+  index: -1
 Tiles/Western/western_watertower
   rotate: false
   xy: 2, 114

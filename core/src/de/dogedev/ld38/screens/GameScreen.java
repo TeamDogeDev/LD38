@@ -20,7 +20,7 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
         batch = new SpriteBatch();
-        texture = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_ANVIL);
+        texture = Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_DIRT_DIRT_01);
 
     }
 

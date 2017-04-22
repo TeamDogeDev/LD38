@@ -1,5 +1,6 @@
 {
   combineSubdirectories: true,
   bleed: true,
-  edgePadding: true
+  edgePadding: true,
+  useIndexes: false
 }
