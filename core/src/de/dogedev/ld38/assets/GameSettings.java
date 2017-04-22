@@ -6,4 +6,8 @@ package de.dogedev.ld38.assets;
 public class GameSettings {
     public float soundVolume = .5f;
     public float musicVolume = .2f;
+    public int tileWidth = 120;
+    public int tileHeight = 140;
+    public int tilesX = 10;
+    public int tilesY = 10;
 }
