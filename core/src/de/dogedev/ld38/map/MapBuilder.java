@@ -23,20 +23,6 @@ public class MapBuilder {
         map.getProperties().put("staggeraxis", "y");
         MapLayers layers = map.getLayers();
 
-        TiledMapTile[] tiles = new TiledMapTile[5];
-
-        tiles[0] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_SAND_SAND_07));
-        tiles[1] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_DIRT_DIRT_06));
-        tiles[2] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_GRASS_GRASS_05));
-        tiles[3] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_STONE_STONE_07));
-        tiles[4] = new StaticTiledMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_SAND_SAND_17));
-
-        tiles[0].setId(0);
-        tiles[1].setId(1);
-        tiles[2].setId(2);
-        tiles[3].setId(3);
-        tiles[4].setId(4);
-
         for (int l = 0; l < 1; l++) {
             Grid mapGrid = new Grid(tilesX, tilesY);
 
@@ -44,14 +30,14 @@ public class MapBuilder {
             noiseGenerator.setSeed(4711);
             noiseStage(mapGrid, noiseGenerator, 2, 1);
 
-            TiledMapTileLayer layer = createLayer(mapGrid, tilesX, tilesY, tiles);
-            decorateLayer(layer, tilesX, tilesY, tiles);
+            TiledMapTileLayer layer = createLayer(mapGrid, tilesX, tilesY);
+            decorateLayer(layer, tilesX, tilesY);
             layers.add(layer);
         }
         return map;
     }
 
-    private TiledMapTileLayer createLayer(Grid mapGrid, int tilesX, int tilesY, TiledMapTile[] tiles) {
+    private TiledMapTileLayer createLayer(Grid mapGrid, int tilesX, int tilesY) {
 
 
         TiledMapTileLayer layer = new TiledMapTileLayer(tilesX, tilesY, Statics.settings.tileWidth, Statics.settings.tileHeight);
@@ -59,19 +45,20 @@ public class MapBuilder {
             for (int x = 0; x < tilesX; x++) {
                 TiledMapTileLayer.Cell cell = new TiledMapTileLayer.Cell();
 
-                int tileIdx = 0;
+                CMapTile tile;
                 float noise = mapGrid.get(x, y);
+
                 if (noise < .4) {
-                    tileIdx = 0;
+                    tile = CMapTile.SAND;
                 } else if (noise < .45) {
-                    tileIdx = 1;
+                    tile = CMapTile.DIRT;
                 } else if (noise < .7) {
-                    tileIdx = 2;
+                    tile = CMapTile.GRASS;
                 } else {
-                    tileIdx = 3;
+                    tile = CMapTile.STONE;
                 }
 
-                cell.setTile(tiles[tileIdx]);
+                cell.setTile(tile);
                 layer.setCell(x, y, cell);
             }
         }
@@ -79,25 +66,14 @@ public class MapBuilder {
         return layer;
     }
 
-    private void decorateLayer(TiledMapTileLayer tileLayer, int tilesX, int tilesY, TiledMapTile[] tiles) {
+    private void decorateLayer(TiledMapTileLayer tileLayer, int tilesX, int tilesY) {
         for (int y = 0; y < tilesY; y++) {
             for (int x = 0; x < tilesX; x++) {
                 int id = tileLayer.getCell(x, y).getTile().getId();
-                boolean b = MathUtils.randomBoolean(.5f);
-                TiledMapTileLayer.Cell cell = new TiledMapTileLayer.Cell();
-                cell.setTile(tiles[4]);
-                if(b) {
-                    switch (id) {
-                        case 0:
-                            tileLayer.setCell(x, y, cell);
-                            break;
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                    }
+                boolean decorate = MathUtils.randomBoolean(.5f);
+                if(decorate) {
+                    TiledMapTileLayer.Cell cell = tileLayer.getCell(x, y);
+                    cell.setTile(CMapTile.getTileVariation((CMapTile) cell.getTile()));
                 }
             }
         }
