@@ -5,7 +5,7 @@ package de.dogedev.ld38.assets.enums;
  */
 public enum BitmapFonts {
 
-    DEBUG("");
+    KENNEY_1("fonts/font.fnt");
 
     public String name;
 

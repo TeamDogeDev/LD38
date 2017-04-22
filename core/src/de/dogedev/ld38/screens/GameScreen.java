@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.MathUtils;
+import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.components.PositionComponent;
@@ -52,8 +53,8 @@ public class GameScreen implements Screen {
         RenderComponent rc = ashley.createComponent(RenderComponent.class);
         rc.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_OPEN);
         PositionComponent pc = ashley.createComponent(PositionComponent.class);
-        pc.x = renderSystem.getTilePosX(0, Statics.settings.tilesY-1); //
-        pc.y = renderSystem.getTilePosY(Statics.settings.tilesY-1);
+        pc.x = CoordinateMapper.getTilePosX(0, Statics.settings.tilesY-1); //
+        pc.y = CoordinateMapper.getTilePosY(Statics.settings.tilesY-1);
         castleOpen.add(pc);
         castleOpen.add(rc);
 
@@ -62,8 +63,8 @@ public class GameScreen implements Screen {
         RenderComponent rc1 = ashley.createComponent(RenderComponent.class);
         rc1.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_SMALL);
         PositionComponent pc1 = ashley.createComponent(PositionComponent.class);
-        pc1.x = renderSystem.getTilePosX(Statics.settings.tilesX-1, 0); //
-        pc1.y = renderSystem.getTilePosY(0);
+        pc1.x = CoordinateMapper.getTilePosX(Statics.settings.tilesX-1, 0); //
+        pc1.y = CoordinateMapper.getTilePosY(0);
         castleSmall.add(pc1);
         castleSmall.add(rc1);
 
@@ -81,8 +82,8 @@ public class GameScreen implements Screen {
             pc = ashley.createComponent(PositionComponent.class);
             int x = MathUtils.random(1, Statics.settings.tilesX-1);
             int y = MathUtils.random(1, Statics.settings.tilesY-1);
-            pc.x = renderSystem.getTilePosX(x, y); //
-            pc.y = renderSystem.getTilePosY(y);
+            pc.x = CoordinateMapper.getTilePosX(x, y); //
+            pc.y = CoordinateMapper.getTilePosY(y);
             e.add(pc);
             e.add(rc);
             ashley.addEntity(e);

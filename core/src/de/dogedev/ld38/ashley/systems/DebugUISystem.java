@@ -2,6 +2,7 @@ package de.dogedev.ld38.ashley.systems;
 
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -9,6 +10,9 @@ import com.badlogic.gdx.graphics.profiling.GLProfiler;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
+import de.dogedev.ld38.Statics;
+import de.dogedev.ld38.assets.AssetLoader;
+import de.dogedev.ld38.assets.enums.BitmapFonts;
 
 import java.text.DecimalFormat;
 
@@ -24,7 +28,7 @@ public class DebugUISystem extends EntitySystem implements Disposable {
 
     public DebugUISystem(OrthographicCamera camera) {
         this.camera = camera;
-        font = new BitmapFont();
+        font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1);
         GLProfiler.enable();
     }
 
@@ -32,6 +36,7 @@ public class DebugUISystem extends EntitySystem implements Disposable {
     public void update(float deltaTime) {
 
         batch.begin();
+        font.setColor(Color.WHITE);
         Vector3 pos = getMousePosInGameWorld();
         if(camera != null)debugLine(260, "mouse x=" + (int) (pos.x) );
         if(camera != null)debugLine(240, "mouse y=" + (int) (pos.y) );
