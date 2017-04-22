@@ -1,5 +1,6 @@
 package de.dogedev.ld38.assets;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
@@ -7,11 +8,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.utils.Disposable;
-import de.dogedev.ld38.assets.enums.BitmapFonts;
-import de.dogedev.ld38.assets.enums.Musics;
-import de.dogedev.ld38.assets.enums.Sounds;
-import de.dogedev.ld38.assets.enums.Textures;
+import de.dogedev.ld38.assets.enums.*;
 
 /**
  * Created by elektropapst on 22.04.2017.
@@ -26,6 +25,16 @@ public class AssetLoader implements Disposable{
 //        loadMusics();
 //        loadSounds();
         loadBitmapFonts();
+    }
+
+    public ShaderProgram getShader(ShaderPrograms shaderProgram) {
+        ShaderProgram.pedantic = false;
+        ShaderProgram shader = new ShaderProgram(
+                Gdx.files.internal(shaderProgram.vertexShaderFile),
+                Gdx.files.internal(shaderProgram.fragmentShaderFile)
+        );
+        System.out.println(shader.isCompiled() ? shaderProgram.name() + " compiled." : shader.getLog());
+        return shader;
     }
 
     public boolean load() {
@@ -73,8 +82,8 @@ public class AssetLoader implements Disposable{
         return manager.get(font.name, BitmapFont.class);
     }
 
-    public TextureRegion getTexture(Textures texture) {
-        return manager.get(texture.name, TextureRegion.class);
+    public Texture getTexture(Textures texture) {
+        return manager.get(texture.name, Texture.class);
     }
 
     public TextureRegion getTextureAtlasRegion(String texture) {

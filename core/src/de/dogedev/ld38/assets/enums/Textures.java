@@ -5,7 +5,9 @@ package de.dogedev.ld38.assets.enums;
  */
 public enum Textures {
 
-    BADLOGIC("badlogic.jpg");
+    BADLOGIC("badlogic.jpg"),
+    CLOUD("clouds.png");
+
 
     public String name;
 

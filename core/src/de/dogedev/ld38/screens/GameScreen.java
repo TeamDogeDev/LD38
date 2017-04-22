@@ -6,15 +6,21 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
-import com.badlogic.gdx.math.MathUtils;
-import de.dogedev.ld38.CoordinateMapper;
+import com.badlogic.gdx.math.Vector2;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
-import de.dogedev.ld38.ashley.components.*;
+import de.dogedev.ld38.ashley.components.RenderComponent;
+import de.dogedev.ld38.ashley.components.SpawnComponent;
+import de.dogedev.ld38.ashley.components.TilePositionComponent;
+import de.dogedev.ld38.ashley.components.UnitComponent;
 import de.dogedev.ld38.ashley.systems.*;
+import de.dogedev.ld38.assets.enums.ShaderPrograms;
+import de.dogedev.ld38.assets.enums.Textures;
 import de.dogedev.ld38.map.MapBuilder;
 
 import static de.dogedev.ld38.Statics.ashley;
@@ -30,11 +36,18 @@ public class GameScreen implements Screen {
     MapRenderSystem mapRenderSystem;
     RenderSystem renderSystem;
     MapBuilder mapBuilder = new MapBuilder();
+    private ShaderProgram cloudShader;
+    private SpriteBatch cloudBatch;
+    private Texture clouds;
 
     public GameScreen(){
+        cloudBatch = new SpriteBatch();
         camera = new OrthographicCamera();
         camera.zoom = 2f;
         camera.setToOrtho(false, 1280, 720);
+
+        clouds = Statics.asset.getTexture(Textures.CLOUD);
+        initShader();
 
         TiledMap map = mapBuilder.buildMap(settings.tilesX, settings.tilesY);
 
@@ -79,10 +92,22 @@ public class GameScreen implements Screen {
 //        ashley.addEntity(castleSmall);
     }
 
+    private void initShader() {
+        cloudShader = Statics.asset.getShader(ShaderPrograms.CLOUD_SHADER);
+        cloudBatch.setShader(cloudShader);
+        cloudShader.begin();
+        cloudShader.setUniformf("resolution", Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        cloudShader.setUniformf("cloudsize", .4f);
+        cloudShader.end();
+    }
+
     @Override
     public void show() {
 
     }
+
+    private Vector2 windVelocity = new Vector2(0.0005f, 0f);
+    private Vector2 windData = new Vector2(0, 0);
 
     @Override
     public void render(float delta) {
@@ -91,6 +116,26 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         ashley.update(delta);
 
+
+        windData.add(windVelocity);
+        cloudShader.begin();
+        cloudShader.setUniformf("scroll", windData);
+        cloudShader.setUniformf("camPosition", camera.position);
+        cloudShader.end();
+
+        // zoom = 1 black
+
+            cloudBatch.setBlendFunction(GL20.GL_DST_COLOR, GL20.GL_ONE_MINUS_SRC_ALPHA);
+        // zoom > 1
+//        cloudBatch.setBlendFunction(GL20.GL_ONE_MINUS_SRC_ALPHA, GL20.GL_ZERO);
+
+        // zoom < 1 -> off
+
+        if(camera.zoom == 1) {
+            cloudBatch.begin();
+            cloudBatch.draw(clouds, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            cloudBatch.end();
+        }
         if(Gdx.input.isKeyJustPressed(Input.Keys.N)) {
             mapRenderSystem.setMap(mapBuilder.buildMap(settings.tilesX, settings.tilesY));
         }
@@ -99,6 +144,10 @@ public class GameScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         camera.setToOrtho(false, width, height);
+        cloudShader.begin();
+        cloudShader.setUniformf("resolution", width, height);
+        cloudShader.end();
+
     }
 
     @Override
@@ -118,6 +167,6 @@ public class GameScreen implements Screen {
 
     @Override
     public void dispose() {
-
+        cloudBatch.dispose();
     }
 }
