@@ -32,8 +32,6 @@ public class CoordinateMapper {
         int xAprox = x/120;
         int yAprox = y/100;
 
-
-
         for(int xT = (xAprox - 3); xT < (xAprox+3); xT++){
             if(xT < 0) continue;
             if(xT >= tilesX) continue;
