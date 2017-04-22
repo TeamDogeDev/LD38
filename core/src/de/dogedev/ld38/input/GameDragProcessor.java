@@ -27,7 +27,7 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
     public boolean pan(float x, float y, float deltaX, float deltaY) {
         camera.position.x -= (deltaX*camera.zoom);
         camera.position.y += (deltaY*camera.zoom);
-        return true;
+        return super.pan(x, y, deltaX, deltaY);
     }
 
     @Override
