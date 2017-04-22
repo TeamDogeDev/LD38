@@ -3,6 +3,7 @@ package de.dogedev.ld38.ashley.systems;
 import com.badlogic.ashley.core.*;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.math.Vector2;
+import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.*;
 
@@ -44,6 +45,10 @@ public class MovementSystem extends EntitySystem  {
                 // Einheit ist angekommen
                 e.add(((PooledEngine)getEngine()).createComponent(HiddenComponent.class));
                 e.remove(MovementComponent.class);
+                Vector2 tilePos = CoordinateMapper.getTile((int) pvc.x, (int) pvc.y);
+                getEngine().getSystem(GridSystem.class).incAt(
+                        (int) tilePos.x, (int) tilePos.y
+                );
                 continue;
             }
 

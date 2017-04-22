@@ -57,6 +57,16 @@ public class GridSystem extends EntitySystem implements Disposable {
         batch.end();
     }
 
+    public void incAt(int x, int y) {
+        for(Entity entity : entities) {
+            TilePositionComponent tpc = ComponentMappers.tilePos.get(entity);
+            if(tpc.x == x && tpc.y == y) {
+                ComponentMappers.unit.get(entity).units++;
+                break;
+            }
+        }
+    }
+
     @Override
     public void dispose() {
         batch.dispose();
