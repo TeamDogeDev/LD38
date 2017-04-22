@@ -4,6 +4,34 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+Characters/char_0
+  rotate: false
+  xy: 601, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+Characters/char_1
+  rotate: false
+  xy: 667, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+Characters/char_2
+  rotate: false
+  xy: 733, 3
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+Characters/char_3
+  rotate: false
+  xy: 799, 3
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 Objects/anvil
   rotate: false
   xy: 110, 5
@@ -32,16 +60,16 @@ Objects/box1
   orig: 18, 23
   offset: 0, 0
   index: -1
-Objects/box2
+Objects/brickBuilding1
   rotate: false
-  xy: 921, 316
-  size: 18, 22
-  orig: 18, 22
+  xy: 855, 457
+  size: 50, 55
+  orig: 50, 55
   offset: 0, 0
   index: -1
 Objects/cactus1
   rotate: false
-  xy: 654, 314
+  xy: 921, 33
   size: 22, 34
   orig: 22, 34
   offset: 0, 0
@@ -55,7 +83,7 @@ Objects/cactus2
   index: -1
 Objects/cactus3
   rotate: false
-  xy: 1006, 82
+  xy: 1005, 345
   size: 16, 20
   orig: 16, 20
   offset: 0, 0
@@ -69,14 +97,21 @@ Objects/campingTent
   index: -1
 Objects/canFire
   rotate: false
-  xy: 907, 422
+  xy: 612, 255
   size: 18, 37
   orig: 18, 37
   offset: 0, 0
   index: -1
 Objects/can_red
   rotate: false
-  xy: 927, 431
+  xy: 973, 2
+  size: 18, 28
+  orig: 18, 28
+  offset: 0, 0
+  index: -1
+Objects/can_yellow
+  rotate: false
+  xy: 993, 2
   size: 18, 28
   orig: 18, 28
   offset: 0, 0
@@ -125,7 +160,7 @@ Objects/church
   index: -1
 Objects/cornerShop
   rotate: false
-  xy: 948, 389
+  xy: 948, 100
   size: 74, 70
   orig: 74, 70
   offset: 0, 0
@@ -151,11 +186,11 @@ Objects/dish
   orig: 34, 41
   offset: 0, 0
   index: -1
-Objects/dome
+Objects/dumpster1
   rotate: false
-  xy: 898, 372
-  size: 48, 48
-  orig: 48, 48
+  xy: 921, 2
+  size: 28, 28
+  orig: 28, 28
   offset: 0, 0
   index: -1
 Objects/farm
@@ -163,6 +198,13 @@ Objects/farm
   xy: 594, 540
   size: 50, 56
   orig: 50, 56
+  offset: 0, 0
+  index: -1
+Objects/farmland
+  rotate: false
+  xy: 947, 316
+  size: 56, 49
+  orig: 56, 49
   offset: 0, 0
   index: -1
 Objects/fence
@@ -179,23 +221,30 @@ Objects/fire
   orig: 18, 24
   offset: 0, 0
   index: -1
-Objects/hangar
+Objects/fountain
   rotate: false
-  xy: 657, 4
-  size: 56, 62
-  orig: 56, 62
+  xy: 855, 314
+  size: 46, 46
+  orig: 46, 46
   offset: 0, 0
   index: -1
 Objects/hay
   rotate: false
-  xy: 612, 508
+  xy: 690, 318
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
+Objects/hedge
+  rotate: false
+  xy: 612, 440
+  size: 118, 98
+  orig: 118, 98
+  offset: 0, 0
+  index: -1
 Objects/horseTrough
   rotate: false
-  xy: 612, 268
+  xy: 612, 294
   size: 40, 28
   orig: 40, 28
   offset: 0, 0
@@ -207,11 +256,11 @@ Objects/house_small
   orig: 52, 56
   offset: 0, 0
   index: -1
-Objects/housing
+Objects/indianTent_back
   rotate: false
-  xy: 837, 422
-  size: 68, 74
-  orig: 68, 74
+  xy: 903, 314
+  size: 42, 46
+  orig: 42, 46
   offset: 0, 0
   index: -1
 Objects/log
@@ -233,13 +282,6 @@ Objects/medieval_doorway
   xy: 246, 736
   size: 48, 56
   orig: 48, 56
-  offset: 0, 0
-  index: -1
-Objects/militaryOutlook
-  rotate: false
-  xy: 773, 5
-  size: 52, 62
-  orig: 52, 62
   offset: 0, 0
   index: -1
 Objects/militaryTent
@@ -265,7 +307,7 @@ Objects/mill_house
   index: -1
 Objects/mill_overhang
   rotate: false
-  xy: 601, 2
+  xy: 865, 3
   size: 54, 64
   orig: 54, 64
   offset: 0, 0
@@ -282,13 +324,6 @@ Objects/mill_way
   xy: 490, 624
   size: 48, 56
   orig: 48, 56
-  offset: 0, 0
-  index: -1
-Objects/oven_outlet
-  rotate: false
-  xy: 837, 372
-  size: 20, 48
-  orig: 20, 48
   offset: 0, 0
   index: -1
 Objects/pallet
@@ -312,13 +347,6 @@ Objects/pole
   orig: 36, 32
   offset: 0, 0
   index: -1
-Objects/rockBrown_large
-  rotate: false
-  xy: 992, 343
-  size: 30, 44
-  orig: 30, 44
-  offset: 0, 0
-  index: -1
 Objects/rockGrey_large
   rotate: false
   xy: 907, 710
@@ -328,30 +356,16 @@ Objects/rockGrey_large
   index: -1
 Objects/rockGrey_medium1
   rotate: false
-  xy: 612, 298
+  xy: 612, 324
   size: 40, 51
   orig: 40, 51
   offset: 0, 0
   index: -1
 Objects/rockGrey_medium2
   rotate: false
-  xy: 612, 351
+  xy: 612, 377
   size: 40, 61
   orig: 40, 61
-  offset: 0, 0
-  index: -1
-Objects/rockGrey_medium3
-  rotate: false
-  xy: 827, 5
-  size: 52, 62
-  orig: 52, 62
-  offset: 0, 0
-  index: -1
-Objects/rockGrey_medium4
-  rotate: false
-  xy: 881, 7
-  size: 54, 60
-  orig: 54, 60
   offset: 0, 0
   index: -1
 Objects/rockGrey_small1
@@ -359,13 +373,6 @@ Objects/rockGrey_small1
   xy: 2, 2
   size: 32, 26
   orig: 32, 26
-  offset: 0, 0
-  index: -1
-Objects/rockGrey_small4
-  rotate: false
-  xy: 992, 319
-  size: 26, 22
-  orig: 26, 22
   offset: 0, 0
   index: -1
 Objects/rockGrey_small5
@@ -377,7 +384,7 @@ Objects/rockGrey_small5
   index: -1
 Objects/rocket
   rotate: false
-  xy: 889, 314
+  xy: 698, 540
   size: 30, 56
   orig: 30, 56
   offset: 0, 0
@@ -391,21 +398,21 @@ Objects/ruinsCorner
   index: -1
 Objects/ruins_brick2
   rotate: false
-  xy: 1006, 60
+  xy: 1005, 323
   size: 16, 20
   orig: 16, 20
   offset: 0, 0
   index: -1
-Objects/saloon
+Objects/scifi_corner
   rotate: false
-  xy: 646, 508
-  size: 67, 88
-  orig: 67, 88
+  xy: 654, 350
+  size: 70, 88
+  orig: 70, 88
   offset: 0, 0
   index: -1
 Objects/scifi_element1
   rotate: false
-  xy: 678, 316
+  xy: 654, 316
   size: 18, 32
   orig: 18, 32
   offset: 0, 0
@@ -415,13 +422,6 @@ Objects/scifi_element2
   xy: 272, 3
   size: 23, 37
   orig: 23, 37
-  offset: 0, 0
-  index: -1
-Objects/scifi_hangar
-  rotate: false
-  xy: 654, 350
-  size: 56, 62
-  orig: 56, 62
   offset: 0, 0
   index: -1
 Objects/scifi_hangar2
@@ -438,13 +438,6 @@ Objects/scifi_scraper1
   orig: 74, 108
   offset: 0, 0
   index: -1
-Objects/scifi_scraper2
-  rotate: false
-  xy: 837, 498
-  size: 68, 98
-  orig: 68, 98
-  offset: 0, 0
-  index: -1
 Objects/scifi_scraper3
   rotate: false
   xy: 226, 42
@@ -452,18 +445,18 @@ Objects/scifi_scraper3
   orig: 62, 114
   offset: 0, 0
   index: -1
-Objects/sheriff
+Objects/scifi_tower
   rotate: false
-  xy: 612, 414
-  size: 100, 92
-  orig: 100, 92
+  xy: 855, 514
+  size: 50, 82
+  orig: 50, 82
   offset: 0, 0
   index: -1
-Objects/shops
+Objects/sheriff
   rotate: false
-  xy: 715, 5
-  size: 56, 62
-  orig: 56, 62
+  xy: 907, 367
+  size: 100, 92
+  orig: 100, 92
   offset: 0, 0
   index: -1
 Objects/sign
@@ -471,13 +464,6 @@ Objects/sign
   xy: 256, 2
   size: 14, 38
   orig: 14, 38
-  offset: 0, 0
-  index: -1
-Objects/silo1
-  rotate: false
-  xy: 948, 315
-  size: 42, 72
-  orig: 42, 72
   offset: 0, 0
   index: -1
 Objects/skyscraper
@@ -492,13 +478,6 @@ Objects/skyscraper_glass
   xy: 528, 62
   size: 58, 108
   orig: 58, 108
-  offset: 0, 0
-  index: -1
-Objects/skyscraper_wide
-  rotate: false
-  xy: 948, 3
-  size: 56, 99
-  orig: 56, 99
   offset: 0, 0
   index: -1
 Objects/spaceship
@@ -531,7 +510,7 @@ Objects/tank
   index: -1
 Objects/target
   rotate: false
-  xy: 1006, 24
+  xy: 1009, 404
   size: 12, 15
   orig: 12, 15
   offset: 0, 0
@@ -545,21 +524,14 @@ Objects/tinyBuilding
   index: -1
 Objects/tombstone1
   rotate: false
-  xy: 881, 402
+  xy: 1009, 441
   size: 12, 18
   orig: 12, 18
   offset: 0, 0
   index: -1
-Objects/tombstone2
-  rotate: false
-  xy: 1006, 41
-  size: 16, 17
-  orig: 16, 17
-  offset: 0, 0
-  index: -1
 Objects/tombstone3
   rotate: false
-  xy: 881, 382
+  xy: 1009, 421
   size: 12, 18
   orig: 12, 18
   offset: 0, 0
@@ -571,30 +543,51 @@ Objects/tower
   orig: 48, 86
   offset: 0, 0
   index: -1
-Objects/treeRound_large
+Objects/treeAlien_small
   rotate: false
-  xy: 859, 374
-  size: 20, 46
-  orig: 20, 46
+  xy: 951, 2
+  size: 20, 28
+  orig: 20, 28
+  offset: 0, 0
+  index: -1
+Objects/treePine_small
+  rotate: false
+  xy: 632, 262
+  size: 20, 30
+  orig: 20, 30
   offset: 0, 0
   index: -1
 Objects/treeRound_small
   rotate: false
-  xy: 698, 316
+  xy: 674, 316
   size: 14, 32
   orig: 14, 32
   offset: 0, 0
   index: -1
+Objects/turret_base
+  rotate: false
+  xy: 855, 362
+  size: 50, 41
+  orig: 50, 41
+  offset: 0, 0
+  index: -1
+Objects/turret_medium
+  rotate: false
+  xy: 855, 405
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
 Objects/turret_small
   rotate: false
-  xy: 837, 314
+  xy: 646, 540
   size: 50, 56
   orig: 50, 56
   offset: 0, 0
   index: -1
 Objects/villa
   rotate: false
-  xy: 948, 104
+  xy: 948, 32
   size: 72, 66
   orig: 72, 66
   offset: 0, 0
@@ -604,13 +597,6 @@ Objects/wall_corner
   xy: 297, 2
   size: 76, 50
   orig: 76, 50
-  offset: 0, 0
-  index: -1
-Objects/well
-  rotate: false
-  xy: 921, 340
-  size: 24, 30
-  orig: 24, 30
   offset: 0, 0
   index: -1
 Objects/windmill
@@ -902,14 +888,14 @@ Tiles/Terrain/Mars/mars_02
   index: -1
 Tiles/Terrain/Mars/mars_03
   rotate: false
-  xy: 715, 456
+  xy: 733, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_04
   rotate: false
-  xy: 715, 314
+  xy: 733, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -948,597 +934,604 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+Objects/box2
+  rotate: false
+  xy: 78, 2
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
 Objects/brickBuilding2
   rotate: false
-  xy: 978, 920
+  xy: 978, 916
   size: 44, 45
   orig: 44, 45
   offset: 0, 0
   index: -1
 Objects/carBlue
   rotate: false
-  xy: 978, 159
+  xy: 978, 83
   size: 28, 30
   orig: 28, 30
   offset: 0, 0
   index: -1
 Objects/cargo
   rotate: false
-  xy: 978, 64
+  xy: 978, 20
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 Objects/crane
   rotate: false
-  xy: 978, 648
+  xy: 978, 570
   size: 42, 54
   orig: 42, 54
   offset: 0, 0
   index: -1
-Objects/dumpster1
-  rotate: false
-  xy: 978, 34
-  size: 28, 28
-  orig: 28, 28
-  offset: 0, 0
-  index: -1
-Objects/dumpster2
-  rotate: false
-  xy: 978, 2
-  size: 26, 30
-  orig: 26, 30
-  offset: 0, 0
-  index: -1
 Objects/dumpster3
   rotate: false
-  xy: 2, 8
+  xy: 30, 4
   size: 22, 20
   orig: 22, 20
   offset: 0, 0
   index: -1
 Objects/dumpster4
   rotate: false
-  xy: 50, 6
+  xy: 98, 2
   size: 18, 22
   orig: 18, 22
   offset: 0, 0
   index: -1
-Objects/indianTent_back
-  rotate: false
-  xy: 978, 416
-  size: 42, 46
-  orig: 42, 46
-  offset: 0, 0
-  index: -1
 Objects/indianTent_front
   rotate: false
-  xy: 978, 368
+  xy: 978, 293
   size: 42, 46
   orig: 42, 46
   offset: 0, 0
   index: -1
 Objects/lightpost
   rotate: false
-  xy: 978, 191
+  xy: 978, 115
   size: 18, 40
   orig: 18, 40
   offset: 0, 0
   index: -1
 Objects/mine
   rotate: false
-  xy: 978, 967
+  xy: 978, 963
   size: 44, 55
   orig: 44, 55
   offset: 0, 0
   index: -1
 Objects/oil
   rotate: false
-  xy: 978, 320
+  xy: 978, 245
   size: 42, 46
   orig: 42, 46
   offset: 0, 0
   index: -1
-Objects/outhouse
-  rotate: false
-  xy: 998, 201
-  size: 22, 30
-  orig: 22, 30
-  offset: 0, 0
-  index: -1
 Objects/oven
   rotate: false
-  xy: 978, 537
+  xy: 978, 459
   size: 42, 53
   orig: 42, 53
   offset: 0, 0
   index: -1
+Objects/oven_outlet
+  rotate: false
+  xy: 1002, 409
+  size: 20, 48
+  orig: 20, 48
+  offset: 0, 0
+  index: -1
+Objects/rockBrown_large
+  rotate: false
+  xy: 978, 199
+  size: 30, 44
+  orig: 30, 44
+  offset: 0, 0
+  index: -1
 Objects/rockBrown_small
   rotate: false
-  xy: 1002, 258
+  xy: 1002, 341
   size: 20, 18
   orig: 20, 18
   offset: 0, 0
   index: -1
 Objects/rockGrey_small2
   rotate: false
-  xy: 978, 127
+  xy: 978, 51
   size: 30, 30
   orig: 30, 30
   offset: 0, 0
   index: -1
 Objects/rockGrey_small3
   rotate: false
-  xy: 1002, 238
+  xy: 118, 6
   size: 20, 18
   orig: 20, 18
   offset: 0, 0
   index: -1
-Objects/rockGrey_small6
+Objects/rockGrey_small4
   rotate: false
-  xy: 978, 95
-  size: 28, 30
-  orig: 28, 30
+  xy: 2, 2
+  size: 26, 22
+  orig: 26, 22
   offset: 0, 0
   index: -1
 Objects/ruins_brick1
   rotate: false
-  xy: 26, 8
+  xy: 54, 4
   size: 22, 20
   orig: 22, 20
   offset: 0, 0
   index: -1
 Objects/scifi_pipe
   rotate: false
-  xy: 978, 464
+  xy: 978, 386
   size: 22, 71
   orig: 22, 71
   offset: 0, 0
   index: -1
 Objects/sillo2
   rotate: false
-  xy: 978, 842
+  xy: 978, 838
   size: 42, 76
   orig: 42, 76
   offset: 0, 0
   index: -1
+Objects/silo1
+  rotate: false
+  xy: 978, 764
+  size: 42, 72
+  orig: 42, 72
+  offset: 0, 0
+  index: -1
+Objects/tombstone2
+  rotate: false
+  xy: 1006, 180
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
 Objects/towerRuin
   rotate: false
-  xy: 978, 592
+  xy: 978, 514
   size: 42, 54
   orig: 42, 54
   offset: 0, 0
   index: -1
 Objects/treeAlien_large
   rotate: false
-  xy: 978, 233
+  xy: 978, 341
   size: 22, 43
   orig: 22, 43
   offset: 0, 0
   index: -1
-Objects/treeAlien_small
-  rotate: false
-  xy: 1002, 475
-  size: 20, 28
-  orig: 20, 28
-  offset: 0, 0
-  index: -1
 Objects/treePine_large
   rotate: false
-  xy: 978, 278
+  xy: 978, 157
   size: 26, 40
   orig: 26, 40
   offset: 0, 0
   index: -1
-Objects/treePine_small
+Objects/treeRound_large
   rotate: false
-  xy: 1002, 505
-  size: 20, 30
-  orig: 20, 30
+  xy: 1002, 361
+  size: 20, 46
+  orig: 20, 46
   offset: 0, 0
   index: -1
 Objects/watertower
   rotate: false
-  xy: 978, 772
+  xy: 978, 694
   size: 42, 68
   orig: 42, 68
   offset: 0, 0
   index: -1
+Objects/well
+  rotate: false
+  xy: 998, 125
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
 Objects/windmill_base
   rotate: false
-  xy: 978, 704
+  xy: 978, 626
   size: 42, 66
   orig: 42, 66
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_archery
   rotate: false
-  xy: 246, 598
+  xy: 246, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_archway
   rotate: false
-  xy: 368, 740
+  xy: 368, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_blacksmith
   rotate: false
-  xy: 490, 882
+  xy: 490, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_cabin
   rotate: false
-  xy: 2, 172
+  xy: 2, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_church
   rotate: false
-  xy: 124, 314
+  xy: 124, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_farm
   rotate: false
-  xy: 246, 456
+  xy: 246, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_house
   rotate: false
-  xy: 368, 598
+  xy: 368, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_largeCastle
   rotate: false
-  xy: 490, 740
+  xy: 490, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_lumber
   rotate: false
-  xy: 612, 882
+  xy: 612, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_mine
   rotate: false
-  xy: 2, 30
+  xy: 2, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_openCastle
   rotate: false
-  xy: 124, 172
+  xy: 124, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_ruins
   rotate: false
-  xy: 246, 314
+  xy: 246, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_smallCastle
   rotate: false
-  xy: 368, 456
+  xy: 368, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_tower
   rotate: false
-  xy: 490, 598
+  xy: 490, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_windmill
   rotate: false
-  xy: 612, 740
+  xy: 612, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_entrance
   rotate: false
-  xy: 734, 882
+  xy: 734, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_hangar
   rotate: false
-  xy: 124, 30
+  xy: 124, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_rockets
   rotate: false
-  xy: 246, 172
+  xy: 246, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_tanks
   rotate: false
-  xy: 368, 314
+  xy: 368, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_turretLarge
   rotate: false
-  xy: 490, 456
+  xy: 490, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_turretMedium
   rotate: false
-  xy: 612, 598
+  xy: 612, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_turretSmall
   rotate: false
-  xy: 734, 740
+  xy: 734, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_crane
   rotate: false
-  xy: 856, 882
+  xy: 856, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_cutter
   rotate: false
-  xy: 246, 30
+  xy: 246, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_factory
   rotate: false
-  xy: 368, 172
+  xy: 368, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_stoneWarehouse
   rotate: false
-  xy: 490, 314
+  xy: 490, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_storage
   rotate: false
-  xy: 612, 456
+  xy: 612, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_warehouse
   rotate: false
-  xy: 734, 598
+  xy: 734, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_campsite
   rotate: false
-  xy: 856, 740
+  xy: 856, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_cornerShop
   rotate: false
-  xy: 368, 30
+  xy: 368, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_house
   rotate: false
-  xy: 490, 172
+  xy: 490, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_houseSmall
   rotate: false
-  xy: 612, 314
+  xy: 612, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_largeBuilding
   rotate: false
-  xy: 734, 456
+  xy: 734, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_oldBuilding
   rotate: false
-  xy: 856, 598
+  xy: 856, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_petrol
   rotate: false
-  xy: 490, 30
+  xy: 490, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_shop
   rotate: false
-  xy: 612, 172
+  xy: 612, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_skyscraper
   rotate: false
-  xy: 734, 314
+  xy: 734, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_skyscraperGlass
   rotate: false
-  xy: 856, 456
+  xy: 856, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_trailerpark
   rotate: false
-  xy: 612, 30
+  xy: 612, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_villa
   rotate: false
-  xy: 734, 172
+  xy: 734, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_villageLarge
   rotate: false
-  xy: 856, 314
+  xy: 856, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_08
   rotate: false
-  xy: 2, 882
+  xy: 2, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_09
   rotate: false
-  xy: 2, 740
+  xy: 2, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_10
   rotate: false
-  xy: 124, 882
+  xy: 124, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_11
   rotate: false
-  xy: 2, 598
+  xy: 2, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_12
   rotate: false
-  xy: 124, 740
+  xy: 124, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_13
   rotate: false
-  xy: 246, 882
+  xy: 246, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_14
   rotate: false
-  xy: 2, 456
+  xy: 2, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_15
   rotate: false
-  xy: 124, 598
+  xy: 124, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_16
   rotate: false
-  xy: 246, 740
+  xy: 246, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_17
   rotate: false
-  xy: 368, 882
+  xy: 368, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_18
   rotate: false
-  xy: 2, 314
+  xy: 2, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_19
   rotate: false
-  xy: 124, 456
+  xy: 124, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Sand/sand_01
   rotate: false
-  xy: 734, 30
+  xy: 734, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Sand/sand_03
   rotate: false
-  xy: 856, 172
+  xy: 856, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Sand/sand_04
   rotate: false
-  xy: 856, 30
+  xy: 856, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -1549,23 +1542,37 @@ size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-Objects/can_yellow
+Objects/dumpster2
   rotate: false
-  xy: 978, 902
-  size: 18, 28
-  orig: 18, 28
-  offset: 0, 0
-  index: -1
-Objects/pallet_full
-  rotate: false
-  xy: 978, 964
+  xy: 978, 932
   size: 26, 30
   orig: 26, 30
   offset: 0, 0
   index: -1
+Objects/outhouse
+  rotate: false
+  xy: 978, 836
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+Objects/pallet_full
+  rotate: false
+  xy: 978, 900
+  size: 26, 30
+  orig: 26, 30
+  offset: 0, 0
+  index: -1
+Objects/rockGrey_small6
+  rotate: false
+  xy: 978, 964
+  size: 28, 30
+  orig: 28, 30
+  offset: 0, 0
+  index: -1
 Objects/rockGrey_small7
   rotate: false
-  xy: 978, 932
+  xy: 978, 868
   size: 26, 30
   orig: 26, 30
   offset: 0, 0
@@ -1970,231 +1977,252 @@ filter: Nearest,Nearest
 repeat: none
 Objects/archway
   rotate: false
-  xy: 428, 84
+  xy: 274, 2
   size: 70, 84
   orig: 70, 84
   offset: 0, 0
   index: -1
 Objects/beigeBuilding
   rotate: false
-  xy: 674, 114
+  xy: 756, 122
   size: 52, 60
   orig: 52, 60
   offset: 0, 0
   index: -1
-Objects/brickBuilding1
-  rotate: false
-  xy: 782, 123
-  size: 50, 55
-  orig: 50, 55
-  offset: 0, 0
-  index: -1
 Objects/cargoPad
   rotate: false
-  xy: 122, 2
+  xy: 302, 88
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
-Objects/farmland
+Objects/dome
   rotate: false
-  xy: 614, 57
-  size: 56, 49
-  orig: 56, 49
+  xy: 636, 2
+  size: 48, 48
+  orig: 48, 48
   offset: 0, 0
   index: -1
 Objects/farmland_empty
   rotate: false
-  xy: 552, 62
+  xy: 864, 138
   size: 60, 44
   orig: 60, 44
   offset: 0, 0
   index: -1
-Objects/fountain
+Objects/hangar
   rotate: false
-  xy: 886, 136
-  size: 46, 46
-  orig: 46, 46
-  offset: 0, 0
-  index: -1
-Objects/hedge
-  rotate: false
-  xy: 2, 14
-  size: 118, 98
-  orig: 118, 98
+  xy: 454, 5
+  size: 56, 62
+  orig: 56, 62
   offset: 0, 0
   index: -1
 Objects/house
   rotate: false
-  xy: 902, 184
+  xy: 782, 184
   size: 88, 70
   orig: 88, 70
   offset: 0, 0
   index: -1
+Objects/housing
+  rotate: false
+  xy: 512, 10
+  size: 68, 74
+  orig: 68, 74
+  offset: 0, 0
+  index: -1
 Objects/landingpad
   rotate: false
-  xy: 124, 84
+  xy: 872, 184
   size: 84, 70
   orig: 84, 70
   offset: 0, 0
   index: -1
 Objects/living
   rotate: false
-  xy: 210, 80
+  xy: 124, 80
   size: 82, 71
   orig: 82, 71
   offset: 0, 0
   index: -1
+Objects/militaryOutlook
+  rotate: false
+  xy: 400, 6
+  size: 52, 62
+  orig: 52, 62
+  offset: 0, 0
+  index: -1
 Objects/mill_factory
   rotate: false
-  xy: 422, 170
+  xy: 302, 170
   size: 94, 84
   orig: 94, 84
   offset: 0, 0
   index: -1
 Objects/mill_hightop
   rotate: false
-  xy: 428, 16
+  xy: 958, 188
   size: 60, 66
   orig: 60, 66
   offset: 0, 0
   index: -1
 Objects/mill_lodge
   rotate: false
-  xy: 294, 81
+  xy: 581, 104
   size: 46, 70
   orig: 46, 70
   offset: 0, 0
   index: -1
 Objects/oldBuilding
   rotate: false
-  xy: 614, 176
+  xy: 494, 176
   size: 96, 78
   orig: 96, 78
   offset: 0, 0
   index: -1
 Objects/petrolStation
   rotate: false
-  xy: 334, 160
+  xy: 214, 160
   size: 86, 94
   orig: 86, 94
   offset: 0, 0
   index: -1
-Objects/scifi_corner
+Objects/rockGrey_medium3
   rotate: false
-  xy: 356, 8
-  size: 70, 88
-  orig: 70, 88
+  xy: 582, 40
+  size: 52, 62
+  orig: 52, 62
+  offset: 0, 0
+  index: -1
+Objects/rockGrey_medium4
+  rotate: false
+  xy: 694, 62
+  size: 54, 60
+  orig: 54, 60
+  offset: 0, 0
+  index: -1
+Objects/saloon
+  rotate: false
+  xy: 512, 86
+  size: 67, 88
+  orig: 67, 88
   offset: 0, 0
   index: -1
 Objects/scifi_factory
   rotate: false
-  xy: 518, 170
+  xy: 398, 170
   size: 94, 84
   orig: 94, 84
   offset: 0, 0
   index: -1
+Objects/scifi_hangar
+  rotate: false
+  xy: 629, 116
+  size: 56, 62
+  orig: 56, 62
+  offset: 0, 0
+  index: -1
 Objects/scifi_hangar1
   rotate: false
-  xy: 552, 108
+  xy: 688, 124
   size: 66, 60
   orig: 66, 60
   offset: 0, 0
   index: -1
+Objects/scifi_scraper2
+  rotate: false
+  xy: 384, 70
+  size: 68, 98
+  orig: 68, 98
+  offset: 0, 0
+  index: -1
 Objects/scifi_ship
   rotate: false
-  xy: 712, 180
+  xy: 592, 180
   size: 94, 74
   orig: 94, 74
   offset: 0, 0
   index: -1
-Objects/scifi_tower
-  rotate: false
-  xy: 500, 86
-  size: 50, 82
-  orig: 50, 82
-  offset: 0, 0
-  index: -1
 Objects/shop
   rotate: false
-  xy: 288, 2
+  xy: 206, 2
   size: 66, 76
   orig: 66, 76
   offset: 0, 0
   index: -1
+Objects/shops
+  rotate: false
+  xy: 636, 52
+  size: 56, 62
+  orig: 56, 62
+  offset: 0, 0
+  index: -1
+Objects/skyscraper_wide
+  rotate: false
+  xy: 454, 69
+  size: 56, 99
+  orig: 56, 99
+  offset: 0, 0
+  index: -1
 Objects/tavern
   rotate: false
-  xy: 204, 2
+  xy: 122, 2
   size: 82, 76
   orig: 82, 76
   offset: 0, 0
   index: -1
-Objects/turret_base
-  rotate: false
-  xy: 934, 141
-  size: 50, 41
-  orig: 50, 41
-  offset: 0, 0
-  index: -1
 Objects/turret_large
   rotate: false
-  xy: 728, 123
+  xy: 810, 127
   size: 52, 55
   orig: 52, 55
   offset: 0, 0
   index: -1
-Objects/turret_medium
-  rotate: false
-  xy: 834, 134
-  size: 50, 50
-  orig: 50, 50
-  offset: 0, 0
-  index: -1
 Objects/villa_large
   rotate: false
-  xy: 808, 186
+  xy: 688, 186
   size: 92, 68
   orig: 92, 68
   offset: 0, 0
   index: -1
 Objects/wall
   rotate: false
-  xy: 500, 49
+  xy: 582, 3
   size: 50, 35
   orig: 50, 35
   offset: 0, 0
   index: -1
 Objects/wall_large
   rotate: false
-  xy: 124, 156
+  xy: 2, 14
   size: 118, 98
   orig: 118, 98
   offset: 0, 0
   index: -1
 Objects/wall_red
   rotate: false
-  xy: 490, 12
+  xy: 750, 85
   size: 50, 35
   orig: 50, 35
   offset: 0, 0
   index: -1
 Objects/wall_small
   rotate: false
-  xy: 342, 98
+  xy: 214, 98
   size: 70, 60
   orig: 70, 60
   offset: 0, 0
   index: -1
 Objects/windmill_complete
   rotate: false
-  xy: 620, 108
+  xy: 346, 2
   size: 52, 66
   orig: 52, 66
   offset: 0, 0
   index: -1
 Tiles/Terrain/Stone/stone_02
   rotate: false
-  xy: 244, 153
+  xy: 124, 153
   size: 88, 101
   orig: 88, 101
   offset: 0, 0
