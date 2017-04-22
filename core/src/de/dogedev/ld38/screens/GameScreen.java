@@ -13,10 +13,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
-import de.dogedev.ld38.ashley.components.RenderComponent;
-import de.dogedev.ld38.ashley.components.SpawnComponent;
-import de.dogedev.ld38.ashley.components.TilePositionComponent;
-import de.dogedev.ld38.ashley.components.UnitComponent;
+import de.dogedev.ld38.ashley.components.*;
 import de.dogedev.ld38.ashley.systems.*;
 import de.dogedev.ld38.assets.enums.ShaderPrograms;
 import de.dogedev.ld38.assets.enums.Textures;
@@ -60,6 +57,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));
         ashley.addSystem(new TickSystem());
+        ashley.addSystem(new GridSystem(camera));
 //        ashley.addSystem(new OverlayRenderSystem(camera));
 
         Entity castleOpen = ashley.createEntity();
@@ -80,6 +78,25 @@ public class GameScreen implements Screen {
         castleOpen.add(spawnComponent);
 
         ashley.addEntity(castleOpen);
+
+
+        for (int x = 0; x < Statics.settings.tilesX; x++) {
+            for (int y = 0; y < Statics.settings.tilesY; y++) {
+                Entity gridEntity = ashley.createEntity();
+                TilePositionComponent gridTpc = ashley.createComponent(TilePositionComponent.class);
+                gridTpc.x = x;
+                gridTpc.y = y;
+
+                GridComponent gridComponent = ashley.createComponent(GridComponent.class);
+                UnitComponent gridUnitComponent = ashley.createComponent(UnitComponent.class);
+
+                gridEntity.add(gridComponent);
+                gridEntity.add(gridTpc);
+                gridEntity.add(gridUnitComponent);
+                ashley.addEntity(gridEntity);
+            }
+        }
+
 
 //        Entity castleSmall = ashley.createEntity();
 //        RenderComponent rc1 = ashley.createComponent(RenderComponent.class);
@@ -123,13 +140,7 @@ public class GameScreen implements Screen {
         cloudShader.setUniformf("camPosition", camera.position);
         cloudShader.end();
 
-        // zoom = 1 black
-
-            cloudBatch.setBlendFunction(GL20.GL_DST_COLOR, GL20.GL_ONE_MINUS_SRC_ALPHA);
-        // zoom > 1
-//        cloudBatch.setBlendFunction(GL20.GL_ONE_MINUS_SRC_ALPHA, GL20.GL_ZERO);
-
-        // zoom < 1 -> off
+        cloudBatch.setBlendFunction(GL20.GL_DST_COLOR, GL20.GL_ONE_MINUS_SRC_ALPHA);
 
         if(camera.zoom == 1) {
             cloudBatch.begin();
