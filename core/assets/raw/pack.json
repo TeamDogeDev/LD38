@@ -1,0 +1,5 @@
+{
+  combineSubdirectories: true,
+  bleed: true,
+  edgePadding: true
+}
