@@ -6,14 +6,13 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
-import com.badlogic.gdx.math.MathUtils;
-import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
-import de.dogedev.ld38.ashley.components.*;
+import de.dogedev.ld38.ashley.components.RenderComponent;
+import de.dogedev.ld38.ashley.components.SpawnComponent;
+import de.dogedev.ld38.ashley.components.TilePositionComponent;
+import de.dogedev.ld38.ashley.components.UnitComponent;
 import de.dogedev.ld38.ashley.systems.*;
 import de.dogedev.ld38.map.MapBuilder;
 
@@ -43,6 +42,7 @@ public class GameScreen implements Screen {
 
         ashley.addSystem(new InputSystem(camera));
         ashley.addSystem(new CameraSystem(camera));
+        ashley.addSystem(new MovementSystem());
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));

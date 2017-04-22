@@ -9,6 +9,7 @@ import de.dogedev.ld38.ashley.components.*;
 public class ComponentMappers {
 
     public static final ComponentMapper<PositionComponent> position = ComponentMapper.getFor(PositionComponent.class);
+    public static final ComponentMapper<MovementComponent> movement = ComponentMapper.getFor(MovementComponent.class);
     public static final ComponentMapper<TilePositionComponent> tilePos = ComponentMapper.getFor(TilePositionComponent.class);
     public static final ComponentMapper<RenderComponent> render = ComponentMapper.getFor(RenderComponent.class);
     public static final ComponentMapper<SpawnComponent> spawn = ComponentMapper.getFor(SpawnComponent.class);
