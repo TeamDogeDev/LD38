@@ -13,8 +13,7 @@ import com.badlogic.gdx.math.MathUtils;
 import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
-import de.dogedev.ld38.ashley.components.PositionComponent;
-import de.dogedev.ld38.ashley.components.RenderComponent;
+import de.dogedev.ld38.ashley.components.*;
 import de.dogedev.ld38.ashley.systems.*;
 import de.dogedev.ld38.map.MapBuilder;
 
@@ -47,30 +46,37 @@ public class GameScreen implements Screen {
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));
+        ashley.addSystem(new TickSystem());
 //        ashley.addSystem(new OverlayRenderSystem(camera));
 
         Entity castleOpen = ashley.createEntity();
         RenderComponent rc = ashley.createComponent(RenderComponent.class);
         rc.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_OPEN);
-        PositionComponent pc = ashley.createComponent(PositionComponent.class);
-        pc.x = CoordinateMapper.getTilePosX(0, Statics.settings.tilesY-1); //
-        pc.y = CoordinateMapper.getTilePosY(Statics.settings.tilesY-1);
-        castleOpen.add(pc);
+
+        SpawnComponent spawnComponent = ashley.createComponent(SpawnComponent.class);
+        UnitComponent unitComponent = ashley.createComponent(UnitComponent.class);
+
+        TilePositionComponent tpc = ashley.createComponent(TilePositionComponent.class);
+
+        tpc.x = 0; //
+        tpc.y = Statics.settings.tilesY-1;
+
+        castleOpen.add(tpc);
         castleOpen.add(rc);
-
-
-        Entity castleSmall = ashley.createEntity();
-        RenderComponent rc1 = ashley.createComponent(RenderComponent.class);
-        rc1.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_SMALL);
-        PositionComponent pc1 = ashley.createComponent(PositionComponent.class);
-        pc1.x = CoordinateMapper.getTilePosX(Statics.settings.tilesX-1, 0); //
-        pc1.y = CoordinateMapper.getTilePosY(0);
-        castleSmall.add(pc1);
-        castleSmall.add(rc1);
-
+        castleOpen.add(unitComponent);
+        castleOpen.add(spawnComponent);
 
         ashley.addEntity(castleOpen);
-        ashley.addEntity(castleSmall);
+
+//        Entity castleSmall = ashley.createEntity();
+//        RenderComponent rc1 = ashley.createComponent(RenderComponent.class);
+//        rc1.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_SMALL);
+//        PositionComponent pc1 = ashley.createComponent(PositionComponent.class);
+//        pc1.x = CoordinateMapper.getTilePosX(Statics.settings.tilesX-1, 0); //
+//        pc1.y = CoordinateMapper.getTilePosY(0);
+//        castleSmall.add(pc1);
+//        castleSmall.add(rc1);
+//        ashley.addEntity(castleSmall);
     }
 
     @Override

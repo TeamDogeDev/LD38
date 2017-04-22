@@ -6,12 +6,11 @@ import com.badlogic.gdx.utils.Pool;
 /**
  * Created by elektropapst on 22.04.2017.
  */
-public class SpawnComponent implements Component, Pool.Poolable {
-
-    public int maxUnits = 10;
+public class UnitComponent implements Component, Pool.Poolable{
+    public int units = 0;
 
     @Override
     public void reset() {
-        maxUnits = 10;
+        units = 0;
     }
 }

@@ -10,4 +10,5 @@ public class GameSettings {
     public int tileHeight = 140;
     public int tilesX = 8;
     public int tilesY = 8;
+    public float tickInterval = 1;
 }

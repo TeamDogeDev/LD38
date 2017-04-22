@@ -9,12 +9,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.*;
+import de.dogedev.ld38.assets.enums.BitmapFonts;
 
 /**
  * Created by Furuha on 28.01.2016.
@@ -31,7 +33,7 @@ public class RenderSystem extends EntitySystem implements EntityListener {
         this.camera = camera;
         this.batch = new SpriteBatch();
         this.sortedEntities = new Array<>();
-        this.font = new BitmapFont();
+        this.font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1);
     }
 
     @Override
@@ -141,7 +143,14 @@ public class RenderSystem extends EntitySystem implements EntityListener {
             } else {
                 draw(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2);
             }
-
+        }
+        if(ComponentMappers.spawn.has(e) && ComponentMappers.unit.has(e) && ComponentMappers.tilePos.has(e)) {
+            TilePositionComponent tpc = ComponentMappers.tilePos.get(e);
+            UnitComponent units = ComponentMappers.unit.get(e);
+            font.draw(batch, "#" + units.units,
+                    CoordinateMapper.getTilePosX(tpc.x, tpc.y)-(Statics.settings.tileWidth>>1),
+                    CoordinateMapper.getTilePosY(tpc.y) + (Statics.settings.tileHeight>>2),
+                    Statics.settings.tileWidth, Align.center, false);
         }
 
     }
