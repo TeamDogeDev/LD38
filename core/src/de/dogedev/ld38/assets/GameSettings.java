@@ -8,6 +8,6 @@ public class GameSettings {
     public float musicVolume = .2f;
     public int tileWidth = 120;
     public int tileHeight = 140;
-    public int tilesX = 10;
-    public int tilesY = 10;
+    public int tilesX = 15;
+    public int tilesY = 15;
 }

@@ -65,6 +65,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.ashley:ashley:$ashleyVersion"
+        compile "com.github.czyzby:noise4j:0.1.0"
     }
 }
 

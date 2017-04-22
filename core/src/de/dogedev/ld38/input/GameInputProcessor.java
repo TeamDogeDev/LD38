@@ -23,7 +23,7 @@ public class GameInputProcessor extends InputAdapter {
             camera.zoom *= .5;
         }
 
-        camera.zoom = MathUtils.clamp(camera.zoom, .25f, 2.f);
+//        camera.zoom = MathUtils.clamp(camera.zoom, .25f, 2.f);
         return super.scrolled(amount);
     }
 }
