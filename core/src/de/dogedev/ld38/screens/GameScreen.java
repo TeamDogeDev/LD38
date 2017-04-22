@@ -45,7 +45,7 @@ public class GameScreen implements Screen {
     @Override
     public void render(float delta) {
 //        Gdx.gl.glClearColor(39/255.f, 174/255.f, 96/255.f, 1f);
-        Gdx.gl.glClearColor(39/255.f, 0/255.f, 96/255.f, 1f);
+        Gdx.gl.glClearColor(29/255.f, 128/255.f, 71/255.f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         Statics.ashley.update(delta);
 
@@ -56,7 +56,7 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        camera.setToOrtho(false, width, height);
     }
 
     @Override

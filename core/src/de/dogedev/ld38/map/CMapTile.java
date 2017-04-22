@@ -12,6 +12,8 @@ import de.dogedev.ld38.Statics;
  */
 public class CMapTile extends StaticTiledMapTile {
 
+    public static CMapTile EDGE = new CMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_EDGE));
+
     public static CMapTile GRASS = new CMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_GRASS_GRASS_05));
     public static CMapTile GRASS_TREE_1 = new CMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_GRASS_GRASS_10));
     public static CMapTile GRASS_TREE_2 = new CMapTile(Statics.asset.getTextureAtlasRegion(Key.TILES_TERRAIN_GRASS_GRASS_11));

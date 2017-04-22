@@ -2,14 +2,11 @@ package de.dogedev.ld38.map;
 
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
-import com.badlogic.gdx.maps.tiled.tiles.StaticTiledMapTile;
 import com.badlogic.gdx.math.MathUtils;
 import com.github.czyzby.noise4j.map.Grid;
 import com.github.czyzby.noise4j.map.generator.noise.NoiseGenerator;
 import com.github.czyzby.noise4j.map.generator.util.Generators;
-import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 
 /**
@@ -27,16 +24,28 @@ public class MapBuilder {
             Grid mapGrid = new Grid(tilesX, tilesY);
 
             final NoiseGenerator noiseGenerator = NoiseGenerator.getInstance();
-            noiseGenerator.setSeed(4711);
             noiseStage(mapGrid, noiseGenerator, 2, 1);
 
             TiledMapTileLayer layer = createLayer(mapGrid, tilesX, tilesY);
             decorateLayer(layer, tilesX, tilesY);
             layers.add(layer);
         }
+
+        layers.add(createEdges(tilesX, tilesY));
         return map;
     }
 
+    private TiledMapTileLayer createEdges(int tilesX, int tilesY) {
+        TiledMapTileLayer layer = new TiledMapTileLayer(tilesX, tilesY, Statics.settings.tileWidth, Statics.settings.tileHeight);
+        for (int y = 0; y < tilesY; y++) {
+            for (int x = 0; x < tilesX; x++) {
+                TiledMapTileLayer.Cell cell = new TiledMapTileLayer.Cell();
+                cell.setTile(CMapTile.EDGE);
+                layer.setCell(x, y, cell);
+            }
+        }
+        return layer;
+    }
     private TiledMapTileLayer createLayer(Grid mapGrid, int tilesX, int tilesY) {
 
 
@@ -70,7 +79,7 @@ public class MapBuilder {
         for (int y = 0; y < tilesY; y++) {
             for (int x = 0; x < tilesX; x++) {
                 int id = tileLayer.getCell(x, y).getTile().getId();
-                boolean decorate = MathUtils.randomBoolean(.5f);
+                boolean decorate = MathUtils.randomBoolean(.2f);
                 if(decorate) {
                     TiledMapTileLayer.Cell cell = tileLayer.getCell(x, y);
                     cell.setTile(CMapTile.getTileVariation((CMapTile) cell.getTile()));
