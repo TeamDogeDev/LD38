@@ -1,19 +1,19 @@
 package de.dogedev.ld38.ashley.components;
 
 import com.badlogic.ashley.core.Component;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Pool;
 
 /**
  * Created by elektropapst on 22.04.2017.
  */
-public class RenderComponent implements Component, Pool.Poolable {
+public class LookComponent implements Component, Pool.Poolable {
 
-    public TextureRegion region;
-    public int angle;
+    public float x;
+    public float y;
 
     @Override
     public void reset() {
-        region = null;
+        x = 0;
+        y = 0;
     }
 }
