@@ -14,6 +14,8 @@ import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.systems.DebugUISystem;
 import de.dogedev.ld38.ashley.systems.InputSystem;
+import de.dogedev.ld38.ashley.systems.MapRenderSystem;
+import de.dogedev.ld38.ashley.systems.RenderSystem;
 
 /**
  * Created by elektropapst on 22.04.2017.
@@ -30,8 +32,10 @@ public class GameScreen implements Screen {
         camera.zoom = 2f;
         camera.setToOrtho(false, 1280, 720);
 
-        Statics.ashley.addSystem(new DebugUISystem(camera));
         Statics.ashley.addSystem(new InputSystem(camera));
+        Statics.ashley.addSystem(new MapRenderSystem(camera));
+        Statics.ashley.addSystem(new RenderSystem(camera));
+        Statics.ashley.addSystem(new DebugUISystem(camera));
 
     }
 
