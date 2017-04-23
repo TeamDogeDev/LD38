@@ -169,8 +169,8 @@ public class GameScreen implements Screen {
                     warrior.add(mvc);
 
                     LookComponent lookComponent = Statics.ashley.createComponent(LookComponent.class);
-                    lookComponent.x = targetTile.x;
-                    lookComponent.y = targetTile.y;
+                    lookComponent.x = tilePos.x;
+                    lookComponent.y = tilePos.y;
 
                     warrior.add(lookComponent);
 

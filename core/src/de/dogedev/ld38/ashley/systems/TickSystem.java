@@ -34,6 +34,9 @@ public class TickSystem extends EntitySystem {
     public void update(float delta) {
         for (Entity entity : spawns) {
             PlayerComponent playerComponent = ComponentMappers.player.get(entity);
+            if(playerComponent == null){
+                continue;
+            }
 
             float tickrate = 1;
             float spawnate = 1;
