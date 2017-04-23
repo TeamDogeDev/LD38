@@ -46,7 +46,7 @@ public class GameScreen implements Screen {
 
     public GameScreen() {
         ashley.removeAllEntities();
-        
+
         music = Statics.asset.getMusic(Musics.GAME_MUSIC);
         music.setVolume(Statics.settings.musicVolume);
         music.setLooping(true);
@@ -83,7 +83,8 @@ public class GameScreen implements Screen {
         dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
 
         createSpawnEntity(0, Statics.settings.tilesY-1, PlayerComponent.PLAYER.A);
-        createSpawnEntity(Statics.settings.tilesX-1, 0, PlayerComponent.PLAYER.B);        createGridEntites(Statics.settings.tilesX, Statics.settings.tilesY);
+        createSpawnEntity(Statics.settings.tilesX-1, 0, PlayerComponent.PLAYER.B);
+        createGridEntites(Statics.settings.tilesX, Statics.settings.tilesY);
 
 
     }
