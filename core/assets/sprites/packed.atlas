@@ -32,6 +32,13 @@ Characters/char_3
   orig: 64, 64
   offset: 0, 0
   index: -1
+Icons/arrowDown
+  rotate: false
+  xy: 2, 882
+  size: 120, 140
+  orig: 120, 140
+  offset: 0, 0
+  index: -1
 Objects/anvil
   rotate: false
   xy: 110, 5
@@ -608,126 +615,126 @@ Objects/windmill
   index: -1
 Tiles/Terrain/Dirt/dirt_01
   rotate: false
-  xy: 2, 882
+  xy: 2, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_02
   rotate: false
-  xy: 2, 740
+  xy: 2, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_03
   rotate: false
-  xy: 2, 598
+  xy: 2, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_04
   rotate: false
-  xy: 2, 456
+  xy: 2, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_05
   rotate: false
-  xy: 2, 314
+  xy: 2, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_06
   rotate: false
-  xy: 2, 172
+  xy: 2, 30
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_07
   rotate: false
-  xy: 2, 30
+  xy: 132, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_08
   rotate: false
-  xy: 132, 882
+  xy: 254, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_09
   rotate: false
-  xy: 254, 882
+  xy: 376, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_10
   rotate: false
-  xy: 376, 882
+  xy: 498, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_11
   rotate: false
-  xy: 498, 882
+  xy: 620, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_12
   rotate: false
-  xy: 620, 882
+  xy: 742, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_13
   rotate: false
-  xy: 742, 882
+  xy: 864, 882
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_14
   rotate: false
-  xy: 864, 882
+  xy: 124, 726
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_15
   rotate: false
-  xy: 124, 726
+  xy: 124, 584
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_16
   rotate: false
-  xy: 124, 584
+  xy: 124, 442
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_17
   rotate: false
-  xy: 124, 442
+  xy: 124, 300
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Dirt/dirt_18
   rotate: false
-  xy: 124, 300
+  xy: 124, 158
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -741,126 +748,126 @@ Tiles/Terrain/Dirt/dirt_19
   index: -1
 Tiles/Terrain/Grass/grass_01
   rotate: false
-  xy: 297, 740
+  xy: 246, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_02
   rotate: false
-  xy: 246, 594
+  xy: 246, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_03
   rotate: false
-  xy: 246, 452
+  xy: 246, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_04
   rotate: false
-  xy: 246, 310
+  xy: 246, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_05
   rotate: false
-  xy: 246, 168
+  xy: 368, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_06
   rotate: false
-  xy: 368, 598
+  xy: 419, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_07
   rotate: false
-  xy: 419, 740
+  xy: 368, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_08
   rotate: false
-  xy: 368, 456
+  xy: 368, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_09
   rotate: false
-  xy: 368, 314
+  xy: 368, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_10
   rotate: false
-  xy: 368, 172
+  xy: 541, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_11
   rotate: false
-  xy: 541, 740
+  xy: 663, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_12
   rotate: false
-  xy: 663, 740
+  xy: 785, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_13
   rotate: false
-  xy: 785, 740
+  xy: 541, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_14
   rotate: false
-  xy: 541, 598
+  xy: 663, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_15
   rotate: false
-  xy: 663, 598
+  xy: 785, 598
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_16
   rotate: false
-  xy: 785, 598
+  xy: 490, 397
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_17
   rotate: false
-  xy: 490, 397
+  xy: 490, 255
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Grass/grass_18
   rotate: false
-  xy: 490, 255
+  xy: 733, 456
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -874,7 +881,7 @@ Tiles/Terrain/Grass/grass_19
   index: -1
 Tiles/Terrain/Mars/mars_01
   rotate: false
-  xy: 733, 456
+  xy: 733, 314
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -888,26 +895,19 @@ Tiles/Terrain/Mars/mars_02
   index: -1
 Tiles/Terrain/Mars/mars_03
   rotate: false
-  xy: 733, 314
+  xy: 654, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Terrain/Mars/mars_04
   rotate: false
-  xy: 654, 172
-  size: 120, 140
-  orig: 120, 140
-  offset: 0, 0
-  index: -1
-Tiles/Terrain/Mars/mars_05
-  rotate: false
   xy: 776, 172
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_06
+Tiles/Terrain/Mars/mars_05
   rotate: false
   xy: 898, 172
   size: 120, 140
@@ -923,7 +923,7 @@ Tiles/Terrain/Sand/sand_02
   index: -1
 Tiles/edge
   rotate: false
-  xy: 124, 158
+  xy: 297, 740
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -1146,390 +1146,390 @@ Objects/windmill_base
   index: -1
 Tiles/Medieval/medieval_archery
   rotate: false
-  xy: 368, 736
+  xy: 490, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_archway
   rotate: false
-  xy: 490, 878
+  xy: 2, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_blacksmith
   rotate: false
-  xy: 2, 168
+  xy: 124, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_cabin
   rotate: false
-  xy: 124, 310
+  xy: 246, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_church
   rotate: false
-  xy: 246, 452
+  xy: 368, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_farm
   rotate: false
-  xy: 368, 594
+  xy: 490, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_house
   rotate: false
-  xy: 490, 736
+  xy: 612, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_largeCastle
   rotate: false
-  xy: 612, 878
+  xy: 2, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_lumber
   rotate: false
-  xy: 2, 26
+  xy: 124, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_mine
   rotate: false
-  xy: 124, 168
+  xy: 246, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_openCastle
   rotate: false
-  xy: 246, 310
+  xy: 368, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_ruins
   rotate: false
-  xy: 368, 452
+  xy: 490, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_smallCastle
   rotate: false
-  xy: 490, 594
+  xy: 612, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_tower
   rotate: false
-  xy: 612, 736
+  xy: 734, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Medieval/medieval_windmill
   rotate: false
-  xy: 734, 878
+  xy: 124, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_entrance
   rotate: false
-  xy: 124, 26
+  xy: 246, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_hangar
   rotate: false
-  xy: 246, 168
+  xy: 368, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_rockets
   rotate: false
-  xy: 368, 310
+  xy: 490, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_tanks
   rotate: false
-  xy: 490, 452
+  xy: 612, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_turretLarge
   rotate: false
-  xy: 612, 594
+  xy: 734, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_turretMedium
   rotate: false
-  xy: 734, 736
+  xy: 856, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Military/military_turretSmall
   rotate: false
-  xy: 856, 878
+  xy: 246, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_crane
   rotate: false
-  xy: 246, 26
+  xy: 368, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_cutter
   rotate: false
-  xy: 368, 168
+  xy: 490, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_factory
   rotate: false
-  xy: 490, 310
+  xy: 612, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_stoneWarehouse
   rotate: false
-  xy: 612, 452
+  xy: 734, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_storage
   rotate: false
-  xy: 734, 594
+  xy: 856, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Mill/mill_warehouse
   rotate: false
-  xy: 856, 736
+  xy: 368, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_campsite
   rotate: false
-  xy: 368, 26
+  xy: 490, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_cornerShop
   rotate: false
-  xy: 490, 168
+  xy: 612, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_house
   rotate: false
-  xy: 612, 310
+  xy: 734, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_houseSmall
   rotate: false
-  xy: 734, 452
+  xy: 856, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_largeBuilding
   rotate: false
-  xy: 856, 594
+  xy: 490, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_oldBuilding
   rotate: false
-  xy: 490, 26
+  xy: 612, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_petrol
   rotate: false
-  xy: 612, 168
+  xy: 734, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_shop
   rotate: false
-  xy: 734, 310
+  xy: 856, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_skyscraper
   rotate: false
-  xy: 856, 452
+  xy: 612, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_skyscraperGlass
   rotate: false
-  xy: 612, 26
+  xy: 734, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_trailerpark
   rotate: false
-  xy: 734, 168
+  xy: 856, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_villa
   rotate: false
-  xy: 856, 310
+  xy: 734, 26
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Modern/modern_villageLarge
   rotate: false
-  xy: 734, 26
+  xy: 856, 168
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_07
+Tiles/Terrain/Mars/mars_06
   rotate: false
   xy: 2, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_08
+Tiles/Terrain/Mars/mars_07
   rotate: false
   xy: 2, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_09
+Tiles/Terrain/Mars/mars_08
   rotate: false
   xy: 124, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_10
+Tiles/Terrain/Mars/mars_09
   rotate: false
   xy: 2, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_11
+Tiles/Terrain/Mars/mars_10
   rotate: false
   xy: 124, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_12
+Tiles/Terrain/Mars/mars_11
   rotate: false
   xy: 246, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_13
+Tiles/Terrain/Mars/mars_12
   rotate: false
   xy: 2, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_14
+Tiles/Terrain/Mars/mars_13
   rotate: false
   xy: 124, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_15
+Tiles/Terrain/Mars/mars_14
   rotate: false
   xy: 246, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_16
+Tiles/Terrain/Mars/mars_15
   rotate: false
   xy: 368, 878
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_17
+Tiles/Terrain/Mars/mars_16
   rotate: false
   xy: 2, 310
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_18
+Tiles/Terrain/Mars/mars_17
   rotate: false
   xy: 124, 452
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Mars/mars_19
+Tiles/Terrain/Mars/mars_18
   rotate: false
   xy: 246, 594
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_01
+Tiles/Terrain/Mars/mars_19
   rotate: false
-  xy: 856, 168
+  xy: 368, 736
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_03
+Tiles/Terrain/Sand/sand_01
   rotate: false
   xy: 856, 26
   size: 120, 140
@@ -1579,369 +1579,369 @@ Objects/rockGrey_small7
   index: -1
 Tiles/Sci-fi/scifi_base
   rotate: false
-  xy: 124, 286
+  xy: 246, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_building
   rotate: false
-  xy: 246, 428
+  xy: 368, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_cargo
   rotate: false
-  xy: 368, 570
+  xy: 490, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_corner
   rotate: false
-  xy: 490, 712
+  xy: 612, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_domes
   rotate: false
-  xy: 612, 854
+  xy: 2, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_energy
   rotate: false
-  xy: 2, 2
+  xy: 124, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_factory
   rotate: false
-  xy: 124, 144
+  xy: 246, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_factoryHangar
   rotate: false
-  xy: 246, 286
+  xy: 368, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_factoryHigh
   rotate: false
-  xy: 368, 428
+  xy: 490, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_foliage
   rotate: false
-  xy: 490, 570
+  xy: 612, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_hangar
   rotate: false
-  xy: 612, 712
+  xy: 734, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_headquarters
   rotate: false
-  xy: 734, 854
+  xy: 124, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_living
   rotate: false
-  xy: 124, 2
+  xy: 246, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_port
   rotate: false
-  xy: 246, 144
+  xy: 368, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_silo
   rotate: false
-  xy: 368, 286
+  xy: 490, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_skyscraper
   rotate: false
-  xy: 490, 428
+  xy: 612, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/Sci-fi/scifi_tower
   rotate: false
-  xy: 612, 570
+  xy: 734, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_04
+Tiles/Terrain/Sand/sand_03
   rotate: false
   xy: 2, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_05
+Tiles/Terrain/Sand/sand_04
   rotate: false
   xy: 2, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_06
+Tiles/Terrain/Sand/sand_05
   rotate: false
   xy: 124, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_07
+Tiles/Terrain/Sand/sand_06
   rotate: false
   xy: 2, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_08
+Tiles/Terrain/Sand/sand_07
   rotate: false
   xy: 124, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_09
+Tiles/Terrain/Sand/sand_08
   rotate: false
   xy: 246, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_10
+Tiles/Terrain/Sand/sand_09
   rotate: false
   xy: 2, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_11
+Tiles/Terrain/Sand/sand_10
   rotate: false
   xy: 124, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_12
+Tiles/Terrain/Sand/sand_11
   rotate: false
   xy: 246, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_13
+Tiles/Terrain/Sand/sand_12
   rotate: false
   xy: 368, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_14
+Tiles/Terrain/Sand/sand_13
   rotate: false
   xy: 2, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_15
+Tiles/Terrain/Sand/sand_14
   rotate: false
   xy: 124, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_16
+Tiles/Terrain/Sand/sand_15
   rotate: false
   xy: 246, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_17
+Tiles/Terrain/Sand/sand_16
   rotate: false
   xy: 368, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_18
+Tiles/Terrain/Sand/sand_17
   rotate: false
   xy: 490, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Sand/sand_19
+Tiles/Terrain/Sand/sand_18
   rotate: false
   xy: 2, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_01
+Tiles/Terrain/Sand/sand_19
   rotate: false
-  xy: 734, 712
+  xy: 124, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_03
+Tiles/Terrain/Stone/stone_01
   rotate: false
   xy: 856, 854
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_04
+Tiles/Terrain/Stone/stone_03
   rotate: false
   xy: 246, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_05
+Tiles/Terrain/Stone/stone_04
   rotate: false
   xy: 368, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_06
+Tiles/Terrain/Stone/stone_05
   rotate: false
   xy: 490, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_07
+Tiles/Terrain/Stone/stone_06
   rotate: false
   xy: 612, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_08
+Tiles/Terrain/Stone/stone_07
   rotate: false
   xy: 734, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_09
+Tiles/Terrain/Stone/stone_08
   rotate: false
   xy: 856, 712
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_10
+Tiles/Terrain/Stone/stone_09
   rotate: false
   xy: 368, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_11
+Tiles/Terrain/Stone/stone_10
   rotate: false
   xy: 490, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_12
+Tiles/Terrain/Stone/stone_11
   rotate: false
   xy: 612, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_13
+Tiles/Terrain/Stone/stone_12
   rotate: false
   xy: 734, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_14
+Tiles/Terrain/Stone/stone_13
   rotate: false
   xy: 856, 570
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_15
+Tiles/Terrain/Stone/stone_14
   rotate: false
   xy: 490, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_16
+Tiles/Terrain/Stone/stone_15
   rotate: false
   xy: 612, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_17
+Tiles/Terrain/Stone/stone_16
   rotate: false
   xy: 734, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_18
+Tiles/Terrain/Stone/stone_17
   rotate: false
   xy: 856, 428
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Terrain/Stone/stone_19
+Tiles/Terrain/Stone/stone_18
   rotate: false
   xy: 612, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Western/western_bank
+Tiles/Terrain/Stone/stone_19
   rotate: false
-  xy: 856, 144
+  xy: 734, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Western/western_general
+Tiles/Western/western_bank
   rotate: false
   xy: 856, 2
   size: 120, 140
@@ -1950,21 +1950,21 @@ Tiles/Western/western_general
   index: -1
 Tiles/tileoverlay
   rotate: false
-  xy: 734, 144
+  xy: 856, 286
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/tileoverlaygreen
   rotate: false
-  xy: 856, 286
+  xy: 734, 2
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
 Tiles/tileoverlayred
   rotate: false
-  xy: 734, 2
+  xy: 856, 144
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
@@ -1977,98 +1977,98 @@ filter: Nearest,Nearest
 repeat: none
 Objects/archway
   rotate: false
-  xy: 403, 336
+  xy: 533, 336
   size: 70, 84
   orig: 70, 84
   offset: 0, 0
   index: -1
 Objects/beigeBuilding
   rotate: false
-  xy: 953, 373
+  xy: 725, 370
   size: 52, 60
   orig: 52, 60
   offset: 0, 0
   index: -1
 Objects/cargoPad
   rotate: false
-  xy: 246, 230
+  xy: 244, 103
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 Objects/dome
   rotate: false
-  xy: 543, 296
+  xy: 841, 324
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: -1
 Objects/farmland_empty
   rotate: false
-  xy: 593, 318
+  xy: 368, 366
   size: 60, 44
   orig: 60, 44
   offset: 0, 0
   index: -1
 Objects/hangar
   rotate: false
-  xy: 723, 372
+  xy: 721, 306
   size: 56, 62
   orig: 56, 62
   offset: 0, 0
   index: -1
 Objects/house
   rotate: false
-  xy: 748, 436
+  xy: 838, 436
   size: 88, 70
   orig: 88, 70
   offset: 0, 0
   index: -1
 Objects/housing
   rotate: false
-  xy: 475, 346
+  xy: 464, 256
   size: 68, 74
   orig: 68, 74
   offset: 0, 0
   index: -1
 Objects/landingpad
   rotate: false
-  xy: 838, 436
+  xy: 928, 436
   size: 84, 70
   orig: 84, 70
   offset: 0, 0
   index: -1
 Objects/living
   rotate: false
-  xy: 924, 435
+  xy: 124, 51
   size: 82, 71
   orig: 82, 71
   offset: 0, 0
   index: -1
 Objects/militaryOutlook
   rotate: false
-  xy: 655, 312
+  xy: 951, 372
   size: 52, 62
   orig: 52, 62
   offset: 0, 0
   index: -1
 Objects/mill_factory
   rotate: false
-  xy: 366, 422
+  xy: 456, 422
   size: 94, 84
   orig: 94, 84
   offset: 0, 0
   index: -1
 Objects/mill_hightop
   rotate: false
-  xy: 593, 364
+  xy: 779, 306
   size: 60, 66
   orig: 60, 66
   offset: 0, 0
   index: -1
 Objects/mill_lodge
   rotate: false
-  xy: 545, 350
+  xy: 605, 350
   size: 46, 70
   orig: 46, 70
   offset: 0, 0
@@ -2082,182 +2082,189 @@ Objects/oldBuilding
   index: -1
 Objects/petrolStation
   rotate: false
-  xy: 246, 312
+  xy: 368, 412
   size: 86, 94
   orig: 86, 94
   offset: 0, 0
   index: -1
 Objects/rockGrey_medium3
   rotate: false
-  xy: 709, 308
+  xy: 891, 308
   size: 52, 62
   orig: 52, 62
   offset: 0, 0
   index: -1
 Objects/rockGrey_medium4
   rotate: false
-  xy: 897, 373
+  xy: 837, 374
   size: 54, 60
   orig: 54, 60
   offset: 0, 0
   index: -1
 Objects/saloon
   rotate: false
-  xy: 334, 318
+  xy: 464, 332
   size: 67, 88
   orig: 67, 88
   offset: 0, 0
   index: -1
 Objects/scifi_factory
   rotate: false
-  xy: 462, 422
+  xy: 552, 422
   size: 94, 84
   orig: 94, 84
   offset: 0, 0
   index: -1
 Objects/scifi_hangar
   rotate: false
-  xy: 781, 372
+  xy: 779, 374
   size: 56, 62
   orig: 56, 62
   offset: 0, 0
   index: -1
 Objects/scifi_hangar1
   rotate: false
-  xy: 655, 376
+  xy: 653, 308
   size: 66, 60
   orig: 66, 60
   offset: 0, 0
   index: -1
 Objects/scifi_scraper2
   rotate: false
-  xy: 272, 130
+  xy: 394, 266
   size: 68, 98
   orig: 68, 98
   offset: 0, 0
   index: -1
 Objects/scifi_ship
   rotate: false
-  xy: 558, 432
+  xy: 648, 432
   size: 94, 74
   orig: 94, 74
   offset: 0, 0
   index: -1
 Objects/shop
   rotate: false
-  xy: 475, 268
+  xy: 534, 258
   size: 66, 76
   orig: 66, 76
   offset: 0, 0
   index: -1
 Objects/shops
   rotate: false
-  xy: 839, 372
+  xy: 893, 372
   size: 56, 62
   orig: 56, 62
   offset: 0, 0
   index: -1
 Objects/skyscraper_wide
   rotate: false
-  xy: 214, 123
+  xy: 336, 265
   size: 56, 99
   orig: 56, 99
   offset: 0, 0
   index: -1
 Objects/tavern
   rotate: false
-  xy: 124, 43
+  xy: 246, 185
   size: 82, 76
   orig: 82, 76
   offset: 0, 0
   index: -1
 Objects/turret_large
   rotate: false
-  xy: 817, 315
+  xy: 208, 46
   size: 52, 55
   orig: 52, 55
   offset: 0, 0
   index: -1
 Objects/villa_large
   rotate: false
-  xy: 654, 438
+  xy: 744, 438
   size: 92, 68
   orig: 92, 68
   offset: 0, 0
   index: -1
 Objects/wall
   rotate: false
-  xy: 543, 259
+  xy: 262, 66
   size: 50, 35
   orig: 50, 35
   offset: 0, 0
   index: -1
 Objects/wall_large
   rotate: false
-  xy: 246, 408
+  xy: 124, 124
   size: 118, 98
   orig: 118, 98
   offset: 0, 0
   index: -1
 Objects/wall_red
   rotate: false
-  xy: 595, 281
+  xy: 262, 29
   size: 50, 35
   orig: 50, 35
   offset: 0, 0
   index: -1
 Objects/wall_small
   rotate: false
-  xy: 403, 274
+  xy: 653, 370
   size: 70, 60
   orig: 70, 60
   offset: 0, 0
   index: -1
 Objects/windmill_complete
   rotate: false
-  xy: 763, 304
+  xy: 945, 304
   size: 52, 66
   orig: 52, 66
   offset: 0, 0
   index: -1
 Tiles/Terrain/Stone/stone_02
   rotate: false
-  xy: 124, 121
+  xy: 246, 263
   size: 88, 101
   orig: 88, 101
   offset: 0, 0
   index: -1
-Tiles/Western/western_indians
+Tiles/Western/western_general
   rotate: false
   xy: 2, 366
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Western/western_saloon
+Tiles/Western/western_indians
   rotate: false
   xy: 2, 224
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Western/western_sheriff
+Tiles/Western/western_saloon
   rotate: false
   xy: 124, 366
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Western/western_station
+Tiles/Western/western_sheriff
   rotate: false
   xy: 2, 82
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
   index: -1
-Tiles/Western/western_watertower
+Tiles/Western/western_station
   rotate: false
   xy: 124, 224
+  size: 120, 140
+  orig: 120, 140
+  offset: 0, 0
+  index: -1
+Tiles/Western/western_watertower
+  rotate: false
+  xy: 246, 366
   size: 120, 140
   orig: 120, 140
   offset: 0, 0
