@@ -87,7 +87,7 @@ public class AiSystem extends IntervalSystem {
                             targetTileY += 1;
                         }
 
-                        gameScreen.spawnWarrior(new Vector2(sourcePos.x, sourcePos.y), new Vector2(targetTileX, targetTileY), PlayerComponent.PLAYER.B, 60);
+                        gameScreen.spawnWarrior(new Vector2(sourcePos.x, sourcePos.y), new Vector2(targetTileX, targetTileY), PlayerComponent.PLAYER.B, 40);
                     }
                 }
             }

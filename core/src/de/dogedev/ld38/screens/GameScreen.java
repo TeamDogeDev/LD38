@@ -68,6 +68,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(new OverlayRenderSystem(camera));
         ashley.addSystem(new GridSystem(camera));
 
+
         dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
 
         createSpawnEntity(0, Statics.settings.tilesY-1, PlayerComponent.PLAYER.A);

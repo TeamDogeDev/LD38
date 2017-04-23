@@ -8,8 +8,9 @@ public class GameSettings {
     public float musicVolume = .2f;
     public int tileWidth = 120;
     public int tileHeight = 140;
-    public int tilesX = 4;
-    public int tilesY = 4;
+    public int tilesX = 16;
+    public int tilesY = 16;
     public float tickInterval = 1;
     public int minPeeps = 5;
+    public int numBuildings = (int) ((tilesX*tilesY)*.4);
 }
