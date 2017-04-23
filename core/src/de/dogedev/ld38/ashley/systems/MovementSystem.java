@@ -14,6 +14,7 @@ public class MovementSystem extends EntitySystem  {
 
 
     private ImmutableArray<Entity> entities;
+    private ImmutableArray<Entity> spawns;
 
     public MovementSystem() {
 
@@ -21,8 +22,8 @@ public class MovementSystem extends EntitySystem  {
 
     @Override
     public void addedToEngine (Engine engine) {
-        entities = engine.getEntitiesFor(
-                Family.all(PositionComponent.class, MovementComponent.class, PeepComponent.class).get());
+        entities = engine.getEntitiesFor(Family.all(PositionComponent.class, MovementComponent.class, PeepComponent.class).get());
+        spawns = engine.getEntitiesFor(Family.all(SpawnComponent.class, PlayerComponent.class).get());
     }
 
     @Override
@@ -55,8 +56,18 @@ public class MovementSystem extends EntitySystem  {
                 continue;
             }
 
+            float speed = 50;
+
+            for(Entity spawn: spawns){
+                PlayerComponent playerComponent = ComponentMappers.player.get(spawn);
+                if(playerComponent != null && playerComponent.player == peep.player){
+                    speed += ComponentMappers.spawn.get(spawn).movementSpeed;
+                }
+
+            }
+
             target.nor();
-            target.scl(mvc.speed*deltaTime);
+            target.scl(speed*deltaTime);
             pvc.x += target.x;
             pvc.y += target.y;
         }
