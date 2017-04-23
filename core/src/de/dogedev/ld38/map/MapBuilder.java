@@ -127,16 +127,13 @@ public class MapBuilder {
                 int buildingTileX = MathUtils.random(tiledMapTileLayer.getWidth()- 1);
                 int buildingTileY = MathUtils.random(tiledMapTileLayer.getHeight()- 1);
                 if((buildingTileX == 0 && buildingTileY == tiledMapTileLayer.getHeight()-1)||(buildingTileX == tiledMapTileLayer.getWidth()-1 && buildingTileY == 0)) {
-                    System.out.println("SPAWN");
                 } else {
-                    System.out.println("Try to build on (" + buildingTileX + ", " + buildingTileY + ")");
                     CMapTile tile = (CMapTile) tiledMapTileLayer.getCell(buildingTileX, buildingTileY).getTile();
                     boolean canHaveBuilding = tile.canHaveBuilding();
                     boolean hasBuilding = false;
                     for (Entity building : buildings) {
                         TilePositionComponent tilePositionComponent = ComponentMappers.tilePos.get(building);
                         if (tilePositionComponent.x == buildingTileX && tilePositionComponent.y == buildingTileY) {
-                            System.out.println("Has already a building");
                             hasBuilding = true;
                         }
                     }
@@ -172,8 +169,6 @@ public class MapBuilder {
 
                         Statics.ashley.addEntity(building);
                         buildingBuild = true;
-                    } else {
-                        System.out.println("Nope, retry");
                     }
                 }
             } while (!buildingBuild);

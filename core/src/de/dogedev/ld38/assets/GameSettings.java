@@ -10,7 +10,8 @@ public class GameSettings {
     public int tileHeight = 140;
     public int tilesX = 4;
     public int tilesY = 4;
-    public float tickInterval = 1;
+    public float tickInterval = 0.25f;
     public int minPeeps = 5;
     public int numBuildings = (int) ((tilesX*tilesY)*.4);
+    public float difficulty = 1f; // 0 = easy peasy; 1 = super hard
 }

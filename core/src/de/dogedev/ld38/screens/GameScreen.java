@@ -127,7 +127,7 @@ public class GameScreen implements Screen {
                     uc.units--;
                     Entity warrior = Statics.ashley.createEntity();
                     RenderComponent rc = Statics.ashley.createComponent(RenderComponent.class);
-                    rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);
+                    rc.region = Statics.asset.getTextureAtlasRegion(player == PlayerComponent.PLAYER.A ? Key.CHARACTERS_CHAR_0 : Key.CHARACTERS_CHAR_1) ;
                     rc.angle = 90;
                     warrior.add(rc);
 
@@ -151,7 +151,11 @@ public class GameScreen implements Screen {
                     mvc.speed = speed;
                     warrior.add(mvc);
 
-                    warrior.add(Statics.ashley.createComponent(LookComponent.class));
+                    LookComponent lookComponent = Statics.ashley.createComponent(LookComponent.class);
+                    lookComponent.x = targetTile.x;
+                    lookComponent.y = targetTile.y;
+
+                    warrior.add(lookComponent);
 
                     Statics.ashley.addEntity(warrior);
                 }
