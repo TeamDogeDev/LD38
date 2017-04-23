@@ -8,10 +8,19 @@ public class GameSettings {
     public float musicVolume = .2f;
     public int tileWidth = 120;
     public int tileHeight = 140;
-    public int tilesX = 8;
-    public int tilesY = 8;
-    public float tickInterval = 0.25f;
+    public int tilesX = 4;
+    public int tilesY = 4;
+    public float tickInterval = 0.5f;
     public int minPeeps = 5;
+    public int maxPeeps = 10;
+
     public int numBuildings = (int) ((tilesX*tilesY)*.4);
-    public float difficulty = 1f; // 0 = easy peasy; 1 = super hard
+    public float difficulty = 1f; // 0 = easy peasy; 1 = "super hard"
+    public float finishCheckInterval = 1;
+
+    // effects
+    public float movementSpeed = 20;
+    public float spawnrate = 1f;
+    public float maxPopulation = 2;
+    public float tickrate = 0.5f;
 }

@@ -35,7 +35,6 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
 
     @Override
     public boolean longPress(float x, float y) {
-        System.out.println("LONGPRESS");
         mouse.set(x, y, 0);
         Vector3 unproject = camera.unproject(mouse);
         Vector2 tileCoordinates = CoordinateMapper.getTile((int) unproject.x, (int) unproject.y);

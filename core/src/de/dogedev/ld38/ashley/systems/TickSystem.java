@@ -40,7 +40,7 @@ public class TickSystem extends EntitySystem {
 
             float tickrate = 1;
             float spawnate = 1;
-            float maxPopulation = 10;
+            float maxPopulation = Statics.settings.maxPeeps;
             float movementSpeed = 0;
 
             for(Entity building: buildings){

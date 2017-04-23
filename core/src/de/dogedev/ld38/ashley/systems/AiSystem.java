@@ -65,7 +65,7 @@ public class AiSystem extends IntervalSystem {
 
         float skipChance = 1 - Statics.settings.difficulty; // difficulty = 1 = hard -> skipchance = 0
         skipChance -= .5 * MathUtils.clamp(owningPercentagePlayer, 0.0, Math.min(owningPercentagePlayer, (1 - Statics.settings.difficulty)));
-        skipChance = MathUtils.clamp(skipChance, 0.2f, 0.8f);
+        skipChance = MathUtils.clamp(skipChance, 0.1f, 0.8f);
 
         Vector2 tmpVector = new Vector2();
         Vector2 tmpVector2 = new Vector2();
