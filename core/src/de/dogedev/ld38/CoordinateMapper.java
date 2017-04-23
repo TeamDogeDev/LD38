@@ -15,6 +15,10 @@ public class CoordinateMapper {
         return x2;
     }
 
+    public static int getTilePosX(Vector2 tile) {
+        return getTilePosX((int) tile.x, (int) tile.y);
+    }
+
     public static int getTilePosY(int y) {
         return y * 104 + 70;
     }

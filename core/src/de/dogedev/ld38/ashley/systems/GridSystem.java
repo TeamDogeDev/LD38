@@ -80,7 +80,6 @@ public class GridSystem extends EntitySystem implements Disposable {
     }
 
     public boolean isClickable(int x, int y) {
-        TilePositionComponent tpc;
         try {
             Entity entity = getEntityAt(x, y);
             GridComponent gridComponent = ComponentMappers.grid.get(entity);

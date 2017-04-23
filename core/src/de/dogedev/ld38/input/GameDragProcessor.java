@@ -41,7 +41,6 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
             if(Statics.ashley.getSystem(GridSystem.class).isClickable((int) tile.x, (int) tile.y)) {
                 spawnEntity(tile);
             } else {
-                System.out.println("Nope");
             }
         }
         return super.tap(x, y, count, button);
@@ -65,8 +64,7 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
         Vector2 tilePos = CoordinateMapper.getTilePos((int) tile.x, (int) tile.y);
         mvc.x = (int) tilePos.x;
         mvc.y = (int) tilePos.y;
-        mvc.speed = 120;
-//        mvc.speed = 40;
+        mvc.speed = 40;
         entity.add(mvc);
 
         entity.add(Statics.ashley.createComponent(LookComponent.class));

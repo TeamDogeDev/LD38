@@ -33,7 +33,6 @@ public class TickSystem extends IntervalSystem {
             UnitComponent unitComponent = ComponentMappers.unit.get(entity);
             SpawnComponent spawnComponent = ComponentMappers.spawn.get(entity);
             unitComponent.units = MathUtils.clamp(++unitComponent.units, 0, spawnComponent.maxUnits);
-            System.out.println(unitComponent.units);
         }
     }
 }

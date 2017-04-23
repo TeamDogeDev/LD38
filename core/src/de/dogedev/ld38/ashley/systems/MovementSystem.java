@@ -49,6 +49,7 @@ public class MovementSystem extends EntitySystem  {
                 getEngine().getSystem(GridSystem.class).incAt(
                         (int) tilePos.x, (int) tilePos.y
                 );
+                e.add(new DirtyComponent());
                 continue;
             }
 

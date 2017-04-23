@@ -1,6 +1,9 @@
 package de.dogedev.ld38.screens;
 
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.ashley.core.EntitySystem;
+import com.badlogic.ashley.core.Family;
+import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -35,6 +38,7 @@ public class GameScreen implements Screen {
     private ShaderProgram cloudShader;
     private SpriteBatch cloudBatch;
     private Texture clouds;
+    private ImmutableArray<Entity> dirtyEntities;
 
     public GameScreen(){
         cloudBatch = new SpriteBatch();
@@ -58,30 +62,44 @@ public class GameScreen implements Screen {
         ashley.addSystem(new DebugUISystem(camera));
         ashley.addSystem(new TickSystem());
         ashley.addSystem(new GridSystem(camera));
-//        ashley.addSystem(new OverlayRenderSystem(camera));
+        ashley.addSystem(new OverlayRenderSystem(camera));
 
-        Entity castleOpen = ashley.createEntity();
-        RenderComponent rc = ashley.createComponent(RenderComponent.class);
-        rc.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_OPEN);
+        dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
+
+        createSpawnEntity(0, Statics.settings.tilesY-1);
+        createSpawnEntity(Statics.settings.tilesX-1, 0);
+        createGridEntites(Statics.settings.tilesX, Statics.settings.tilesY);
+
+
+    }
+
+    private void createSpawnEntity(int tileX, int tileY) {
+        Entity spawnEntity = ashley.createEntity();
+        RenderComponent renderComponent = ashley.createComponent(RenderComponent.class);
+        renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_OPEN);
 
         SpawnComponent spawnComponent = ashley.createComponent(SpawnComponent.class);
         UnitComponent unitComponent = ashley.createComponent(UnitComponent.class);
 
-        TilePositionComponent tpc = ashley.createComponent(TilePositionComponent.class);
+        TilePositionComponent tilePositionComponent = ashley.createComponent(TilePositionComponent.class);
 
-        tpc.x = 0; //
-        tpc.y = Statics.settings.tilesY-1;
+        tilePositionComponent.x = tileX; //
+        tilePositionComponent.y = tileY;
 
-        castleOpen.add(tpc);
-        castleOpen.add(rc);
-        castleOpen.add(unitComponent);
-        castleOpen.add(spawnComponent);
+        spawnEntity.add(tilePositionComponent);
+        spawnEntity.add(renderComponent);
+        spawnEntity.add(unitComponent);
+        spawnEntity.add(spawnComponent);
 
-        ashley.addEntity(castleOpen);
+        ashley.addEntity(spawnEntity);
+    }
 
-
-        for (int x = 0; x < Statics.settings.tilesX; x++) {
-            for (int y = 0; y < Statics.settings.tilesY; y++) {
+    private void createGridEntites(int tilesX, int tilesY) {
+        for (int x = 0; x < tilesX; x++) {
+            for (int y = 0; y < tilesY; y++) {
+                if((x == 0 && y == tilesY-1) || (x == tilesX-1 && y == 0)) { // spawn tiles
+                    continue;
+                }
                 Entity gridEntity = ashley.createEntity();
                 TilePositionComponent gridTpc = ashley.createComponent(TilePositionComponent.class);
                 gridTpc.x = x;
@@ -104,16 +122,6 @@ public class GameScreen implements Screen {
             }
         }
 
-
-//        Entity castleSmall = ashley.createEntity();
-//        RenderComponent rc1 = ashley.createComponent(RenderComponent.class);
-//        rc1.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_SMALL);
-//        PositionComponent pc1 = ashley.createComponent(PositionComponent.class);
-//        pc1.x = CoordinateMapper.getTilePosX(Statics.settings.tilesX-1, 0); //
-//        pc1.y = CoordinateMapper.getTilePosY(0);
-//        castleSmall.add(pc1);
-//        castleSmall.add(rc1);
-//        ashley.addEntity(castleSmall);
     }
 
     private void initShader() {
@@ -140,7 +148,6 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         ashley.update(delta);
 
-
         windData.add(windVelocity);
         cloudShader.begin();
         cloudShader.setUniformf("scroll", windData);
@@ -156,6 +163,14 @@ public class GameScreen implements Screen {
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.N)) {
             mapRenderSystem.setMap(mapBuilder.buildMap(settings.tilesX, settings.tilesY));
+        }
+
+        // remove entities
+        if(dirtyEntities.size() > 0) {
+            System.out.println("Remove " + dirtyEntities.size());
+            for (Entity entity : dirtyEntities) {
+                ashley.removeEntity(entity);
+            }
         }
     }
 
