@@ -7,7 +7,10 @@ import com.badlogic.gdx.utils.Pool;
  * Created by elektropapst on 22.04.2017.
  */
 public class GridComponent implements Component, Pool.Poolable {
+
+    public boolean clickable = false;
     @Override
     public void reset() {
+        clickable = false;
     }
 }

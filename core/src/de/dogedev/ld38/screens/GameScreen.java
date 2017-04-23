@@ -88,6 +88,13 @@ public class GameScreen implements Screen {
                 gridTpc.y = y;
 
                 GridComponent gridComponent = ashley.createComponent(GridComponent.class);
+                // TODO
+                if(x == 0 && y == Statics.settings.tilesY-2) { //(0, N-1) / TL
+                    gridComponent.clickable = true;
+                }
+                if(x == 1 && y == Statics.settings.tilesY-1) { //(1, N-1) / TL
+                    gridComponent.clickable = true;
+                }
                 UnitComponent gridUnitComponent = ashley.createComponent(UnitComponent.class);
 
                 gridEntity.add(gridComponent);

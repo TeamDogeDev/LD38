@@ -15,5 +15,6 @@ public class ComponentMappers {
     public static final ComponentMapper<SpawnComponent> spawn = ComponentMapper.getFor(SpawnComponent.class);
     public static final ComponentMapper<LookComponent> look = ComponentMapper.getFor(LookComponent.class);
     public static final ComponentMapper<UnitComponent> unit = ComponentMapper.getFor(UnitComponent.class);
+    public static final ComponentMapper<GridComponent> grid = ComponentMapper.getFor(GridComponent.class);
 
 }
