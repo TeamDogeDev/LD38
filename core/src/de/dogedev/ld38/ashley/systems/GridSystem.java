@@ -5,6 +5,7 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -79,11 +80,17 @@ public class GridSystem extends EntitySystem implements Disposable {
         throw new EntityNotFoundException();
     }
 
-    public boolean isClickable(int x, int y) {
+    public boolean isClickable(int x, int y, int button) {
         try {
             Entity entity = getEntityAt(x, y);
-            GridComponent gridComponent = ComponentMappers.grid.get(entity);
-            return gridComponent.clickable;
+
+            if(button == Input.Buttons.LEFT) {
+                GridComponent gridComponent = ComponentMappers.grid.get(entity);
+                return gridComponent.clickable;
+            } else if(button == Input.Buttons.RIGHT) {
+                UnitComponent unitComponent= ComponentMappers.unit.get(entity);
+                return unitComponent.units > 0;
+            }
         } catch (EntityNotFoundException e) {
         }
         return false;

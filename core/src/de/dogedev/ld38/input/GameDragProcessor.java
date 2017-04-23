@@ -1,5 +1,6 @@
 package de.dogedev.ld38.input;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
@@ -7,6 +8,7 @@ import com.badlogic.gdx.math.Vector3;
 import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.systems.GridSystem;
+import de.dogedev.ld38.ashley.systems.OverlayRenderSystem;
 import de.dogedev.ld38.screens.GameScreen;
 
 /**
@@ -31,21 +33,34 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
 
     @Override
     public boolean tap(float x, float y, int count, int button) {
-        mouse.set(x, y, 0);
-        Vector3 unproject = camera.unproject(mouse);
-        Vector2 tileCoordinates = CoordinateMapper.getTile((int) unproject.x, (int) unproject.y);
+        if(button == Input.Buttons.LEFT) {
+            mouse.set(x, y, 0);
+            Vector3 unproject = camera.unproject(mouse);
+            Vector2 tileCoordinates = CoordinateMapper.getTile((int) unproject.x, (int) unproject.y);
 
-        if(tileCoordinates != null) {
-            if(Statics.ashley.getSystem(GridSystem.class).isClickable((int) tileCoordinates.x, (int) tileCoordinates.y)) {
-                gameScreen.spawnWarrior(new Vector2(0, Statics.settings.tilesY-1), tileCoordinates, 40);
-            } else {
+            if(tileCoordinates != null) {
+                if(Statics.ashley.getSystem(GridSystem.class).isClickable((int) tileCoordinates.x, (int) tileCoordinates.y, button)) {
+                    Vector2 arrowTilePosition = Statics.ashley.getSystem(OverlayRenderSystem.class).getArrowTilePosition();
+
+//                    gameScreen.spawnWarrior(new Vector2(0, Statics.settings.tilesY-1), tileCoordinates, 40);
+                    gameScreen.spawnWarrior(arrowTilePosition, tileCoordinates, 40);
+                } else {
+                }
+            }
+        } else if(button == Input.Buttons.RIGHT) {
+            mouse.set(x, y, 0);
+            Vector3 unproject = camera.unproject(mouse);
+            Vector2 tileCoordinates = CoordinateMapper.getTile((int) unproject.x, (int) unproject.y);
+
+            if(tileCoordinates != null) {
+                GridSystem gridSystem = Statics.ashley.getSystem(GridSystem.class);
+                if(gridSystem.isClickable((int) tileCoordinates.x, (int) tileCoordinates.y, button)) {
+                    Statics.ashley.getSystem(OverlayRenderSystem.class)
+                            .setArrowTilePosition(tileCoordinates);
+                } else {
+                }
             }
         }
         return super.tap(x, y, count, button);
     }
-//
-//    @Deprecated
-//    private void spawnEntity(Vector2 tile) {
-//
-//    }
 }

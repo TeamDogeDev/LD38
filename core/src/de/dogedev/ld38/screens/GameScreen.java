@@ -15,9 +15,11 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.github.czyzby.noise4j.map.Grid;
 import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
+import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.*;
 import de.dogedev.ld38.ashley.systems.*;
 import de.dogedev.ld38.assets.enums.ShaderPrograms;
@@ -42,7 +44,7 @@ public class GameScreen implements Screen {
     private Texture clouds;
     private ImmutableArray<Entity> dirtyEntities;
 
-    public GameScreen(){
+    public GameScreen() {
         cloudBatch = new SpriteBatch();
         camera = new OrthographicCamera();
         camera.zoom = 2f;
@@ -63,13 +65,13 @@ public class GameScreen implements Screen {
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));
         ashley.addSystem(new TickSystem());
-        ashley.addSystem(new GridSystem(camera));
         ashley.addSystem(new OverlayRenderSystem(camera));
+        ashley.addSystem(new GridSystem(camera));
 
         dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
 
-        createSpawnEntity(0, Statics.settings.tilesY-1);
-        createSpawnEntity(Statics.settings.tilesX-1, 0);
+        createSpawnEntity(0, Statics.settings.tilesY - 1);
+        createSpawnEntity(Statics.settings.tilesX - 1, 0);
         createGridEntites(Statics.settings.tilesX, Statics.settings.tilesY);
 
 
@@ -88,47 +90,74 @@ public class GameScreen implements Screen {
         tilePositionComponent.x = tileX; //
         tilePositionComponent.y = tileY;
 
+        GridComponent gridComponent = ashley.createComponent(GridComponent.class);
+        gridComponent.clickable = true;
+
         spawnEntity.add(tilePositionComponent);
         spawnEntity.add(renderComponent);
+        spawnEntity.add(gridComponent);
         spawnEntity.add(unitComponent);
         spawnEntity.add(spawnComponent);
 
         ashley.addEntity(spawnEntity);
     }
 
+    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, float speed, int num) {
+        for (int i = 0; i < num; i++) {
+            spawnWarrior(spawnTile, targetTile, speed);
+        }
+    }
+
     public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, float speed) {
-        Entity entity = Statics.ashley.createEntity();
-        RenderComponent rc = Statics.ashley.createComponent(RenderComponent.class);
-        rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);
-        rc.angle = 90;
-        entity.add(rc);
 
-        PositionComponent tpc = Statics.ashley.createComponent(PositionComponent.class);
-        // w/4 & h/4
-        int spawnOffsetX = MathUtils.random(-Statics.settings.tileWidth>>2, Statics.settings.tileWidth>>2);
-        int spawnOffsetY = MathUtils.random(-Statics.settings.tileHeight>>2, Statics.settings.tileHeight>>2);
-        tpc.x = CoordinateMapper.getTilePosX((int) spawnTile.x , (int) spawnTile.y) + spawnOffsetX;
-        tpc.y = CoordinateMapper.getTilePosY((int) spawnTile.y ) + spawnOffsetY;
+        ImmutableArray<Entity> entitiesFor = Statics.ashley.getEntitiesFor(
+                Family.all(TilePositionComponent.class, UnitComponent.class).get());
 
-        entity.add(tpc);
+        TilePositionComponent tilePositionComponent;
+        UnitComponent uc;
+
+        for(Entity entity : entitiesFor) {
+            tilePositionComponent = ComponentMappers.tilePos.get(entity);
+            if(tilePositionComponent.x == spawnTile.x && tilePositionComponent.y == spawnTile.y) {
+                uc = ComponentMappers.unit.get(entity);
+                if(uc.units > 0) {
+                    uc.units--;
+                    Entity warrior = Statics.ashley.createEntity();
+                    RenderComponent rc = Statics.ashley.createComponent(RenderComponent.class);
+                    rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);
+                    rc.angle = 90;
+                    warrior.add(rc);
+
+                    PositionComponent tpc = Statics.ashley.createComponent(PositionComponent.class);
+                    // w/4 & h/4
+                    int spawnOffsetX = MathUtils.random(-Statics.settings.tileWidth >> 2, Statics.settings.tileWidth >> 2);
+                    int spawnOffsetY = MathUtils.random(-Statics.settings.tileHeight >> 2, Statics.settings.tileHeight >> 2);
+                    tpc.x = CoordinateMapper.getTilePosX((int) spawnTile.x, (int) spawnTile.y) + spawnOffsetX;
+                    tpc.y = CoordinateMapper.getTilePosY((int) spawnTile.y) + spawnOffsetY;
+
+                    warrior.add(tpc);
 
 
-        MovementComponent mvc = Statics.ashley.createComponent(MovementComponent.class);
-        Vector2 tilePos = CoordinateMapper.getTilePos((int) targetTile.x, (int) targetTile.y);
-        mvc.x = (int) tilePos.x;
-        mvc.y = (int) tilePos.y;
-        mvc.speed = speed;
-        entity.add(mvc);
+                    MovementComponent mvc = Statics.ashley.createComponent(MovementComponent.class);
+                    Vector2 tilePos = CoordinateMapper.getTilePos((int) targetTile.x, (int) targetTile.y);
+                    mvc.x = (int) tilePos.x;
+                    mvc.y = (int) tilePos.y;
+                    mvc.speed = speed;
+                    warrior.add(mvc);
 
-        entity.add(Statics.ashley.createComponent(LookComponent.class));
+                    warrior.add(Statics.ashley.createComponent(LookComponent.class));
 
-        Statics.ashley.addEntity(entity);
+                    Statics.ashley.addEntity(warrior);
+                }
+                break;
+            }
+        }
     }
 
     private void createGridEntites(int tilesX, int tilesY) {
         for (int x = 0; x < tilesX; x++) {
             for (int y = 0; y < tilesY; y++) {
-                if((x == 0 && y == tilesY-1) || (x == tilesX-1 && y == 0)) { // spawn tiles
+                if ((x == 0 && y == tilesY - 1) || (x == tilesX - 1 && y == 0)) { // spawn tiles
                     continue;
                 }
                 Entity gridEntity = ashley.createEntity();
@@ -138,10 +167,10 @@ public class GameScreen implements Screen {
 
                 GridComponent gridComponent = ashley.createComponent(GridComponent.class);
                 // TODO
-                if(x == 0 && y == Statics.settings.tilesY-2) { //(0, N-1) / TL
+                if (x == 0 && y == Statics.settings.tilesY - 2) { //(0, N-1) / TL
                     gridComponent.clickable = true;
                 }
-                if(x == 1 && y == Statics.settings.tilesY-1) { //(1, N-1) / TL
+                if (x == 1 && y == Statics.settings.tilesY - 1) { //(1, N-1) / TL
                     gridComponent.clickable = true;
                 }
                 UnitComponent gridUnitComponent = ashley.createComponent(UnitComponent.class);
@@ -175,7 +204,7 @@ public class GameScreen implements Screen {
     @Override
     public void render(float delta) {
 //        Gdx.gl.glClearColor(39/255.f, 174/255.f, 96/255.f, 1f);
-        Gdx.gl.glClearColor(29/255.f, 128/255.f, 71/255.f, 1f);
+        Gdx.gl.glClearColor(29 / 255.f, 128 / 255.f, 71 / 255.f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         ashley.update(delta);
 
@@ -187,17 +216,17 @@ public class GameScreen implements Screen {
 
         cloudBatch.setBlendFunction(GL20.GL_DST_COLOR, GL20.GL_ONE_MINUS_SRC_ALPHA);
 
-        if(camera.zoom == 1) {
+        if (camera.zoom == 1) {
             cloudBatch.begin();
             cloudBatch.draw(clouds, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
             cloudBatch.end();
         }
-        if(Gdx.input.isKeyJustPressed(Input.Keys.N)) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.N)) {
             mapRenderSystem.setMap(mapBuilder.buildMap(settings.tilesX, settings.tilesY));
         }
 
         // remove dirty entities
-        if(dirtyEntities.size() > 0) {
+        if (dirtyEntities.size() > 0) {
             for (Entity entity : dirtyEntities) {
                 ashley.removeEntity(entity);
             }
