@@ -64,7 +64,7 @@ public class AiSystem extends IntervalSystem {
 
                             int dist2 = (g1.x-sourcePos.x) + (g1.y - sourcePos.y);
                             if(dist2 < 0) dist *= -1;
-                            if(dist2 < dist){
+                            if(dist2 <= dist){
                                 dist = dist2;
                                 target = t;
                             }
