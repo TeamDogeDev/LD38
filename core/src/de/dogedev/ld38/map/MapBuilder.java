@@ -169,6 +169,7 @@ public class MapBuilder {
 
                         Statics.ashley.addEntity(building);
                         buildingBuild = true;
+
                     }
                 }
             } while (!buildingBuild);

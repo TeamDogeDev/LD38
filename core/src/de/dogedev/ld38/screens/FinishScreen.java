@@ -38,52 +38,57 @@ public class FinishScreen implements Screen {
         stage = new Stage();
         batch = new SpriteBatch();
         music = Statics.asset.getMusic(Musics.VICTORY);//.play();
+        music.setVolume(Statics.settings.musicVolume);
 
         tex = new Texture(Gdx.files.internal("finishscreen.png"));
 
+        TextActor continueText = new TextActor("Press <Space> or <ESC> to restart", 1270, Align.left);
+        continueText.setPosition(10, 700);
+        continueText.setColor(Color.DARK_GRAY);
+        stage.addActor(continueText);
 
         TextActor text;
 
         text = new TextActor(firstLine, 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
-        text.setScale(5);
-        text.addAction(sequence(delay(0), moveTo(0, 550, 2),delay(2), moveBy(0, 800, 2)));
+        text.setColor(Color.BLACK);
+        text.setScale(3);
+        text.addAction(sequence(delay(0), moveTo(0,700, 2),delay(2), moveBy(0, 800, 2)));
         stage.addActor(text);
 
         text = new TextActor("Made for Ludum Dare 38 Jam", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
-        text.setScale(2);
-        text.addAction(sequence(delay(0), moveTo(0, 450, 2),delay(2), moveBy(0, 800, 2)));
+        text.setColor(Color.BLACK);
+        text.setScale(1);
+        text.addAction(sequence(delay(0), moveTo(0, 650, 2),delay(2), moveBy(0, 800, 2)));
         stage.addActor(text);
 
         text = new TextActor("By Elektropapst, Meisterfuu", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
-        text.setScale(2);
-        text.addAction(sequence(delay(0), moveTo(0, 350, 2),delay(2), moveBy(0, 800, 2)));
+        text.setColor(Color.BLACK);
+        text.setScale(2f);
+        text.addAction(sequence(delay(0), moveTo(0, 670, 2),delay(2), moveBy(0, 800, 2)));
         stage.addActor(text);
 
-        text = new TextActor("Made with LibGDX & Ashley", 1280, Align.center);
+        text = new TextActor("Made with LibGDX and Ashley", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
+        text.setColor(Color.BLACK);
         text.setScale(3);
-        text.addAction(sequence(delay(4), moveTo(0, 500, 2),delay(2), moveBy(0, 800, 2)));
+        text.addAction(sequence(delay(4), moveTo(0, 700, 2),delay(2), moveBy(0, 800, 2)));
         stage.addActor(text);
 
         text = new TextActor("Assets from Kenny.nl", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
+        text.setColor(Color.BLACK);
         text.setScale(2);
-        text.addAction(sequence(delay(8), moveTo(0, 500, 2),delay(2), moveBy(0, 800, 2)));
+        text.addAction(sequence(delay(8), moveTo(0, 700, 2),delay(2), moveBy(0, 800, 2)));
         stage.addActor(text);
 
         text = new TextActor("Music: www.bensound.com", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
+        text.setColor(Color.BLACK);
         text.setScale(2);
-        text.addAction(sequence(delay(12), moveTo(0, 500, 2),delay(2), moveBy(0, 800, 2)));
+        text.addAction(sequence(delay(12), moveTo(0, 700, 2),delay(2), moveBy(0, 800, 2)));
         stage.addActor(text);
 //
 //        text = new TextActor("Grass sound from duckduckpony (CC BY 3.0)", 1280, Align.center);
@@ -95,18 +100,19 @@ public class FinishScreen implements Screen {
 
         text = new TextActor("The End!", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
+        text.setColor(Color.BLACK);
         text.setScale(5);
-        text.addAction(sequence(delay(21), moveTo(0, 500, 2),delay(10), moveBy(0, 800, 2)));
+        text.addAction(sequence(delay(21), moveTo(0, 700, 2),delay(10), moveBy(0, 800, 2)));
         stage.addActor(text);
 
         text = new TextActor("TeamDogeDev", 1280, Align.center);
         text.setPosition(0, -300);
-        text.setColor(Color.WHITE);
+        text.setColor(Color.BLACK);
         text.setScale(5);
-        text.addAction(sequence(delay(35), moveTo(0, 500, 2)));
+        text.addAction(sequence(delay(35), moveTo(0, 700, 2)));
 
         stage.addActor(text);
+        text.setScale(1);
     }
 
     @Override
