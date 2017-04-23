@@ -13,10 +13,7 @@ import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
-import de.dogedev.ld38.ashley.components.GridComponent;
-import de.dogedev.ld38.ashley.components.PlayerComponent;
-import de.dogedev.ld38.ashley.components.TilePositionComponent;
-import de.dogedev.ld38.ashley.components.UnitComponent;
+import de.dogedev.ld38.ashley.components.*;
 import de.dogedev.ld38.assets.enums.BitmapFonts;
 
 /**
@@ -25,6 +22,7 @@ import de.dogedev.ld38.assets.enums.BitmapFonts;
 public class GridSystem extends EntitySystem implements Disposable {
 
     private ImmutableArray<Entity> entities;
+    private ImmutableArray<Entity> buildings;
 
     @Override
     public void addedToEngine(Engine engine) {
@@ -32,6 +30,10 @@ public class GridSystem extends EntitySystem implements Disposable {
                 Family.all(GridComponent.class,
                         TilePositionComponent.class,
                         UnitComponent.class).get());
+
+        buildings = engine.getEntitiesFor(
+                Family.all(BuildingComponent.class,
+                        TilePositionComponent.class).get());
     }
 
     private SpriteBatch batch = new SpriteBatch();
@@ -119,6 +121,12 @@ public class GridSystem extends EntitySystem implements Disposable {
                 int newUnits = --ComponentMappers.unit.get(entity).units;
                 if(newUnits <= 0) {
                     entity.remove(PlayerComponent.class);
+                    for(Entity b: buildings){
+                        TilePositionComponent bPos = ComponentMappers.tilePos.get(b);
+                        if(bPos.x == x && bPos.y == y) {
+                            b.remove(PlayerComponent.class);
+                        }
+                    }
                     if(PlayerComponent.PLAYER.A != player) gridChange = -1;
                 }
             }
@@ -127,6 +135,14 @@ public class GridSystem extends EntitySystem implements Disposable {
             if(PlayerComponent.PLAYER.A == player) gridChange = 1;
             newPlayerComponent.player = player;
             entity.add(newPlayerComponent);
+            for(Entity b: buildings){
+                TilePositionComponent bPos = ComponentMappers.tilePos.get(b);
+                if(bPos.x == x && bPos.y == y) {
+                    PlayerComponent buildingPlayer = ((PooledEngine) getEngine()).createComponent(PlayerComponent.class);
+                    buildingPlayer.player = player;
+                    b.add(buildingPlayer);
+                }
+            }
             ComponentMappers.unit.get(entity).units++;
         }
 
