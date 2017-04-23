@@ -5,7 +5,6 @@ import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.MathUtils;
 import com.github.czyzby.noise4j.map.Grid;
@@ -18,9 +17,6 @@ import de.dogedev.ld38.ashley.components.BuildingComponent;
 import de.dogedev.ld38.ashley.components.DirtyComponent;
 import de.dogedev.ld38.ashley.components.RenderComponent;
 import de.dogedev.ld38.ashley.components.TilePositionComponent;
-
-import java.awt.*;
-import java.awt.image.renderable.RenderableImage;
 
 import static de.dogedev.ld38.Statics.settings;
 
@@ -151,14 +147,18 @@ public class MapBuilder {
                         switch (tile.getBasicType()) {
                             case DIRT:
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_HANGAR);
+                                buildingComponent.movementSpeed = 15;
                                 break;
                             case SAND:
+                                buildingComponent.spawnate = 0.8f;
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_BEIGEBUILDING);
                                 break;
                             case GRASS:
+                                buildingComponent.maxPopulation = 2;
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_WINDMILL_COMPLETE);
                                 break;
                             case STONE:
+                                buildingComponent.tickrate = 0.8f;
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_SKYSCRAPER_GLASS);
                                 break;
                         }
