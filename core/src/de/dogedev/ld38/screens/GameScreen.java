@@ -66,6 +66,8 @@ public class GameScreen implements Screen {
         ashley.addSystem(new TickSystem());
         ashley.addSystem(new OverlayRenderSystem(camera));
         ashley.addSystem(new GridSystem(camera));
+        ashley.addSystem(new FinishSystem());
+        ashley.addSystem(new LegendUISystem());
 
 
         dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
@@ -83,6 +85,7 @@ public class GameScreen implements Screen {
 
         SpawnComponent spawnComponent = ashley.createComponent(SpawnComponent.class);
         UnitComponent unitComponent = ashley.createComponent(UnitComponent.class);
+        unitComponent.units = Statics.settings.maxPeeps;
 
         PlayerComponent playerComponent = ashley.createComponent(PlayerComponent.class);
         playerComponent.player = player;

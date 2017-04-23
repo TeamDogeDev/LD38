@@ -147,18 +147,18 @@ public class MapBuilder {
                         switch (tile.getBasicType()) {
                             case DIRT:
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_HANGAR);
-                                buildingComponent.movementSpeed = 20;
+                                buildingComponent.movementSpeed = Statics.settings.movementSpeed;
                                 break;
                             case SAND:
-                                buildingComponent.spawnate = 1f;
+                                buildingComponent.spawnate = Statics.settings.spawnrate;
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_BEIGEBUILDING);
                                 break;
                             case GRASS:
-                                buildingComponent.maxPopulation = 2;
+                                buildingComponent.maxPopulation = Statics.settings.maxPopulation;
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_WINDMILL_COMPLETE);
                                 break;
                             case STONE:
-                                buildingComponent.tickrate = 0.5f;
+                                buildingComponent.tickrate = Statics.settings.tickrate;
                                 renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_SKYSCRAPER_GLASS);
                                 break;
                         }
