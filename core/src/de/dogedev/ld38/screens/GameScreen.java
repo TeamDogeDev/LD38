@@ -13,7 +13,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.components.*;
@@ -54,7 +56,7 @@ public class GameScreen implements Screen {
         mapRenderSystem = new MapRenderSystem(camera, map);
         renderSystem = new RenderSystem(camera);
 
-        ashley.addSystem(new InputSystem(camera));
+        ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
         ashley.addSystem(mapRenderSystem);
@@ -92,6 +94,35 @@ public class GameScreen implements Screen {
         spawnEntity.add(spawnComponent);
 
         ashley.addEntity(spawnEntity);
+    }
+
+    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, float speed) {
+        Entity entity = Statics.ashley.createEntity();
+        RenderComponent rc = Statics.ashley.createComponent(RenderComponent.class);
+        rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);
+        rc.angle = 90;
+        entity.add(rc);
+
+        PositionComponent tpc = Statics.ashley.createComponent(PositionComponent.class);
+        // w/4 & h/4
+        int spawnOffsetX = MathUtils.random(-Statics.settings.tileWidth>>2, Statics.settings.tileWidth>>2);
+        int spawnOffsetY = MathUtils.random(-Statics.settings.tileHeight>>2, Statics.settings.tileHeight>>2);
+        tpc.x = CoordinateMapper.getTilePosX((int) spawnTile.x , (int) spawnTile.y) + spawnOffsetX;
+        tpc.y = CoordinateMapper.getTilePosY((int) spawnTile.y ) + spawnOffsetY;
+
+        entity.add(tpc);
+
+
+        MovementComponent mvc = Statics.ashley.createComponent(MovementComponent.class);
+        Vector2 tilePos = CoordinateMapper.getTilePos((int) targetTile.x, (int) targetTile.y);
+        mvc.x = (int) tilePos.x;
+        mvc.y = (int) tilePos.y;
+        mvc.speed = speed;
+        entity.add(mvc);
+
+        entity.add(Statics.ashley.createComponent(LookComponent.class));
+
+        Statics.ashley.addEntity(entity);
     }
 
     private void createGridEntites(int tilesX, int tilesY) {
@@ -165,9 +196,8 @@ public class GameScreen implements Screen {
             mapRenderSystem.setMap(mapBuilder.buildMap(settings.tilesX, settings.tilesY));
         }
 
-        // remove entities
+        // remove dirty entities
         if(dirtyEntities.size() > 0) {
-            System.out.println("Remove " + dirtyEntities.size());
             for (Entity entity : dirtyEntities) {
                 ashley.removeEntity(entity);
             }
