@@ -271,8 +271,6 @@ public class GameScreen implements Screen {
             }
         }
 
-        System.out.println(camera.position);
-
     }
 
     @Override
