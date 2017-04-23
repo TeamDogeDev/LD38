@@ -235,6 +235,9 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
+        camera.position.x = 544.0f;
+        camera.position.y = 388.0f;
+        camera.update();
 
         music.play();
     }
@@ -267,6 +270,9 @@ public class GameScreen implements Screen {
                 ashley.removeEntity(entity);
             }
         }
+
+        System.out.println(camera.position);
+
     }
 
     @Override
