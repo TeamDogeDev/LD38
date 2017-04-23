@@ -8,10 +8,15 @@ import com.badlogic.gdx.utils.Pool;
  */
 public class SpawnComponent implements Component, Pool.Poolable {
 
-    public int maxUnits = 10;
+    public float spawnTimer = 0;
+    public float maxPopulation = 0;
+    public float movementSpeed = 0;
+
 
     @Override
     public void reset() {
-        maxUnits = 10;
+        spawnTimer = 10;
+        maxPopulation = 0;
+        movementSpeed = 0;
     }
 }
