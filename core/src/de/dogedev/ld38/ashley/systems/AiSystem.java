@@ -48,7 +48,8 @@ public class AiSystem extends IntervalSystem {
 //            }
 //        }
 //        if (spawn != null) {
-            for (Entity entity : fields) {
+            for (int i = 0; i < fields.size(); i++) {
+                Entity entity = fields.get(i);
                 if (ComponentMappers.player.get(entity).player.equals(player)) {
                     TilePositionComponent sourcePos = ComponentMappers.tilePos.get(entity);
                     //Send?
@@ -72,7 +73,7 @@ public class AiSystem extends IntervalSystem {
                     TilePositionComponent targetPos = ComponentMappers.tilePos.get(target);
                     int targetTileX = sourcePos.x;
                     int targetTileY = sourcePos.y;
-                    if(targetTileX > targetPos.x) {
+                    if(targetTileX > targetPos.x && !(targetTileY < targetPos.y)) {
                         targetTileX -= 1;
                     } else if(targetTileX < targetPos.x) {
                         targetTileX += 1;

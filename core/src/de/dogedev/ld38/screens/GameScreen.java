@@ -1,7 +1,6 @@
 package de.dogedev.ld38.screens;
 
 import com.badlogic.ashley.core.Entity;
-import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
@@ -59,6 +58,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
+        ashley.addSystem(new AiSystem(this));
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));
@@ -68,20 +68,24 @@ public class GameScreen implements Screen {
 
         dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
 
-        createSpawnEntity(0, Statics.settings.tilesY-1);
-        createSpawnEntity(Statics.settings.tilesX-1, 0);
+        createSpawnEntity(0, Statics.settings.tilesY-1, PlayerComponent.PLAYER.A);
+        createSpawnEntity(Statics.settings.tilesX-1, 0, PlayerComponent.PLAYER.B);
         createGridEntites(Statics.settings.tilesX, Statics.settings.tilesY);
 
 
     }
 
-    private void createSpawnEntity(int tileX, int tileY) {
+    private void createSpawnEntity(int tileX, int tileY, PlayerComponent.PLAYER player) {
         Entity spawnEntity = ashley.createEntity();
         RenderComponent renderComponent = ashley.createComponent(RenderComponent.class);
         renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_CASTLE_OPEN);
 
         SpawnComponent spawnComponent = ashley.createComponent(SpawnComponent.class);
         UnitComponent unitComponent = ashley.createComponent(UnitComponent.class);
+
+        PlayerComponent playerComponent = ashley.createComponent(PlayerComponent.class);
+        playerComponent.player = player;
+        spawnEntity.add(playerComponent);
 
         TilePositionComponent tilePositionComponent = ashley.createComponent(TilePositionComponent.class);
 
