@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Statics;
+import de.dogedev.ld38.ashley.components.PlayerComponent;
 import de.dogedev.ld38.ashley.systems.GridSystem;
 import de.dogedev.ld38.ashley.systems.OverlayRenderSystem;
 import de.dogedev.ld38.screens.GameScreen;
@@ -43,7 +44,7 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
                     Vector2 arrowTilePosition = Statics.ashley.getSystem(OverlayRenderSystem.class).getArrowTilePosition();
 
 //                    gameScreen.spawnWarrior(new Vector2(0, Statics.settings.tilesY-1), tileCoordinates, 40);
-                    gameScreen.spawnWarrior(arrowTilePosition, tileCoordinates, 40);
+                    gameScreen.spawnWarrior(arrowTilePosition, tileCoordinates, PlayerComponent.PLAYER.A, 40);
                 } else {
                 }
             }

@@ -105,13 +105,13 @@ public class GameScreen implements Screen {
         ashley.addEntity(spawnEntity);
     }
 
-    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, float speed, int num) {
-        for (int i = 0; i < num; i++) {
-            spawnWarrior(spawnTile, targetTile, speed);
-        }
-    }
+//    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, PlayerComponent.PLAYER player, float speed, int num) {
+//        for (int i = 0; i < num; i++) {
+//            spawnWarrior(spawnTile, targetTile, speed);
+//        }
+//    }
 
-    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, float speed) {
+    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, PlayerComponent.PLAYER player, float speed) {
 
         ImmutableArray<Entity> entitiesFor = Statics.ashley.getEntitiesFor(
                 Family.all(TilePositionComponent.class, UnitComponent.class).get());
@@ -140,6 +140,9 @@ public class GameScreen implements Screen {
 
                     warrior.add(tpc);
 
+                    PeepComponent peepComponent = Statics.ashley.createComponent(PeepComponent.class);
+                    peepComponent.player = player;
+                    warrior.add(peepComponent);
 
                     MovementComponent mvc = Statics.ashley.createComponent(MovementComponent.class);
                     Vector2 tilePos = CoordinateMapper.getTilePos((int) targetTile.x, (int) targetTile.y);

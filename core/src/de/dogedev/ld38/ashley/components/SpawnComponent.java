@@ -14,6 +14,4 @@ public class SpawnComponent implements Component, Pool.Poolable {
     public void reset() {
         maxUnits = 10;
     }
-
-    // spawn method ??
 }

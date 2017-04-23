@@ -1,9 +1,6 @@
 package de.dogedev.ld38.ashley.systems;
 
-import com.badlogic.ashley.core.Engine;
-import com.badlogic.ashley.core.Entity;
-import com.badlogic.ashley.core.EntitySystem;
-import com.badlogic.ashley.core.Family;
+import com.badlogic.ashley.core.*;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
@@ -17,6 +14,7 @@ import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.GridComponent;
+import de.dogedev.ld38.ashley.components.PlayerComponent;
 import de.dogedev.ld38.ashley.components.TilePositionComponent;
 import de.dogedev.ld38.ashley.components.UnitComponent;
 import de.dogedev.ld38.assets.enums.BitmapFonts;
@@ -56,7 +54,13 @@ public class GridSystem extends EntitySystem implements Disposable {
             GridComponent grid = ComponentMappers.grid.get(entity);
             float tileScreenX = CoordinateMapper.getTilePosX(tpc.x, tpc.y) - (Statics.settings.tileWidth >> 1);
             float tileScreenY = CoordinateMapper.getTilePosY(tpc.y) + (Statics.settings.tileHeight >> 2);
-            if( units.units > 0) {
+            if(units.units > 0 && ComponentMappers.player.has(entity)) {
+                PlayerComponent playerComponent = ComponentMappers.player.get(entity);
+                if(playerComponent.player == PlayerComponent.PLAYER.A) {
+                    font.setColor(Color.BLUE);
+                } else {
+                    font.setColor(Color.RED);
+                }
                 font.draw(batch, "#" + units.units,
                         tileScreenX, tileScreenY,
                         Statics.settings.tileWidth, Align.center, false);
@@ -96,7 +100,7 @@ public class GridSystem extends EntitySystem implements Disposable {
         return false;
     }
 
-    public void incAt(int x, int y) {
+    public void incAt(int x, int y, PlayerComponent.PLAYER player) {
         Entity entity;
         try {
             entity = getEntityAt(x, y);
@@ -104,8 +108,24 @@ public class GridSystem extends EntitySystem implements Disposable {
             return;
         }
 
-        int newUnits = ++ComponentMappers.unit.get(entity).units;
-        // testing
+
+        if(ComponentMappers.player.has(entity)) {
+            PlayerComponent playerComponent = ComponentMappers.player.get(entity);
+            if(playerComponent.player == player) {
+                // player's tile
+                ComponentMappers.unit.get(entity).units++;
+            } else {
+                int newUnits = --ComponentMappers.unit.get(entity).units;
+                if(newUnits <= 0) entity.remove(PlayerComponent.class);
+            }
+        } else {
+            PlayerComponent newPlayerComponent = ((PooledEngine) getEngine()).createComponent(PlayerComponent.class);
+            newPlayerComponent.player = player;
+            entity.add(newPlayerComponent);
+            ComponentMappers.unit.get(entity).units++;
+        }
+
+//        int newUnits = ++ComponentMappers.unit.get(entity).units;
 
         if(y%2 == 0) { // red -> right
             for (int xOffset = 0; xOffset <= 1; xOffset++) {
@@ -138,38 +158,6 @@ public class GridSystem extends EntitySystem implements Disposable {
             } catch (EntityNotFoundException e) {
             }
         }
-//
-//        try {
-//            Entity entityOff = getEntityAt(x, y - 1);
-//            ComponentMappers.grid.get(entityOff).clickable = true;
-//        } catch (EntityNotFoundException e) {
-//        }
-//        try {
-//            Entity entityOff = getEntityAt(x , y -1);
-//            ComponentMappers.grid.get(entityOff).clickable = true;
-//        } catch (EntityNotFoundException e) {
-//        }
-//        try {
-//            Entity entityOff = getEntityAt(x+1 , y );
-//            ComponentMappers.grid.get(entityOff).clickable = true;
-//        } catch (EntityNotFoundException e) {
-//        }
-//        try {
-//            Entity entityOff = getEntityAt(x+1 , y+1);
-//            ComponentMappers.grid.get(entityOff).clickable = true;
-//        } catch (EntityNotFoundException e) {
-//        }
-//        try {
-//            Entity entityOff = getEntityAt(x , y+1);
-//            ComponentMappers.grid.get(entityOff).clickable = true;
-//        } catch (EntityNotFoundException e) {
-//        }
-//        try {
-//            Entity entityOff = getEntityAt(x-1 , y);
-//            ComponentMappers.grid.get(entityOff).clickable = true;
-//        } catch (EntityNotFoundException e) {
-//        }
-
 
     }
 

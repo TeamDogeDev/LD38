@@ -17,5 +17,6 @@ public class ComponentMappers {
     public static final ComponentMapper<UnitComponent> unit = ComponentMapper.getFor(UnitComponent.class);
     public static final ComponentMapper<GridComponent> grid = ComponentMapper.getFor(GridComponent.class);
     public static final ComponentMapper<PlayerComponent> player = ComponentMapper.getFor(PlayerComponent.class);
+    public static final ComponentMapper<PeepComponent> peep = ComponentMapper.getFor(PeepComponent.class);
 
 }

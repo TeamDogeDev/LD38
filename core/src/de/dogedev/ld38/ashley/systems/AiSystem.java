@@ -70,21 +70,23 @@ public class AiSystem extends IntervalSystem {
                             }
                         }
                     }
-                    TilePositionComponent targetPos = ComponentMappers.tilePos.get(target);
-                    int targetTileX = sourcePos.x;
-                    int targetTileY = sourcePos.y;
-                    if(targetTileX > targetPos.x && !(targetTileY < targetPos.y)) {
-                        targetTileX -= 1;
-                    } else if(targetTileX < targetPos.x) {
-                        targetTileX += 1;
-                    }
-                    if(targetTileY > targetPos.y) {
-                        targetTileY -= 1;
-                    } else if(targetTileY < targetPos.y) {
-                        targetTileY += 1;
-                    }
+                    if(target != null) {
+                        TilePositionComponent targetPos = ComponentMappers.tilePos.get(target);
+                        int targetTileX = sourcePos.x;
+                        int targetTileY = sourcePos.y;
+                        if (targetTileX > targetPos.x && !(targetTileY < targetPos.y)) {
+                            targetTileX -= 1;
+                        } else if (targetTileX < targetPos.x) {
+                            targetTileX += 1;
+                        }
+                        if (targetTileY > targetPos.y) {
+                            targetTileY -= 1;
+                        } else if (targetTileY < targetPos.y) {
+                            targetTileY += 1;
+                        }
 
-                    gameScreen.spawnWarrior(new Vector2(sourcePos.x, sourcePos.y), new Vector2(targetTileX, targetTileY), 60);
+                        gameScreen.spawnWarrior(new Vector2(sourcePos.x, sourcePos.y), new Vector2(targetTileX, targetTileY), PlayerComponent.PLAYER.B, 60);
+                    }
                 }
             }
 //        }

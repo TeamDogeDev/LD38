@@ -21,7 +21,8 @@ public class MovementSystem extends EntitySystem  {
 
     @Override
     public void addedToEngine (Engine engine) {
-        entities = engine.getEntitiesFor(Family.all(PositionComponent.class, MovementComponent.class).get());
+        entities = engine.getEntitiesFor(
+                Family.all(PositionComponent.class, MovementComponent.class, PeepComponent.class).get());
     }
 
     @Override
@@ -37,6 +38,7 @@ public class MovementSystem extends EntitySystem  {
         for(Entity e: entities){
             MovementComponent mvc = ComponentMappers.movement.get(e);
             PositionComponent pvc = ComponentMappers.position.get(e);
+            PeepComponent peep = ComponentMappers.peep.get(e);
             current.set(pvc.x, pvc.y);
             target.set(mvc.x, mvc.y);
             target.sub(current);
@@ -47,7 +49,7 @@ public class MovementSystem extends EntitySystem  {
                 e.remove(MovementComponent.class);
                 Vector2 tilePos = CoordinateMapper.getTile((int) pvc.x, (int) pvc.y);
                 getEngine().getSystem(GridSystem.class).incAt(
-                        (int) tilePos.x, (int) tilePos.y
+                        (int) tilePos.x, (int) tilePos.y, peep.player
                 );
                 e.add(new DirtyComponent());
                 continue;
