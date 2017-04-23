@@ -20,6 +20,7 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
     private GameScreen gameScreen;
     private OrthographicCamera camera;
     private Vector3 mouse = new Vector3();
+
     public GameDragProcessor(GameScreen gameScreen, OrthographicCamera camera) {
         this.gameScreen = gameScreen;
         this.camera = camera;
@@ -30,6 +31,25 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
         camera.position.x -= (deltaX*camera.zoom);
         camera.position.y += (deltaY*camera.zoom);
         return super.pan(x, y, deltaX, deltaY);
+    }
+
+    @Override
+    public boolean longPress(float x, float y) {
+        System.out.println("LONGPRESS");
+        mouse.set(x, y, 0);
+        Vector3 unproject = camera.unproject(mouse);
+        Vector2 tileCoordinates = CoordinateMapper.getTile((int) unproject.x, (int) unproject.y);
+
+        if(tileCoordinates != null) {
+            if(Statics.ashley.getSystem(GridSystem.class).isClickable((int) tileCoordinates.x, (int) tileCoordinates.y, Input.Buttons.LEFT)) {
+                Vector2 arrowTilePosition = Statics.ashley.getSystem(OverlayRenderSystem.class).getArrowTilePosition();
+
+//                    gameScreen.spawnWarrior(new Vector2(0, Statics.settings.tilesY-1), tileCoordinates, 40);
+                gameScreen.spawnAllWarriors(arrowTilePosition, tileCoordinates, PlayerComponent.PLAYER.A, 40);
+            } else {
+            }
+        }
+        return super.longPress(x, y);
     }
 
     @Override

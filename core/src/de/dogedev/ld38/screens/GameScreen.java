@@ -105,11 +105,28 @@ public class GameScreen implements Screen {
         ashley.addEntity(spawnEntity);
     }
 
-//    public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, PlayerComponent.PLAYER player, float speed, int num) {
-//        for (int i = 0; i < num; i++) {
-//            spawnWarrior(spawnTile, targetTile, speed);
-//        }
-//    }
+    public void spawnAllWarriors(Vector2 spawnTile, Vector2 targetTile, PlayerComponent.PLAYER player, int speed) {
+        ImmutableArray<Entity> entitiesFor = Statics.ashley.getEntitiesFor(
+                Family.all(TilePositionComponent.class, UnitComponent.class).get());
+
+        TilePositionComponent tilePositionComponent;
+        UnitComponent uc = null;
+
+        for(Entity entity : entitiesFor) {
+            tilePositionComponent = ComponentMappers.tilePos.get(entity);
+            if (tilePositionComponent.x == spawnTile.x && tilePositionComponent.y == spawnTile.y) {
+                uc = ComponentMappers.unit.get(entity);
+                break;
+            }
+        }
+
+        if(uc != null) {
+            for (int unit = 0; unit < uc.units; unit++) {
+                spawnWarrior(spawnTile, targetTile, player, speed);
+            }
+        }
+    }
+
 
     public void spawnWarrior(Vector2 spawnTile, Vector2 targetTile, PlayerComponent.PLAYER player, float speed) {
 
@@ -231,6 +248,7 @@ public class GameScreen implements Screen {
             cloudBatch.draw(clouds, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
             cloudBatch.end();
         }
+
         if (Gdx.input.isKeyJustPressed(Input.Keys.N)) {
             mapRenderSystem.setMap(mapBuilder.buildMap(settings.tilesX, settings.tilesY));
         }
@@ -271,4 +289,5 @@ public class GameScreen implements Screen {
     public void dispose() {
         cloudBatch.dispose();
     }
+
 }
