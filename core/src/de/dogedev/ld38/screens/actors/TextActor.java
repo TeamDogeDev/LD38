@@ -25,7 +25,7 @@ public class TextActor extends Actor {
         this.text = text;
         this.wrap = wrap;
         font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1, true);
-        this.setColor(1,1,1,1);
+        this.setColor(0,0,0,1);
         this.width = width;
         this.align = align;
     }
