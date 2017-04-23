@@ -71,7 +71,6 @@ public class AiSystem extends IntervalSystem {
         Vector2 tmpVector2 = new Vector2();
         for (int i = 0; i < fields.size(); i++) {
             // smaller = harder
-
             if (MathUtils.randomBoolean(skipChance)) continue;
             Entity entity = fields.get(i);
             if (ComponentMappers.player.get(entity).player.equals(player)) {

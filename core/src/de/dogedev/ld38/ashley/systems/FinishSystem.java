@@ -5,9 +5,12 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IntervalSystem;
 import com.badlogic.ashley.utils.ImmutableArray;
+import com.badlogic.gdx.Game;
+import de.dogedev.ld38.LDGame;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.PlayerComponent;
+import de.dogedev.ld38.screens.FinishScreen;
 
 /**
  * Created by elektropapst on 23.04.2017.
@@ -46,6 +49,7 @@ public class FinishSystem extends IntervalSystem {
         } else if(player > 0 && ai == 0) {
             // PlayerWins
             System.out.println("PLAYER WINS");
+            LDGame.game.setScreen(new FinishScreen());
         }
 
     }

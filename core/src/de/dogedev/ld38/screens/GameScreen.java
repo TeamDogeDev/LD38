@@ -6,6 +6,7 @@ import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -20,6 +21,7 @@ import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.*;
 import de.dogedev.ld38.ashley.systems.*;
+import de.dogedev.ld38.assets.enums.Musics;
 import de.dogedev.ld38.assets.enums.ShaderPrograms;
 import de.dogedev.ld38.assets.enums.Textures;
 import de.dogedev.ld38.map.MapBuilder;
@@ -41,8 +43,12 @@ public class GameScreen implements Screen {
     private SpriteBatch cloudBatch;
     private Texture clouds;
     private ImmutableArray<Entity> dirtyEntities;
+    private Music music;
 
     public GameScreen() {
+        music = Statics.asset.getMusic(Musics.GAME_MUSIC);
+        music.setLooping(true);
+
         cloudBatch = new SpriteBatch();
         camera = new OrthographicCamera();
         camera.zoom = 2f;
@@ -59,7 +65,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
-        ashley.addSystem(new AiSystem(this));
+//        ashley.addSystem(new AiSystem(this));
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
         ashley.addSystem(new DebugUISystem(camera));
@@ -226,6 +232,7 @@ public class GameScreen implements Screen {
     @Override
     public void show() {
 
+        music.play();
     }
 
     private Vector2 windVelocity = new Vector2(0.0005f, 0f);
@@ -275,22 +282,24 @@ public class GameScreen implements Screen {
 
     @Override
     public void pause() {
-
+        music.pause();
     }
 
     @Override
     public void resume() {
-
+        music.play();
     }
 
     @Override
     public void hide() {
-
+        music.pause();
     }
 
     @Override
     public void dispose() {
         cloudBatch.dispose();
+        music.stop();
+        music.dispose();
     }
 
 }

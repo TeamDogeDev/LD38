@@ -22,7 +22,7 @@ public class AssetLoader implements Disposable{
 
     public AssetLoader() {
         loadTextures();
-//        loadMusics();
+        loadMusics();
 //        loadSounds();
         loadBitmapFonts();
     }
@@ -82,6 +82,11 @@ public class AssetLoader implements Disposable{
         return manager.get(font.name, BitmapFont.class);
     }
 
+    public BitmapFont getBitmapFont(BitmapFonts font, boolean markupEnabled) {
+        BitmapFont bitmapFont = manager.get(font.name, BitmapFont.class);
+        bitmapFont.getData().markupEnabled = markupEnabled;
+        return bitmapFont;
+    }
     public Texture getTexture(Textures texture) {
         return manager.get(texture.name, Texture.class);
     }
