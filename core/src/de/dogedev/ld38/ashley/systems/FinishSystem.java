@@ -44,12 +44,10 @@ public class FinishSystem extends IntervalSystem {
         }
         if(player == 0 && ai > 0) {
             // AI WINS
-            System.out.println("AI WINS");
-            LDGame.game.setScreen(new FinishScreen("You lose!"));
+            LDGame.game.setScreen(new FinishScreen("You lost!"));
         } else if(player > 0 && ai == 0) {
             // PlayerWins
-            System.out.println("PLAYER WINS");
-            LDGame.game.setScreen(new FinishScreen("You win!"));
+            LDGame.game.setScreen(new FinishScreen("You won!"));
         }
 
     }

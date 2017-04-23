@@ -31,7 +31,8 @@ public class LoadingScreen implements Screen {
         if (Statics.asset.load()) {
             sumDelta +=delta;
             if(sumDelta >= 1) {
-                LDGame.game.setScreen(new GameScreen());
+                LDGame.game.setScreen( new GameScreen());
+//                LDGame.game.setScreen( new FinishScreen("You won"));
             }
         }
     }
