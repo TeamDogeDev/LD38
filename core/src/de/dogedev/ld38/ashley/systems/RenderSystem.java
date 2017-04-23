@@ -2,17 +2,14 @@ package de.dogedev.ld38.ashley.systems;
 
 import com.badlogic.ashley.core.*;
 import com.badlogic.ashley.utils.ImmutableArray;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import de.dogedev.ld38.CoordinateMapper;
-import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.*;
@@ -128,8 +125,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
             Vector2 tilePos = CoordinateMapper.getTilePos(positionComponent.x, positionComponent.y);
 
             if(ComponentMappers.look.has(e)){
-                int targetX = Gdx.input.getX(), targetY = Gdx.input.getY();
-                drawRotated(renderComponent.region, tilePos.x-renderComponent.region.getRegionWidth()/2, tilePos.y-renderComponent.region.getRegionHeight()/2, targetX, targetY, renderComponent.angle);
+                LookComponent lookComponent = ComponentMappers.look.get(e);
+                drawRotated(renderComponent.region, tilePos.x-renderComponent.region.getRegionWidth()/2, tilePos.y-renderComponent.region.getRegionHeight()/2, (int)lookComponent.x, (int)lookComponent.y, renderComponent.angle);
             } else {
                 draw(renderComponent.region, tilePos.x-renderComponent.region.getRegionWidth()/2, tilePos.y-renderComponent.region.getRegionHeight()/2);
             }
@@ -138,8 +135,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
             PositionComponent positionComponent = ComponentMappers.position.get(e);
 
             if(ComponentMappers.look.has(e)){
-                int targetX = Gdx.input.getX(), targetY = Gdx.input.getY();
-                drawRotated(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2, targetX, targetY, renderComponent.angle);
+                LookComponent lookComponent = ComponentMappers.look.get(e);
+                drawRotated(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2, (int)lookComponent.x, (int)lookComponent.y, renderComponent.angle);
             } else {
                 draw(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2);
             }
@@ -160,9 +157,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
     }
 
     private void drawRotated(TextureRegion region, float x, float y, int targetX, int targetY, int angleOffset) {
-        Vector3 unproject = camera.unproject(Vector3.X.set(targetX, targetY, 0));
         Vector2.X.set(x, y);
-        Vector2.Y.set(unproject.x, unproject.y);
+        Vector2.Y.set(targetX, targetY);
         float angle = Vector2.Y.sub(Vector2.X).angle() - 90 + angleOffset;
         batch.draw(region.getTexture(), x, y, region.getRegionWidth()/2, region.getRegionHeight()/2, region.getRegionWidth(), region.getRegionHeight(), 1, 1, angle, region.getRegionX(), region.getRegionY(), region.getRegionWidth(), region.getRegionHeight(), false, false);
     }
