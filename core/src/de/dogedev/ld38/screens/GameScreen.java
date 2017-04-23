@@ -47,6 +47,7 @@ public class GameScreen implements Screen {
 
     public GameScreen() {
         music = Statics.asset.getMusic(Musics.GAME_MUSIC);
+        music.setVolume(Statics.settings.musicVolume);
         music.setLooping(true);
 
         cloudBatch = new SpriteBatch();

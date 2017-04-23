@@ -26,9 +26,13 @@ public class LoadingScreen implements Screen {
         Statics.initCat();
     }
 
+    float sumDelta = 0;
     private void update(float delta) {
         if (Statics.asset.load()) {
-            LDGame.game.setScreen(new GameScreen());
+            sumDelta +=delta;
+            if(sumDelta >= 1) {
+                LDGame.game.setScreen(new GameScreen());
+            }
         }
     }
 
