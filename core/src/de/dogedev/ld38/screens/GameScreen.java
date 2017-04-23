@@ -66,10 +66,10 @@ public class GameScreen implements Screen {
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
-//        ashley.addSystem(new AiSystem(this));
+        ashley.addSystem(new AiSystem(this));
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
-        ashley.addSystem(new DebugUISystem(camera));
+//        ashley.addSystem(new DebugUISystem(camera));
         ashley.addSystem(new TickSystem());
         ashley.addSystem(new OverlayRenderSystem(camera));
         ashley.addSystem(new GridSystem(camera));
@@ -254,15 +254,9 @@ public class GameScreen implements Screen {
 
         cloudBatch.setBlendFunction(GL20.GL_DST_COLOR, GL20.GL_ONE_MINUS_SRC_ALPHA);
 
-        if (camera.zoom == 1) {
-            cloudBatch.begin();
-            cloudBatch.draw(clouds, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-            cloudBatch.end();
-        }
-
-        if (Gdx.input.isKeyJustPressed(Input.Keys.N)) {
-            mapRenderSystem.setMap(mapBuilder.buildMap(settings.tilesX, settings.tilesY));
-        }
+        cloudBatch.begin();
+        cloudBatch.draw(clouds, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        cloudBatch.end();
 
         // remove dirty entities
         if (dirtyEntities.size() > 0) {

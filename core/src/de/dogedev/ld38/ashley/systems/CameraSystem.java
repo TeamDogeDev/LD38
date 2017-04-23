@@ -39,6 +39,8 @@ public class CameraSystem extends EntitySystem  {
         camera.position.y = MathUtils.round(camera.position.y);
         camera.position.x = MathUtils.clamp(camera.position.x, 0, maxCameraX);
         camera.position.y = MathUtils.clamp(camera.position.y, 0, maxCameraY);
+
+        camera.zoom = MathUtils.clamp(camera.zoom, .5f, 2f);
         camera.update();
     }
 
