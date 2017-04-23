@@ -62,7 +62,9 @@ public class AiSystem extends IntervalSystem {
                         if (!ComponentMappers.player.get(t).player.equals(player)) {
                             TilePositionComponent g1 = ComponentMappers.tilePos.get(t);
 
-                            int dist2 = (g1.x-sourcePos.x) + (g1.y - sourcePos.y);
+                            Vector2.X.set(g1.x, g1.y);
+                            Vector2.Y.set(sourcePos.x, sourcePos.y);
+                            int dist2 = (int) Vector2.X.dst(Vector2.Y);
                             if(dist2 < 0) dist *= -1;
                             if(dist2 <= dist){
                                 dist = dist2;
