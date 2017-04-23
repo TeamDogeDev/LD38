@@ -2,6 +2,7 @@ package de.dogedev.ld38.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -9,6 +10,8 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Align;
+import de.dogedev.ld38.Statics;
+import de.dogedev.ld38.assets.enums.Musics;
 import de.dogedev.ld38.screens.actors.TextActor;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
@@ -21,6 +24,8 @@ public class FinishScreen implements Screen {
     private Texture tex;
     private Stage stage;
     private TextActor text;
+    private Music music;
+
     public FinishScreen() {
         init();
     }
@@ -28,6 +33,8 @@ public class FinishScreen implements Screen {
     private void init() {
         stage = new Stage();
         batch = new SpriteBatch();
+        music = Statics.asset.getMusic(Musics.VICTORY);//.play();
+
         tex = new Texture(Gdx.files.internal("finishscreen.png"));
 
 
@@ -99,6 +106,8 @@ public class FinishScreen implements Screen {
 
     @Override
     public void show() {
+        music.stop();
+        music.play();
     }
 
     @Override
@@ -122,17 +131,21 @@ public class FinishScreen implements Screen {
 
     @Override
     public void pause() {
+        music.pause();
     }
 
     @Override
     public void resume() {
+        music.play();
     }
 
     @Override
     public void hide() {
+        music.pause();
     }
 
     @Override
     public void dispose() {
+        music.stop();
     }
 }

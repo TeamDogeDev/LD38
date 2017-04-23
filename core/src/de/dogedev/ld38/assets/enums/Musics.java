@@ -5,7 +5,8 @@ package de.dogedev.ld38.assets.enums;
  */
 public enum Musics {
 
-    GAME_MUSIC("music/bensound-instinct.mp3");
+    GAME_MUSIC("music/bensound-instinct.mp3"),
+    VICTORY("music/victory.mp3");
 
     public String name;
 
