@@ -5,6 +5,7 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IntervalSystem;
 import com.badlogic.ashley.utils.ImmutableArray;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.PlayerComponent;
@@ -49,6 +50,7 @@ public class AiSystem extends IntervalSystem {
 //        }
 //        if (spawn != null) {
             for (int i = 0; i < fields.size(); i++) {
+                if(MathUtils.randomBoolean(.5f)) continue;
                 Entity entity = fields.get(i);
                 if (ComponentMappers.player.get(entity).player.equals(player)) {
                     TilePositionComponent sourcePos = ComponentMappers.tilePos.get(entity);
