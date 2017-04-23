@@ -89,7 +89,7 @@ public class GridSystem extends EntitySystem implements Disposable {
                 return gridComponent.clickable;
             } else if(button == Input.Buttons.RIGHT) {
                 UnitComponent unitComponent= ComponentMappers.unit.get(entity);
-                return unitComponent.units > 0;
+                return unitComponent.units > Statics.settings.minPeeps;
             }
         } catch (EntityNotFoundException e) {
         }

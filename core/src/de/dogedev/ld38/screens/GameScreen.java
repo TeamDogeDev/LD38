@@ -123,7 +123,7 @@ public class GameScreen implements Screen {
             tilePositionComponent = ComponentMappers.tilePos.get(entity);
             if(tilePositionComponent.x == spawnTile.x && tilePositionComponent.y == spawnTile.y) {
                 uc = ComponentMappers.unit.get(entity);
-                if(uc.units > 0) {
+                if(uc.units > Statics.settings.minPeeps) {
                     uc.units--;
                     Entity warrior = Statics.ashley.createEntity();
                     RenderComponent rc = Statics.ashley.createComponent(RenderComponent.class);
