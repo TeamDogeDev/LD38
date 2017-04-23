@@ -63,6 +63,8 @@ public class GameScreen implements Screen {
         mapRenderSystem = new MapRenderSystem(camera, map);
         renderSystem = new RenderSystem(camera);
 
+        ashley.removeAllEntities();
+
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
