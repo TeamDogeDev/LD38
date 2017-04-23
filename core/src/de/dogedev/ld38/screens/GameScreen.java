@@ -14,7 +14,6 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.github.czyzby.noise4j.map.Grid;
 import de.dogedev.ld38.CoordinateMapper;
 import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
@@ -94,7 +93,7 @@ public class GameScreen implements Screen {
         tilePositionComponent.y = tileY;
 
         GridComponent gridComponent = ashley.createComponent(GridComponent.class);
-        gridComponent.clickable = true;
+        if(PlayerComponent.PLAYER.A == player) gridComponent.clickable = 1;
 
         spawnEntity.add(tilePositionComponent);
         spawnEntity.add(renderComponent);
@@ -174,10 +173,10 @@ public class GameScreen implements Screen {
                 GridComponent gridComponent = ashley.createComponent(GridComponent.class);
                 // TODO
                 if (x == 0 && y == Statics.settings.tilesY - 2) { //(0, N-1) / TL
-                    gridComponent.clickable = true;
+                    gridComponent.clickable = 1;
                 }
                 if (x == 1 && y == Statics.settings.tilesY - 1) { //(1, N-1) / TL
-                    gridComponent.clickable = true;
+                    gridComponent.clickable = 1;
                 }
                 UnitComponent gridUnitComponent = ashley.createComponent(UnitComponent.class);
 

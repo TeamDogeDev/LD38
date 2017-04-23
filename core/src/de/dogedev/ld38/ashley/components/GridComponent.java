@@ -8,9 +8,9 @@ import com.badlogic.gdx.utils.Pool;
  */
 public class GridComponent implements Component, Pool.Poolable {
 
-    public boolean clickable = false;
+    public int clickable = 0;
     @Override
     public void reset() {
-        clickable = false;
+        clickable = 0;
     }
 }

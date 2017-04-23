@@ -65,7 +65,7 @@ public class GridSystem extends EntitySystem implements Disposable {
                         tileScreenX, tileScreenY,
                         Statics.settings.tileWidth, Align.center, false);
             }
-            if(!grid.clickable) {
+            if(grid.clickable <= 0) {
                 batch.draw(Statics.asset.getTextureAtlasRegion(Key.TILES_TILEOVERLAY),
                         tileScreenX, tileScreenY-105);
             }
@@ -90,7 +90,7 @@ public class GridSystem extends EntitySystem implements Disposable {
 
             if(button == Input.Buttons.LEFT) {
                 GridComponent gridComponent = ComponentMappers.grid.get(entity);
-                return gridComponent.clickable;
+                return gridComponent.clickable > 0;
             } else if(button == Input.Buttons.RIGHT) {
                 UnitComponent unitComponent= ComponentMappers.unit.get(entity);
                 return unitComponent.units > Statics.settings.minPeeps;
@@ -108,6 +108,7 @@ public class GridSystem extends EntitySystem implements Disposable {
             return;
         }
 
+        int gridChange = 0;
 
         if(ComponentMappers.player.has(entity)) {
             PlayerComponent playerComponent = ComponentMappers.player.get(entity);
@@ -116,10 +117,14 @@ public class GridSystem extends EntitySystem implements Disposable {
                 ComponentMappers.unit.get(entity).units++;
             } else {
                 int newUnits = --ComponentMappers.unit.get(entity).units;
-                if(newUnits <= 0) entity.remove(PlayerComponent.class);
+                if(newUnits <= 0) {
+                    entity.remove(PlayerComponent.class);
+                    if(PlayerComponent.PLAYER.A != player) gridChange = -1;
+                }
             }
         } else {
             PlayerComponent newPlayerComponent = ((PooledEngine) getEngine()).createComponent(PlayerComponent.class);
+            if(PlayerComponent.PLAYER.A == player) gridChange = 1;
             newPlayerComponent.player = player;
             entity.add(newPlayerComponent);
             ComponentMappers.unit.get(entity).units++;
@@ -132,14 +137,14 @@ public class GridSystem extends EntitySystem implements Disposable {
                 for (int yOffset = -1; yOffset <= 1; yOffset++) {
                     try {
                         Entity entityOff = getEntityAt(x+xOffset, y +yOffset);
-                        ComponentMappers.grid.get(entityOff).clickable = true;
+                        ComponentMappers.grid.get(entityOff).clickable += gridChange;
                     } catch (EntityNotFoundException e) {
                     }
                 }
             }
             try {
                 Entity entityOff = getEntityAt(x-1, y);
-                ComponentMappers.grid.get(entityOff).clickable = true;
+                ComponentMappers.grid.get(entityOff).clickable += gridChange;
             } catch (EntityNotFoundException e) {
             }
         } else { // blue -> left
@@ -147,14 +152,14 @@ public class GridSystem extends EntitySystem implements Disposable {
                 for (int yOffset = -1; yOffset <= 1; yOffset++) {
                     try {
                         Entity entityOff = getEntityAt(x+xOffset, y +yOffset);
-                        ComponentMappers.grid.get(entityOff).clickable = true;
+                        ComponentMappers.grid.get(entityOff).clickable += gridChange;
                     } catch (EntityNotFoundException e) {
                     }
                 }
             }
             try {
                 Entity entityOff = getEntityAt(x+1, y);
-                ComponentMappers.grid.get(entityOff).clickable = true;
+                ComponentMappers.grid.get(entityOff).clickable += gridChange;
             } catch (EntityNotFoundException e) {
             }
         }
