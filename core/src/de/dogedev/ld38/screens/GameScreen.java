@@ -4,7 +4,6 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
@@ -46,6 +45,8 @@ public class GameScreen implements Screen {
     private Music music;
 
     public GameScreen() {
+        ashley.removeAllEntities();
+        
         music = Statics.asset.getMusic(Musics.GAME_MUSIC);
         music.setVolume(Statics.settings.musicVolume);
         music.setLooping(true);
@@ -63,7 +64,7 @@ public class GameScreen implements Screen {
         mapRenderSystem = new MapRenderSystem(camera, map);
         renderSystem = new RenderSystem(camera);
 
-        ashley.removeAllEntities();
+
 
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
