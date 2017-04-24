@@ -19,8 +19,16 @@ public class GameSettings {
     public float finishCheckInterval = 1;
 
     // effects
-    public float movementSpeed = 20;
-    public float spawnrate = 1f;
-    public float maxPopulation = 2;
-    public float tickrate = 0.5f;
+    //movementspeed
+    public float hangar = 20;
+    public float militaryTent = hangar*2;
+    //spawnrate
+    public float beigeBuilding = 1f;
+    public float tent = beigeBuilding*2;
+    //maxpopulation
+    public float windmill = 2;
+    public float tavern = windmill*2;
+    //tickrate
+    public float skyscraperGlass = 0.5f;
+    public float skyscraperWide = skyscraperGlass/2f;
 }

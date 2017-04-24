@@ -272,10 +272,6 @@ public class GameScreen implements Screen {
             }
         }
 
-        if(Gdx.input.isKeyJustPressed(Input.Keys.N)) {
-            mapRenderSystem.setMap(mapBuilder.buildMap(Statics.settings.tilesX, Statics.settings.tilesY));
-        }
-
     }
 
     @Override
