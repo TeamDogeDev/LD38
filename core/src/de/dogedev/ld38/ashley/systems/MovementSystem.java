@@ -10,24 +10,24 @@ import de.dogedev.ld38.ashley.components.*;
 /**
  * Created by Furuha on 28.01.2016.
  */
-public class MovementSystem extends EntitySystem  {
+public class MovementSystem extends EntitySystem {
 
 
     private ImmutableArray<Entity> entities;
     private ImmutableArray<Entity> spawns;
 
-    public MovementSystem() {
-
+    public MovementSystem(int priority) {
+        super(priority);
     }
 
     @Override
-    public void addedToEngine (Engine engine) {
+    public void addedToEngine(Engine engine) {
         entities = engine.getEntitiesFor(Family.all(PositionComponent.class, MovementComponent.class, PeepComponent.class).get());
         spawns = engine.getEntitiesFor(Family.all(SpawnComponent.class, PlayerComponent.class).get());
     }
 
     @Override
-    public void removedFromEngine (Engine engine) {
+    public void removedFromEngine(Engine engine) {
 
     }
 
@@ -35,8 +35,8 @@ public class MovementSystem extends EntitySystem  {
     Vector2 target = new Vector2();
 
     @Override
-    public void update (float deltaTime) {
-        for(Entity e: entities){
+    public void update(float deltaTime) {
+        for (Entity e : entities) {
             MovementComponent mvc = ComponentMappers.movement.get(e);
             PositionComponent pvc = ComponentMappers.position.get(e);
             PeepComponent peep = ComponentMappers.peep.get(e);
@@ -44,9 +44,9 @@ public class MovementSystem extends EntitySystem  {
             target.set(mvc.x, mvc.y);
             target.sub(current);
 
-            if(target.len() < 40){
+            if (target.len() < 40) {
                 // Einheit ist angekommen
-                e.add(((PooledEngine)getEngine()).createComponent(HiddenComponent.class));
+                e.add(((PooledEngine) getEngine()).createComponent(HiddenComponent.class));
                 e.remove(MovementComponent.class);
                 Vector2 tilePos = CoordinateMapper.getTile((int) pvc.x, (int) pvc.y);
                 getEngine().getSystem(GridSystem.class).incAt(
@@ -58,16 +58,16 @@ public class MovementSystem extends EntitySystem  {
 
             float speed = 50;
 
-            for(Entity spawn: spawns){
+            for (Entity spawn : spawns) {
                 PlayerComponent playerComponent = ComponentMappers.player.get(spawn);
-                if(playerComponent != null && playerComponent.player == peep.player){
+                if (playerComponent != null && playerComponent.player == peep.player) {
                     speed += ComponentMappers.spawn.get(spawn).movementSpeed;
                 }
 
             }
 
             target.nor();
-            target.scl(speed*deltaTime);
+            target.scl(speed * deltaTime);
             pvc.x += target.x;
             pvc.y += target.y;
         }

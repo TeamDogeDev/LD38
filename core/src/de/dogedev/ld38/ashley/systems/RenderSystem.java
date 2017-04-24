@@ -26,7 +26,8 @@ public class RenderSystem extends EntitySystem implements EntityListener {
     private BitmapFont font;
     ImmutableArray<Entity> entities;
 
-    public RenderSystem(OrthographicCamera camera) {
+    public RenderSystem(OrthographicCamera camera, int priority) {
+        super(priority);
         this.camera = camera;
         this.batch = new SpriteBatch();
         this.sortedEntities = new Array<>();

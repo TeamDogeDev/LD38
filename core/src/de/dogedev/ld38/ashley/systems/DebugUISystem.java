@@ -27,7 +27,8 @@ public class DebugUISystem extends EntitySystem implements Disposable {
     private OrthographicCamera camera;
     private DecimalFormat floatFormat = new DecimalFormat("#.##");
 
-    public DebugUISystem(OrthographicCamera camera) {
+    public DebugUISystem(OrthographicCamera camera, int priority) {
+        super(priority);
         this.camera = camera;
         font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1);
         GLProfiler.enable();

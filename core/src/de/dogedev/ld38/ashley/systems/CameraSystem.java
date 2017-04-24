@@ -15,7 +15,8 @@ public class CameraSystem extends EntitySystem  {
     private final OrthographicCamera camera;
 
 
-    public CameraSystem(OrthographicCamera camera) {
+    public CameraSystem(OrthographicCamera camera, int priority) {
+        super(priority);
         this.camera = camera;
     }
 

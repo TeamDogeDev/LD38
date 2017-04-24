@@ -17,8 +17,8 @@ import de.dogedev.ld38.screens.FinishScreen;
 public class FinishSystem extends IntervalSystem {
     private ImmutableArray<Entity> entities;
 
-    public FinishSystem() {
-        super(Statics.settings.finishCheckInterval);
+    public FinishSystem(int priority) {
+        super(Statics.settings.finishCheckInterval, priority);
     }
 
     @Override

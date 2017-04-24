@@ -33,7 +33,8 @@ public class LegendUISystem extends EntitySystem implements Disposable {
 
     private float xSpacing = 5;
     private float ySpacing = 10;
-    public LegendUISystem() {
+    public LegendUISystem(int priority) {
+        super(priority);
         font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1);
 
         beigeBuilding = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_BEIGEBUILDING);
