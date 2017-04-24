@@ -148,37 +148,37 @@ public class MapBuilder {
                             case DIRT:
                                 if(MathUtils.randomBoolean(0.8f)) {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_HANGAR);
-                                    buildingComponent.movementSpeed = Statics.settings.movementSpeed;
+                                    buildingComponent.movementSpeed = Statics.settings.hangar;
                                 } else {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_MILITARYTENT);
-                                    buildingComponent.movementSpeed = Statics.settings.movementSpeed*2;
+                                    buildingComponent.movementSpeed = Statics.settings.militaryTent;
                                 }
                                 break;
                             case SAND:
                                 if(MathUtils.randomBoolean(0.8f)) {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_BEIGEBUILDING);
-                                    buildingComponent.spawnate = Statics.settings.spawnrate;
+                                    buildingComponent.spawnate = Statics.settings.beigeBuilding;
                                 } else {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_INDIANTENT_FRONT);
-                                    buildingComponent.spawnate = Statics.settings.spawnrate*2;
+                                    buildingComponent.spawnate = Statics.settings.tent;
                                 }
                                 break;
                             case GRASS:
                                 if(MathUtils.randomBoolean(0.8f)) {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_WINDMILL_COMPLETE);
-                                    buildingComponent.maxPopulation = Statics.settings.maxPopulation;
+                                    buildingComponent.maxPopulation = Statics.settings.windmill;
                                 } else {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_TAVERN);
-                                    buildingComponent.maxPopulation = Statics.settings.maxPopulation*2;
+                                    buildingComponent.maxPopulation = Statics.settings.tavern;
                                 }
                                 break;
                             case STONE:
                                 if(MathUtils.randomBoolean(0.8f)) {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_SKYSCRAPER_GLASS);
-                                    buildingComponent.tickrate = Statics.settings.tickrate;
+                                    buildingComponent.tickrate = Statics.settings.skyscraperGlass;
                                 } else {
                                     renderComponent.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_SKYSCRAPER_WIDE);
-                                    buildingComponent.tickrate = Statics.settings.tickrate/2;
+                                    buildingComponent.tickrate = Statics.settings.skyscraperWide/2;
                                 }
                                 break;
                         }
