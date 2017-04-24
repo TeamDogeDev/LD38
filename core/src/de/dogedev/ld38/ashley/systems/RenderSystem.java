@@ -141,14 +141,14 @@ public class RenderSystem extends EntitySystem implements EntityListener {
                 draw(renderComponent.region, positionComponent.x-renderComponent.region.getRegionWidth()/2, positionComponent.y-renderComponent.region.getRegionHeight()/2);
             }
         }
-        if(ComponentMappers.spawn.has(e) && ComponentMappers.unit.has(e) && ComponentMappers.tilePos.has(e)) {
-            TilePositionComponent tpc = ComponentMappers.tilePos.get(e);
-            UnitComponent units = ComponentMappers.unit.get(e);
-            font.draw(batch, "#" + units.units,
-                    CoordinateMapper.getTilePosX(tpc.x, tpc.y)-(Statics.settings.tileWidth>>1),
-                    CoordinateMapper.getTilePosY(tpc.y) + (Statics.settings.tileHeight>>2),
-                    Statics.settings.tileWidth, Align.center, false);
-        }
+//        if(ComponentMappers.spawn.has(e) && ComponentMappers.unit.has(e) && ComponentMappers.tilePos.has(e)) {
+//            TilePositionComponent tpc = ComponentMappers.tilePos.get(e);
+//            UnitComponent units = ComponentMappers.unit.get(e);
+//            font.draw(batch, "#" + units.units,
+//                    CoordinateMapper.getTilePosX(tpc.x, tpc.y)-(Statics.settings.tileWidth>>1),
+//                    CoordinateMapper.getTilePosY(tpc.y) + (Statics.settings.tileHeight>>2),
+//                    Statics.settings.tileWidth, Align.center, false);
+//        }
 
     }
 

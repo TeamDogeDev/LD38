@@ -6,6 +6,7 @@ import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.math.MathUtils;
+import de.dogedev.ld38.Key;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.ashley.ComponentMappers;
 import de.dogedev.ld38.ashley.components.BuildingComponent;
@@ -38,12 +39,14 @@ public class TickSystem extends EntitySystem {
                 continue;
             }
 
+
             float tickrate = 1;
             float spawnate = 1;
             float maxPopulation = Statics.settings.maxPeeps;
             float movementSpeed = 0;
 
             for(Entity building: buildings){
+
                 if(playerComponent.player == ComponentMappers.player.get(building).player){
                     BuildingComponent bc = ComponentMappers.building.get(building);
                     if(bc.tickrate > 0) tickrate *= bc.tickrate;

@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
@@ -270,6 +271,10 @@ public class GameScreen implements Screen {
             for (Entity entity : dirtyEntities) {
                 ashley.removeEntity(entity);
             }
+        }
+
+        if(Gdx.input.isKeyJustPressed(Input.Keys.N)) {
+            mapRenderSystem.setMap(mapBuilder.buildMap(Statics.settings.tilesX, Statics.settings.tilesY));
         }
 
     }

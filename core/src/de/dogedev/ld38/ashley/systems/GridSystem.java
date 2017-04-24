@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Disposable;
 import de.dogedev.ld38.CoordinateMapper;
@@ -23,6 +24,7 @@ public class GridSystem extends EntitySystem implements Disposable {
 
     private ImmutableArray<Entity> entities;
     private ImmutableArray<Entity> buildings;
+    private TextureRegion fontbg;
 
     @Override
     public void addedToEngine(Engine engine) {
@@ -43,6 +45,7 @@ public class GridSystem extends EntitySystem implements Disposable {
     public GridSystem(OrthographicCamera camera) {
         this.camera = camera;
         font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1);
+        fontbg = Statics.asset.getTextureAtlasRegion(Key.ICONS_TEXTBG);
     }
 
     @Override
@@ -58,12 +61,14 @@ public class GridSystem extends EntitySystem implements Disposable {
             float tileScreenY = CoordinateMapper.getTilePosY(tpc.y) + (Statics.settings.tileHeight >> 2);
             if(units.units > 0 && ComponentMappers.player.has(entity)) {
                 PlayerComponent playerComponent = ComponentMappers.player.get(entity);
+//                batch.draw();
                 if(playerComponent.player == PlayerComponent.PLAYER.A) {
                     font.setColor(Color.BLUE);
                 } else {
                     font.setColor(Color.RED);
                 }
-                font.draw(batch, "#" + units.units,
+                batch.draw(fontbg, tileScreenX+20, tileScreenY-font.getLineHeight()+5, Statics.settings.tileWidth-40, font.getLineHeight());
+                font.draw(batch, "" + units.units,
                         tileScreenX, tileScreenY,
                         Statics.settings.tileWidth, Align.center, false);
             }
