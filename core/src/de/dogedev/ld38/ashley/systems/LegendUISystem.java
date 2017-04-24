@@ -36,6 +36,7 @@ public class LegendUISystem extends EntitySystem implements Disposable {
 
     @Override
     public void update(float deltaTime) {
+        batch.getProjectionMatrix().setToOrtho2D(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         batch.begin();
 
