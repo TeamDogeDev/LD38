@@ -54,7 +54,7 @@ public class GameScreen implements Screen {
 
         cloudBatch = new SpriteBatch();
         camera = new OrthographicCamera();
-        camera.zoom = 2f;
+        camera.zoom = 1f;
         camera.setToOrtho(false, 1280, 720);
 
         clouds = Statics.asset.getTexture(Textures.CLOUD);
@@ -87,7 +87,8 @@ public class GameScreen implements Screen {
         createSpawnEntity(Statics.settings.tilesX-1, 0, PlayerComponent.PLAYER.B);
         createGridEntites(Statics.settings.tilesX, Statics.settings.tilesY);
 
-
+        camera.position.x = 544.0f;
+        camera.position.y = 600.0f;
     }
 
     private void createSpawnEntity(int tileX, int tileY, PlayerComponent.PLAYER player) {
@@ -237,8 +238,6 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-        camera.position.x = 544.0f;
-        camera.position.y = 388.0f;
         camera.update();
 
         music.play();
@@ -281,7 +280,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        camera.setToOrtho(false, width, height);
+        camera.viewportHeight = height;
+        camera.viewportWidth = width;
         cloudShader.begin();
         cloudShader.setUniformf("resolution", width, height);
         cloudShader.end();
