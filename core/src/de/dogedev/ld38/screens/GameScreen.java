@@ -70,7 +70,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
-        ashley.addSystem(new AiSystem(this));
+//        ashley.addSystem(new AiSystem(this));
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
 //        ashley.addSystem(new DebugUISystem(camera));
