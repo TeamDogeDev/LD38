@@ -1,6 +1,7 @@
 package de.dogedev.ld38.ashley.systems;
 
 import com.badlogic.ashley.core.EntitySystem;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -37,25 +38,33 @@ public class LegendUISystem extends EntitySystem implements Disposable {
     public void update(float deltaTime) {
 
         batch.begin();
+
+        batch.draw(Statics.asset.getTextureAtlasRegion(Key.ICONS_TEXTBG), 0, 0, Gdx.graphics.getWidth(), 2*ySpacing+ (skyscraper.getRegionHeight()));
+
         font.setColor(Color.BLACK);
+        float oldScaleX = font.getScaleX();
+        float oldScaleY = font.getScaleY();
+        font.getData().setScale(0.8f, 0.8f);
+
         float xPos = xSpacing*3;
         float fontWidth = 100;
 
-        batch.draw(skyscraper, xPos, (ySpacing + font.getLineHeight())*2, skyscraper.getRegionWidth(), skyscraper.getRegionHeight());
+        batch.draw(skyscraper, xPos, (ySpacing + font.getLineHeight())*2, skyscraper.getRegionWidth()>>1, skyscraper.getRegionHeight()>>1);
         font.draw(batch, "tickrate\nx" + (1/Statics.settings.tickrate), xPos, ySpacing + (font.getLineHeight()*2), fontWidth, 1, false);
         xPos += skyscraper.getRegionWidth() + xSpacing + fontWidth;
 
-        batch.draw(hangar, xPos, (ySpacing + font.getLineHeight())*2, hangar.getRegionWidth(), hangar.getRegionHeight());
+        batch.draw(hangar, xPos, (ySpacing + font.getLineHeight())*2, hangar.getRegionWidth()>>1, hangar.getRegionHeight()>>1);
         font.draw(batch, "movementspeed\n+" + Statics.settings.movementSpeed, xPos, ySpacing + (font.getLineHeight()*2), fontWidth, 1, false);
         xPos += hangar.getRegionWidth() + xSpacing + fontWidth;
 
-        batch.draw(beigeTexture, xPos, (ySpacing + font.getLineHeight())*2, beigeTexture.getRegionWidth(), beigeTexture.getRegionHeight());
+        batch.draw(beigeTexture, xPos, (ySpacing + font.getLineHeight())*2, beigeTexture.getRegionWidth()>>1, beigeTexture.getRegionHeight()>>1);
         font.draw(batch, "spawnrate\nx" + Statics.settings.spawnrate, xPos, ySpacing + (font.getLineHeight()*2), fontWidth, 1, false);
         xPos += beigeTexture.getRegionWidth() + xSpacing + fontWidth;
 
-        batch.draw(windmill, xPos, (ySpacing + font.getLineHeight())*2, windmill.getRegionWidth(), windmill.getRegionHeight());
+        batch.draw(windmill, xPos, (ySpacing + font.getLineHeight())*2, windmill.getRegionWidth()>>1, windmill.getRegionHeight()>>1);
         font.draw(batch, "maxpopulation\n+" + Statics.settings.maxPopulation, xPos, ySpacing + (font.getLineHeight()*2), fontWidth, 1, false);
         batch.end();
+        font.getData().setScale(oldScaleX, oldScaleY);
 
     }
 
