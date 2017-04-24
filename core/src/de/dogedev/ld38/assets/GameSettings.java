@@ -15,9 +15,10 @@ public class GameSettings {
     public int maxPeeps = 10;
 
     public int numBuildings = (int) ((tilesX*tilesY)*.4);
-    public float difficulty = .6f; // 0 = easy peasy; 1 = "super hard"
-    public float finishCheckInterval = 1;
+    public float difficulty = .4f; // 0 = easy peasy; 1 = "super hard"
+    public float aiTickRate = 0.1f;
 
+    public float finishCheckInterval = 1;
     // effects
     //movementspeed
     public float hangar = 20;

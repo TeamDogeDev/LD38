@@ -4,7 +4,6 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
@@ -70,7 +69,7 @@ public class GameScreen implements Screen {
         ashley.addSystem(new InputSystem(camera, this));
         ashley.addSystem(new CameraSystem(camera));
         ashley.addSystem(new MovementSystem());
-//        ashley.addSystem(new AiSystem(this));
+        ashley.addSystem(new AiSystem(this));
         ashley.addSystem(mapRenderSystem);
         ashley.addSystem(renderSystem);
 //        ashley.addSystem(new DebugUISystem(camera));

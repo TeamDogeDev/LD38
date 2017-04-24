@@ -3,9 +3,12 @@
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 	<inherits name='com.badlogic.ashley_gwt' />
+	<inherits name='com.github.czyzby.noise4j.Noise4J' />
+
 
 	<inherits name='LDGame' />
 	<entry-point class='de.dogedev.ld38.client.HtmlLauncher' />
 	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 	<set-configuration-property name="gdx.assetpath" value="../core/assets" />
+	<extend-configuration-property name="gdx.reflect.include" value="de.dogedev.ld38" />
 </module>

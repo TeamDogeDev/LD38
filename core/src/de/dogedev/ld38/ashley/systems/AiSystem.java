@@ -25,7 +25,7 @@ public class AiSystem extends IntervalSystem {
     private ImmutableArray<Entity> spawns;
 
     public AiSystem(GameScreen gameScreen) {
-        super(0.5f);
+        super(Statics.settings.aiTickRate);
         this.gameScreen = gameScreen;
     }
 
