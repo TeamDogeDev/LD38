@@ -20,7 +20,8 @@ public class MapRenderSystem extends EntitySystem {
     private final OrthographicCamera camera;
     private HexagonalTiledMapRenderer renderer;
 
-    public MapRenderSystem(OrthographicCamera camera, TiledMap map) {
+    public MapRenderSystem(OrthographicCamera camera, TiledMap map, int priority) {
+        super(priority);
         this.camera = camera;
         renderer = new HexagonalTiledMapRenderer(map);
     }

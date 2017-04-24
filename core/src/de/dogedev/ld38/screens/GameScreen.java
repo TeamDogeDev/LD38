@@ -61,23 +61,24 @@ public class GameScreen implements Screen {
 
         TiledMap map = mapBuilder.buildMap(settings.tilesX, settings.tilesY);
 
-        mapRenderSystem = new MapRenderSystem(camera, map);
-        renderSystem = new RenderSystem(camera);
 
 
 
-        ashley.addSystem(new InputSystem(camera, this));
-        ashley.addSystem(new CameraSystem(camera));
-        ashley.addSystem(new MovementSystem());
-        ashley.addSystem(new AiSystem(this));
+        ashley.addSystem(new InputSystem(camera, this, 1));
+        ashley.addSystem(new CameraSystem(camera, 1));
+        ashley.addSystem(new MovementSystem(2));
+        ashley.addSystem(new AiSystem(this, 3));
+
+        mapRenderSystem = new MapRenderSystem(camera, map, 4);
         ashley.addSystem(mapRenderSystem);
+        renderSystem = new RenderSystem(camera, 5);
         ashley.addSystem(renderSystem);
-//        ashley.addSystem(new DebugUISystem(camera));
-        ashley.addSystem(new TickSystem());
-        ashley.addSystem(new OverlayRenderSystem(camera));
-        ashley.addSystem(new GridSystem(camera));
-        ashley.addSystem(new FinishSystem());
-        ashley.addSystem(new LegendUISystem());
+//        ashley.addSystem(new DebugUISystem(camera, 6));
+        ashley.addSystem(new TickSystem(7));
+        ashley.addSystem(new OverlayRenderSystem(camera, 8));
+        ashley.addSystem(new GridSystem(camera, 9));
+        ashley.addSystem(new FinishSystem(10));
+        ashley.addSystem(new LegendUISystem(11));
 
 
         dirtyEntities = ashley.getEntitiesFor(Family.all(DirtyComponent.class).get());
@@ -270,7 +271,6 @@ public class GameScreen implements Screen {
                 ashley.removeEntity(entity);
             }
         }
-
     }
 
     @Override

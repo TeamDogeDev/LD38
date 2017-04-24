@@ -42,7 +42,8 @@ public class GridSystem extends EntitySystem implements Disposable {
     private OrthographicCamera camera;
     private BitmapFont font;
 
-    public GridSystem(OrthographicCamera camera) {
+    public GridSystem(OrthographicCamera camera, int priority) {
+        super(priority);
         this.camera = camera;
         font = Statics.asset.getBitmapFont(BitmapFonts.KENNEY_1);
         fontbg = Statics.asset.getTextureAtlasRegion(Key.ICONS_TEXTBG);

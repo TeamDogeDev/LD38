@@ -16,7 +16,7 @@ public class GameSettings {
 
     public int numBuildings = (int) ((tilesX*tilesY)*.4);
     public float difficulty = .4f; // 0 = easy peasy; 1 = "super hard"
-    public float aiTickRate = 0.1f;
+    public float aiTickRate = 0.2f;
 
     public float finishCheckInterval = 1;
     // effects

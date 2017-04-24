@@ -69,6 +69,10 @@ As already mentioned above, capturing tiles with buildings can boost you:
 * `maxpopulation` = Maximum amount of warriors in the Hex Castle spawn
 * `tickrate` = How fast the warrior spawn ticks
 
+Fortunately we can see a legend located at the window's bottom border, so we don't need to remember all buildings and their effects:
+
+![legend][Legend]
+
 ## Goal
 
 It is as simple as it sounds:
@@ -109,3 +113,4 @@ We are incredibly thankful for the assets from:
 
 [start]: start.png "Start"
 [steps]: start2.png "Steps"
+[legend]: legend.png "Legend"

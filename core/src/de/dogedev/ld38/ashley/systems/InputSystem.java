@@ -20,7 +20,8 @@ public class InputSystem extends EntitySystem  {
     private final InputMultiplexer inputMultiplexer;
     private GameScreen gameScreen;
 
-    public InputSystem(OrthographicCamera camera, GameScreen gameScreen) {
+    public InputSystem(OrthographicCamera camera, GameScreen gameScreen, int priority) {
+        super(priority);
         this.camera = camera;
         inputMultiplexer = new InputMultiplexer(
                 new GameInputProcessor(camera),

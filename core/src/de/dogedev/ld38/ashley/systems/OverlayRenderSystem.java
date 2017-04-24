@@ -24,7 +24,8 @@ public class OverlayRenderSystem extends EntitySystem implements Disposable {
     private Vector3 mouse = Vector3.Zero;
     private Vector2 arrowTilePosition;
 
-    public OverlayRenderSystem(OrthographicCamera camera) {
+    public OverlayRenderSystem(OrthographicCamera camera, int priority) {
+        super(priority);
         this.camera = camera;
         spriteBatch = new SpriteBatch();
         arrowTilePosition = new Vector2(0, Statics.settings.tilesY-1);

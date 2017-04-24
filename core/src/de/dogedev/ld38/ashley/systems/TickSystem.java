@@ -22,7 +22,8 @@ public class TickSystem extends EntitySystem {
     private ImmutableArray<Entity> spawns;
     private ImmutableArray<Entity> buildings;
 
-    public TickSystem() {
+    public TickSystem(int priority) {
+        super(priority);
     }
 
     @Override
