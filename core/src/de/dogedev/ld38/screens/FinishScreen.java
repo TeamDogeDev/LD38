@@ -45,6 +45,8 @@ public class FinishScreen implements Screen {
 
         tex = new Texture(Gdx.files.internal("finishscreen.png"));
 
+        stage.setViewport(new FitViewport(1280, 720));
+
         Actor background = new ImageActor(tex);
         background.setPosition(0,0);
         stage.addActor(background);
@@ -151,7 +153,7 @@ public class FinishScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-        stage.setViewport(new FitViewport(1280, 720));
+        stage.getViewport().update(width, height, true);
     }
 
     @Override
