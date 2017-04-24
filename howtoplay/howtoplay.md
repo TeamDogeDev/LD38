@@ -37,7 +37,7 @@ Let us learn how to move our warriors in the next section:
 
 We control the game entirely using our mouse:
 
- &nbsp;                             | Key                   | FOO                   |
+ &nbsp;                             | Key                   | Function                   |
 ------------------------------------|-----------------------|-----------------------|
 ![Left mouse click][leftclick]      | Left mouse click      | Send a single warrior of the selected Hex   |
 ![Left mouse click][leftclick]      | Left mouse long press | Send half of the selected Hex's warriors         |
