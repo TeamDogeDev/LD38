@@ -9,11 +9,14 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import de.dogedev.ld38.LDGame;
 import de.dogedev.ld38.Statics;
 import de.dogedev.ld38.assets.enums.Musics;
+import de.dogedev.ld38.screens.actors.ImageActor;
 import de.dogedev.ld38.screens.actors.TextActor;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
@@ -41,6 +44,10 @@ public class FinishScreen implements Screen {
         music.setVolume(Statics.settings.musicVolume);
 
         tex = new Texture(Gdx.files.internal("finishscreen.png"));
+
+        Actor background = new ImageActor(tex);
+        background.setPosition(0,0);
+        stage.addActor(background);
 
         TextActor continueText = new TextActor("Press <Space> or <ESC> to restart", 1270, Align.left);
         continueText.setPosition(10, 700);
@@ -111,6 +118,7 @@ public class FinishScreen implements Screen {
         text.setScale(5);
         text.addAction(sequence(delay(35), moveTo(0, 700, 2)));
 
+
         stage.addActor(text);
         text.setScale(1);
     }
@@ -127,9 +135,9 @@ public class FinishScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        batch.begin();
-        batch.draw(tex, 0, 0);
-        batch.end();
+//        batch.begin();
+//        batch.draw(tex, 0, 0);
+//        batch.end();
 
         stage.act(delta);
         stage.draw();
@@ -143,7 +151,7 @@ public class FinishScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-
+        stage.setViewport(new FitViewport(1280, 720));
     }
 
     @Override
