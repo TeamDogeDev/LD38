@@ -42,17 +42,6 @@ public class AiSystem extends IntervalSystem {
     }
 
     private void doAi(PlayerComponent.PLAYER player) {
-        //Get player spawn
-//        Entity spawn = null;
-//        for (Entity entity : spawns) {
-//            if (ComponentMappers.player.get(entity).player.equals(player)) {
-//                spawn = entity;
-//                break;
-//            }
-//        }
-//        if (spawn != null) {
-
-
         int numPlayer = 0;
 
         for (Entity fieldEntity : fields) {
@@ -115,6 +104,5 @@ public class AiSystem extends IntervalSystem {
                 }
             }
         }
-//        }
     }
 }

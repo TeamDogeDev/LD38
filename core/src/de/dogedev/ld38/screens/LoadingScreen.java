@@ -29,7 +29,6 @@ public class LoadingScreen implements Screen {
     private void update(float delta) {
         if (Statics.asset.load()) {
                 LDGame.game.setScreen( new GameScreen());
-//                LDGame.game.setScreen( new FinishScreen("You won"));
         }
     }
 

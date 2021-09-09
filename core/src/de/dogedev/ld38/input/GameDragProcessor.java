@@ -42,8 +42,6 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
         if(tileCoordinates != null) {
             if(Statics.ashley.getSystem(GridSystem.class).isClickable((int) tileCoordinates.x, (int) tileCoordinates.y, Input.Buttons.LEFT)) {
                 Vector2 arrowTilePosition = Statics.ashley.getSystem(OverlayRenderSystem.class).getArrowTilePosition();
-
-//                    gameScreen.spawnWarrior(new Vector2(0, Statics.settings.tilesY-1), tileCoordinates, 40);
                 gameScreen.spawnAllWarriors(arrowTilePosition, tileCoordinates, PlayerComponent.PLAYER.A, 40);
             } else {
             }
@@ -61,8 +59,6 @@ public class GameDragProcessor extends GestureDetector.GestureAdapter {
             if(tileCoordinates != null) {
                 if(Statics.ashley.getSystem(GridSystem.class).isClickable((int) tileCoordinates.x, (int) tileCoordinates.y, button)) {
                     Vector2 arrowTilePosition = Statics.ashley.getSystem(OverlayRenderSystem.class).getArrowTilePosition();
-
-//                    gameScreen.spawnWarrior(new Vector2(0, Statics.settings.tilesY-1), tileCoordinates, 40);
                     gameScreen.spawnWarrior(arrowTilePosition, tileCoordinates, PlayerComponent.PLAYER.A, 40);
                 } else {
                 }

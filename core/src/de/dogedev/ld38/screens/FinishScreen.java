@@ -137,10 +137,6 @@ public class FinishScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-//        batch.begin();
-//        batch.draw(tex, 0, 0);
-//        batch.end();
-
         stage.act(delta);
         stage.draw();
         if(

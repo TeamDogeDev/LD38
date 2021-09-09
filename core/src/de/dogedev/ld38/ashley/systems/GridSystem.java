@@ -62,7 +62,6 @@ public class GridSystem extends EntitySystem implements Disposable {
             float tileScreenY = CoordinateMapper.getTilePosY(tpc.y) + (Statics.settings.tileHeight >> 2);
             if(units.units > 0 && ComponentMappers.player.has(entity)) {
                 PlayerComponent playerComponent = ComponentMappers.player.get(entity);
-//                batch.draw();
                 if(playerComponent.player == PlayerComponent.PLAYER.A) {
                     font.setColor(Color.BLUE);
                 } else {
@@ -151,8 +150,6 @@ public class GridSystem extends EntitySystem implements Disposable {
             }
             ComponentMappers.unit.get(entity).units++;
         }
-
-//        int newUnits = ++ComponentMappers.unit.get(entity).units;
 
         if(y%2 == 0) { // red -> right
             for (int xOffset = 0; xOffset <= 1; xOffset++) {

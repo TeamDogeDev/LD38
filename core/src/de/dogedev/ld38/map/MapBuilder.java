@@ -102,8 +102,6 @@ public class MapBuilder {
                                    final float modifier) {
         noiseGenerator.setRadius(radius);
         noiseGenerator.setModifier(modifier);
-        // Seed ensures randomness, can be saved if you feel the need to
-        // generate the same map in the future.
         noiseGenerator.setSeed(Generators.rollSeed());
         noiseGenerator.generate(grid);
     }

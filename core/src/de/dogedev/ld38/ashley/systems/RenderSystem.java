@@ -37,46 +37,6 @@ public class RenderSystem extends EntitySystem implements EntityListener {
     @Override
     public void addedToEngine (Engine pengine) {
         entities = pengine.getEntitiesFor(Family.one(PositionComponent.class, TilePositionComponent.class).one(RenderComponent.class).exclude(HiddenComponent.class).get());
-
-        PooledEngine engine = (PooledEngine) pengine;
-
-//        for(int x = 0; x < Statics.settings.tilesX; x++){
-//            for(int y = 0; y < Statics.settings.tilesY; y++){
-//                Entity entity = engine.createEntity();
-//                RenderComponent rc = engine.createComponent(RenderComponent.class);
-//                rc.region = Statics.asset.getTextureAtlasRegion(Key.OBJECTS_MINE);
-//                rc.angle = 180;
-//                entity.add(rc);
-//
-//                TilePositionComponent pc = engine.createComponent(TilePositionComponent.class);
-//                pc.x = x;
-//                pc.y = y;
-//                entity.add(pc);
-//
-//                engine.addEntity(entity);
-//            }
-//        }
-//
-//        for(int x = 0; x < Statics.settings.tilesX; x++){
-//            for(int y = 0; y < Statics.settings.tilesY; y++){
-//                Entity entity = engine.createEntity();
-//                RenderComponent rc = engine.createComponent(RenderComponent.class);
-//                rc.region = Statics.asset.getTextureAtlasRegion(Key.CHARACTERS_CHAR_1);
-//                rc.angle = 90;
-//                entity.add(rc);
-//
-//                PositionComponent pc = engine.createComponent(PositionComponent.class);
-//                pc.x = CoordinateMapper.getTilePosX(x, y);
-//                pc.y = CoordinateMapper.getTilePosY(y);
-//                entity.add(pc);
-//
-//                entity.add(engine.createComponent(LookComponent.class));
-//
-//                engine.addEntity(entity);
-//            }
-//        }
-
-
     }
 
     @Override
